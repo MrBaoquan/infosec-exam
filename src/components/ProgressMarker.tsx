@@ -1,12 +1,21 @@
+import {useState, useEffect} from 'react';
 import BrowserOnly from '@docusaurus/BrowserOnly';
 import {useStudyProgress} from './useStudyProgress';
 
-interface Props {
-  docId: string;
-}
-
-function ProgressMarkerInner({docId}: Props) {
+function ProgressMarkerInner() {
+  const [docId, setDocId] = useState<string>('');
   const {getStatus, cycleStatus, LABELS} = useStudyProgress();
+
+  useEffect(() => {
+    // 从 URL 解析 docId：/infosec-exam/docs/crypto/classical → crypto/classical
+    const path = window.location.pathname
+      .replace(/\/infosec-exam\/docs\//, '')
+      .replace(/\/$/, '')
+      .replace(/\.html$/, '');
+    setDocId(path);
+  }, []);
+
+  if (!docId) return null;
   const status = getStatus(docId);
 
   return (
@@ -51,10 +60,10 @@ function ProgressMarkerInner({docId}: Props) {
   );
 }
 
-export default function ProgressMarker({docId}: Props): JSX.Element {
+export default function ProgressMarker(): JSX.Element {
   return (
     <BrowserOnly fallback={null}>
-      {() => <ProgressMarkerInner docId={docId} />}
+      {() => <ProgressMarkerInner />}
     </BrowserOnly>
   );
 }
