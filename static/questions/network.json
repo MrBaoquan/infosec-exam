@@ -78,5 +78,37 @@
     "options": ["使用工具不同", "经授权、不破坏、出报告", "技术水平不同", "目标不同"],
     "answer": 1,
     "explanation": "渗透测试：经授权、不破坏系统、产出报告。分黑盒/白盒/灰盒。"
+  },
+  {
+    "id": "network-11",
+    "category": "network",
+    "question": "IPSec 传输模式适合哪种场景？",
+    "options": ["网关到网关", "主机到主机", "客户端到网关", "任意场景"],
+    "answer": 1,
+    "explanation": "传输模式(Transport)只保护IP载荷，原IP头不变，适合主机到主机。隧道模式(Tunnel)保护整个包，适合网关间。"
+  },
+  {
+    "id": "network-12",
+    "category": "network",
+    "question": "下一代防火墙(NGFW)相比传统防火墙的增强是？",
+    "options": ["只做包过滤", "集成IDS/IPS/应用识别/深度检测", "速度更慢", "不支持日志"],
+    "answer": 1,
+    "explanation": "NGFW(Next-Generation Firewall)集成应用层识别、IDS/IPS、深度包检测(DPI)，多层防护。"
+  },
+  {
+    "id": "network-13",
+    "category": "network",
+    "question": "HSTS 头的作用是？",
+    "options": ["允许降级到HTTP", "强制浏览器使用HTTPS，防SSL剥离", "加密Cookie", "防XSS"],
+    "answer": 1,
+    "explanation": "HSTS(HTTP Strict Transport Security)强制浏览器仅用HTTPS访问，防止SSL剥离降级攻击。"
+  },
+  {
+    "id": "network-14",
+    "category": "network",
+    "question": "蜜罐(Honeypot)的主要价值是？",
+    "options": ["直接阻断攻击", "收集攻击手法与预警", "加密流量", "替代防火墙"],
+    "answer": 1,
+    "explanation": "蜜罐是伪装的靶机，主动吸引攻击，收集攻击手法、转移注意力、早期预警，属主动防御。"
   }
 ]

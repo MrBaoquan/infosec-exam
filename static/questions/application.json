@@ -78,5 +78,29 @@
     "options": ["输出编码", "白名单限制内网访问", "参数化查询", "CSRF Token"],
     "answer": 1,
     "explanation": "SSRF 防：白名单限制可访问的 IP/域名（禁内网）、禁用危险协议(file://)。其他选项针对不同攻击。"
+  },
+  {
+    "id": "app-11",
+    "category": "application",
+    "question": "Cookie 设置 HttpOnly 属性的目的是？",
+    "options": ["禁止 Cookie 传输", "防止 JS 读取 Cookie，防 XSS 盗取", "加密 Cookie", "限制 Cookie 大小"],
+    "answer": 1,
+    "explanation": "HttpOnly 使 JS 无法通过 document.cookie 读取，防 XSS 窃取会话 Cookie。"
+  },
+  {
+    "id": "app-12",
+    "category": "application",
+    "question": "CSP（内容安全策略）主要用于防御？",
+    "options": ["SQL注入", "XSS", "CSRF", "DDoS"],
+    "answer": 1,
+    "explanation": "CSP(Content Security Policy)限制页面可加载的资源来源，防 XSS 注入恶意脚本执行。"
+  },
+  {
+    "id": "app-13",
+    "category": "application",
+    "question": "数据库透明加密(TDE)的特点是？",
+    "options": ["需修改应用代码", "应用无感知，引擎层加密", "只加密日志", "降低安全性"],
+    "answer": 1,
+    "explanation": "TDE(Transparent Data Encryption)在数据库引擎层加密，应用无感知，对查询透明。"
   }
 ]

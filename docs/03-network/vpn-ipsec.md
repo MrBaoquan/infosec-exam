@@ -5,6 +5,8 @@ description: VPN 原理、IPSec 协议族、工作模式
 
 # VPN 与 IPSec
 
+> 🎯 **形象比喻**：VPN(Virtual Private Network) 像"在公共公路上建一条加密隧道"——别人能看到有车通过，但看不到车里装了什么。IPSec 是建隧道的核心技术。
+
 ## VPN 虚拟专用网络
 
 - 在**公网**上建立**加密隧道**，实现远程安全访问
@@ -13,14 +15,18 @@ description: VPN 原理、IPSec 协议族、工作模式
 
 ## IPSec 协议族（高频）
 
-IPSec 工作在**网络层（IP层）**，为 IP 包提供安全服务。
+> IPSec = Internet Protocol Security，工作在**网络层（IP层）**，为 IP 包提供安全服务。
 
 ### 两大核心协议
 
-| 协议 | 全称 | 提供 | 是否加密 |
+> 🎯 **形象比喻**：
+> - **AH**(Authentication Header) = **挂号信封条**（证明没被拆开过、确认发件人，但信件内容看得见）
+> - **ESP**(Encapsulating Security Payload) = **密封保险箱**（既证明来源没被篡改，内容也加密看不见）
+
+| 协议 | 全拼 | 提供 | 是否加密 |
 |------|------|------|:--------:|
-| **AH** | 认证头 | 数据完整性、源认证、防重放 | ❌ 不加密 |
-| **ESP** | 封装安全载荷 | 机密性（加密）+ 完整性 + 认证 | ✅ 加密 |
+| **AH** | Authentication Header（认证头） | 数据完整性、源认证、防重放 | ❌ 不加密 |
+| **ESP** | Encapsulating Security Payload（封装安全载荷） | 机密性（加密）+ 完整性 + 认证 | ✅ 加密 |
 
 > 🔑 必记：**AH 只认证不加密；ESP 既加密又认证**。需机密性必选 ESP。
 

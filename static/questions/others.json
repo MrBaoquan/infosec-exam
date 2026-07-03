@@ -86,5 +86,69 @@
     "options": ["算法应保密", "安全不应依赖算法保密", "密钥应公开", "加密越复杂越安全"],
     "answer": 1,
     "explanation": "Kerckhoffs 原则：安全应基于密钥保密而非算法保密（开放设计）。假设攻击者知道算法，安全只依赖密钥。"
+  },
+  {
+    "id": "fund-3",
+    "category": "fundamentals",
+    "question": "下列属于主动攻击的是？",
+    "options": ["窃听", "流量分析", "篡改", "嗅探"],
+    "answer": 2,
+    "explanation": "篡改是主动攻击（修改数据）。窃听/流量分析/嗅探是被动攻击（只监听不修改）。被动攻击防加密，主动攻击防认证+完整性。"
+  },
+  {
+    "id": "fund-4",
+    "category": "fundamentals",
+    "question": "Biba 模型的规则是？",
+    "options": ["下读上写(保机密性)", "上读下写(保完整性)", "全读全写", "只读不写"],
+    "answer": 1,
+    "explanation": "Biba 保完整性：上读下写，与 BLP(下读上写)方向相反。防低完整性数据污染高完整性。"
+  },
+  {
+    "id": "mgmt-7",
+    "category": "management",
+    "question": "风险处置的四种策略是？",
+    "options": ["降低/转移/规避/接受", "删除/复制/移动/备份", "加密/签名/哈希/认证", "检测/阻断/告警/记录"],
+    "answer": 0,
+    "explanation": "风险处置：降低(控制)、转移(保险)、规避(停止活动)、接受(可容忍)。"
+  },
+  {
+    "id": "mgmt-8",
+    "category": "management",
+    "question": "RPO 的含义是？",
+    "options": ["系统恢复的最长时间", "可容忍的数据丢失量", "业务中断最长时间", "备份频率"],
+    "answer": 1,
+    "explanation": "RPO(Recovery Point Objective)恢复点目标=可容忍数据丢失量，决定备份频率。RTO=恢复时间。RTO≤MTD。"
+  },
+  {
+    "id": "mgmt-9",
+    "category": "management",
+    "question": "备份的 3-2-1 原则是指？",
+    "options": ["3份/2介质/1异地", "3天/2次/1份", "3个服务器/2个机房/1个备份", "3种算法/2个密钥/1个管理员"],
+    "answer": 0,
+    "explanation": "3-2-1：3份数据(1原始+2备份)、2种不同介质、1份异地存放。"
+  },
+  {
+    "id": "mgmt-10",
+    "category": "management",
+    "question": "ISMS 基于 ISO 27001，其核心方法是？",
+    "options": ["瀑布模型", "PDCA循环", "敏捷开发", "六西格玛"],
+    "answer": 1,
+    "explanation": "ISMS 基于 ISO/IEC 27001，核心是 PDCA(Plan-Do-Check-Act)循环。27002 是控制措施指南。"
+  },
+  {
+    "id": "eng-4",
+    "category": "engineering",
+    "question": "失败安全(Fail Safe)原则的含义是？",
+    "options": ["失败时允许访问", "失败时进入安全状态(默认拒绝)", "失败时忽略", "失败时记录即可"],
+    "answer": 1,
+    "explanation": "Fail Safe：系统异常/失败时进入安全状态，默认拒绝访问，防止失败导致开放。"
+  },
+  {
+    "id": "eng-5",
+    "category": "engineering",
+    "question": "纵深防御(Defense in Depth)的核心思想是？",
+    "options": ["单层强防护", "多层防护，单层突破不致全盘崩溃", "只防网络层", "只防应用层"],
+    "answer": 1,
+    "explanation": "Defense in Depth 多层防护：网络边界/传输/应用/数据/终端/管理，单层被突破仍有其他层保护。"
   }
 ]

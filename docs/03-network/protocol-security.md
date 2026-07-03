@@ -5,14 +5,20 @@ description: TCP/IP 各层安全协议与脆弱性
 
 # 网络协议安全
 
+> 🎯 **形象比喻**：TCP/IP 四层模型像"快递系统"——
+> - **链路层**=同城快递员（点对点投递）
+> - **网络层**=跨城分拣中心（IP 地址定目的地）
+> - **传输层**=快递公司保证送达（TCP 可靠/UDP 快但不保）
+> - **应用层**=你寄的具体物品（网页/邮件/文件）
+
 ## TCP/IP 各层对应安全技术
 
-| 层次 | 协议/技术 | 说明 |
-|------|-----------|------|
-| 链路层 | PPP/CHAP、PPTP、L2TP | 链路加密、点对点认证 |
-| 网络层 | **IPSec**、包过滤防火墙 | 端到端加密、访问控制 |
-| 传输层 | **SSL/TLS**、SSH | 传输加密、身份认证 |
-| 应用层 | HTTPS、S/MIME、PGP、SET | 应用级安全 |
+| 层次 | 协议/技术 | 全拼 | 说明 |
+|------|-----------|------|------|
+| 链路层 | PPP/CHAP、PPTP、L2TP | Point-to-Point Protocol / Challenge Handshake Auth Protocol / Layer 2 Tunneling Protocol | 链路加密、点对点认证 |
+| 网络层 | **IPSec**、包过滤防火墙 | Internet Protocol Security | 端到端加密、访问控制 |
+| 传输层 | **SSL/TLS**、SSH | Secure Sockets Layer / Transport Layer Security / Secure Shell | 传输加密、身份认证 |
+| 应用层 | HTTPS、S/MIME、PGP、SET | HyperText Transfer Protocol Secure / Secure MIME / Pretty Good Privacy / Secure Electronic Transaction | 应用级安全 |
 
 ## 常见协议脆弱性（高频考点）
 

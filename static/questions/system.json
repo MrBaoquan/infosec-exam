@@ -78,5 +78,53 @@
     "options": ["客体所有者决定权限", "系统按标签强制", "用户通过角色获得权限", "属性策略动态判定"],
     "answer": 2,
     "explanation": "RBAC：用户→角色→权限，不直接关联权限。是企业系统最常用的模型，便于管理。"
+  },
+  {
+    "id": "system-11",
+    "category": "system",
+    "question": "Windows 的 UAC（用户账户控制）的作用是？",
+    "options": ["加密磁盘", "提权操作时需确认，降低恶意提权", "防病毒", "记录日志"],
+    "answer": 1,
+    "explanation": "UAC(User Account Control) 在需管理员权限操作时弹出确认，降低恶意程序静默提权的风险。"
+  },
+  {
+    "id": "system-12",
+    "category": "system",
+    "question": "Linux 中 SUID 权限的含义是？",
+    "options": ["以文件属主身份执行", "禁止执行", "以其他用户身份读", "仅属组可写"],
+    "answer": 0,
+    "explanation": "SUID(Set User ID)：执行时以文件属主身份运行（如 passwd 命令以 root 身份执行修改密码文件）。有提权风险。"
+  },
+  {
+    "id": "system-13",
+    "category": "system",
+    "question": "Rootkit 的主要特征是？",
+    "options": ["加密文件勒索", "内核级隐藏自身", "伪造正常程序", "批量发垃圾邮件"],
+    "answer": 1,
+    "explanation": "Rootkit 在内核层运行，隐藏自身及恶意进程，难以被常规杀毒检测，常用于持久化驻留。"
+  },
+  {
+    "id": "system-14",
+    "category": "system",
+    "question": "WannaCry 勒索病毒利用的漏洞是？",
+    "options": ["永恒之蓝(EternalBlue, SMB漏洞)", "Heartbleed", "Log4j2", "SQL注入"],
+    "answer": 0,
+    "explanation": "WannaCry 利用 EternalBlue(永恒之蓝)即 SMB 协议漏洞 MS17-010 蠕虫式传播。"
+  },
+  {
+    "id": "system-15",
+    "category": "system",
+    "question": "可信计算中 TPM 的作用是？",
+    "options": ["防病毒软件", "硬件可信根，存储密钥与度量", "防火墙", "入侵检测"],
+    "answer": 1,
+    "explanation": "TPM(Trusted Platform Module)可信平台模块，硬件级可信根，安全存储密钥、度量系统完整性。"
+  },
+  {
+    "id": "system-16",
+    "category": "system",
+    "question": "补丁管理流程中，部署前必须做什么？",
+    "options": ["直接全量部署", "在测试环境验证兼容性", "忽略补丁", "只通知用户"],
+    "answer": 1,
+    "explanation": "补丁管理：评估→测试→部署→验证。必须先在测试环境验证补丁不破坏业务，再分批部署。"
   }
 ]

@@ -5,6 +5,10 @@ description: 入侵检测系统与入侵防御系统
 
 # 入侵检测系统 IDS 与入侵防御系统 IPS
 
+> 🎯 **形象比喻**：
+> - **IDS**(Intrusion Detection System) = **监控摄像头**（只看只报警，不抓人，旁路部署）
+> - **IPS**(Intrusion Prevention System) = **保安**（当场拦截，串联部署）
+
 ## IDS 入侵检测系统
 
 - **旁路部署**（镜像流量），**仅告警不阻断**
