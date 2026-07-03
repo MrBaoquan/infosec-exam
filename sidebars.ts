@@ -12,7 +12,7 @@ const sidebars: SidebarsConfig = {
         {
             type: 'category',
             label: '二、密码学基础与应用 ⭐',
-            items: ['crypto/index', 'crypto/classical', 'crypto/symmetric', 'crypto/des', 'crypto/asymmetric', 'crypto/hash', 'crypto/signature', 'crypto/pki', 'crypto/national-crypto'],
+            items: ['crypto/index', 'crypto/classical', 'crypto/symmetric', 'crypto/des', 'crypto/asymmetric', 'crypto/hash', 'crypto/signature', 'crypto/pki', 'crypto/national-crypto', 'crypto/kerberos-x509'],
         },
         {
             type: 'category',

@@ -2,9 +2,10 @@ import {useState, useEffect} from 'react';
 import Layout from '@theme/Layout';
 import BrowserOnly from '@docusaurus/BrowserOnly';
 import Quiz, {type Question} from '../components/Quiz';
+import SpacedRepetition from '../components/SpacedRepetition';
 import {useWrongQuestions} from '../components/useWrongQuestions';
 
-type Mode = 'menu' | 'practice';
+type Mode = 'menu' | 'practice' | 'spaced';
 
 interface Category {
   key: string;
@@ -74,12 +75,39 @@ function QuizPageContent() {
     }
   };
 
+  const startSpaced = async (cat: Category) => {
+    setLoading(true);
+    setError('');
+    try {
+      const res = await fetch(cat.file);
+      if (!res.ok) throw new Error('加载失败');
+      const data = await res.json();
+      setQuestions(data);
+      setTitle(cat.label);
+      setMode('spaced');
+    } catch {
+      setError('题目加载失败，请刷新重试');
+    } finally {
+      setLoading(false);
+    }
+  };
+
   if (mode === 'practice') {
     return (
       <Quiz
         questions={questions}
         title={title}
         wrongOnly={wrongOnly}
+        onExit={() => setMode('menu')}
+      />
+    );
+  }
+
+  if (mode === 'spaced') {
+    return (
+      <SpacedRepetition
+        questions={questions}
+        title={title}
         onExit={() => setMode('menu')}
       />
     );
@@ -134,6 +162,37 @@ function QuizPageContent() {
           >
             清空
           </button>
+        </div>
+      </div>
+
+      {/* 记忆模式入口 */}
+      <div
+        style={{
+          border: '1px solid #8b5cf6',
+          borderRadius: 12,
+          padding: 16,
+          marginBottom: 16,
+          background: '#8b5cf608',
+        }}
+      >
+        <div style={{marginBottom: 8}}>
+          <b>🧠 间隔重复记忆模式</b>
+          <span style={{fontSize: 12, color: 'var(--ifm-color-emphasis-600)', marginLeft: 8}}>
+            答错的题反复出现，答对的逐步拉长间隔，直到稳定记忆
+          </span>
+        </div>
+        <div style={{display: 'flex', gap: 8, flexWrap: 'wrap'}}>
+          {CATEGORIES.map((cat) => (
+            <button
+              key={cat.key}
+              className="crypto-btn crypto-btn-ghost"
+              disabled={loading}
+              onClick={() => startSpaced(cat)}
+              style={{minHeight: 36, fontSize: 13, borderColor: '#8b5cf6', color: '#8b5cf6'}}
+            >
+              {cat.label}
+            </button>
+          ))}
         </div>
       </div>
 

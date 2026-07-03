@@ -8,15 +8,19 @@ import DiffieHellman from '@site/src/components/DiffieHellman';
 
 # 非对称加密：RSA
 
+> RSA = Rivest-Shamir-Adleman（三人姓氏），1977 年提出，基于**大整数分解难题**。
+
+> 🎯 **形象理解**：RSA 像一个"公开信箱"——任何人都能把信投进去（公钥加密），但只有信箱主人有钥匙能打开取信（私钥解密）。信箱地址（公钥）可以公开，钥匙（私钥）只你一人有。
+
 ## 非对称加密总览
 
-| 算法        | 数学难题         | 用途                  |
-| ----------- | ---------------- | --------------------- |
-| **RSA**     | 大整数分解       | 加密/签名/密钥交换    |
-| **ECC**     | 椭圆曲线离散对数 | 签名/密钥交换(短密钥) |
-| **ElGamal** | 离散对数         | 加密/签名             |
-| **DH**      | 离散对数         | 密钥协商(不能加密)    |
-| **SM2**     | 椭圆曲线         | 国密公钥加密/签名     |
+| 算法 | 全拼 | 数学难题 | 用途 |
+|------|------|----------|------|
+| **RSA** | Rivest-Shamir-Adleman | 大整数分解 | 加密/签名/密钥交换 |
+| **ECC** | Elliptic Curve Cryptography | 椭圆曲线离散对数 | 签名/密钥交换(短密钥) |
+| **ElGamal** | Elgamal(人名) | 离散对数 | 加密/签名 |
+| **DH** | Diffie-Hellman | 离散对数 | 密钥协商(不能加密) |
+| **SM2** | ShangMi 2(国密) | 椭圆曲线 | 国密公钥加密/签名 |
 
 > 特点：**公钥加密/私钥解密**；速度远慢于对称加密（约慢 100~1000 倍）；
 > 实践中常**混合加密**：非对称加密对称密钥，对称加密数据。
@@ -25,20 +29,46 @@ import DiffieHellman from '@site/src/components/DiffieHellman';
 
 1. 选大素数 $p, q$
 2. $n = p \times q$
-3. $\varphi(n) = (p-1)(q-1)$（欧拉函数）
-4. 选公钥 $e$，满足 $1 < e < \varphi(n)$ 且 $\gcd(e, \varphi(n)) = 1$
-5. 计算私钥 $d = e^{-1} \bmod \varphi(n)$（扩展欧几里得算法）
+3. $\varphi(n) = (p-1)(q-1)$（欧拉函数 Euler's Totient）
+4. 选公钥 $e$，满足 $1 < e < \varphi(n)$ 且 $\gcd(e, \varphi(n)) = 1$（互素）
+5. 计算私钥 $d = e^{-1} \bmod \varphi(n)$（扩展欧几里得算法 Extended Euclidean）
 6. 公钥 $(e, n)$，私钥 $(d, n)$
 7. 加密：$C = M^e \bmod n$
 8. 解密：$M = C^d \bmod n$
 
 <RsaSteps />
 
+## 为什么 RSA 成立？（数学原理）
+
+RSA 的正确性基于**欧拉定理**：若 $\gcd(M, n) = 1$，则 $M^{\varphi(n)} \equiv 1 \pmod{n}$。
+
+由 $e \cdot d \equiv 1 \pmod{\varphi(n)}$，得 $e \cdot d = k\varphi(n) + 1$（某个整数 $k$）。
+
+故：
+$$C^d = (M^e)^d = M^{ed} = M^{k\varphi(n)+1} = M \cdot (M^{\varphi(n)})^k \equiv M \cdot 1^k = M \pmod{n}$$
+
+> 💡 **通俗理解**：$e$ 和 $d$ 是"互逆"的指数——加密是"乘 $e$ 次方"，解密是"再乘 $d$ 次方"，合起来等于乘 $ed$ 次方，而 $ed \equiv 1$，所以还原回原值。
+
+## d 的计算详解（扩展欧几里得）
+
+> 求 $d = e^{-1} \bmod \varphi(n)$，即找 $d$ 使 $e \cdot d \equiv 1 \pmod{\varphi(n)}$。
+
+**示例**：$e=7, \varphi(n)=20$，求 $d$
+
+方法：试算 $7d \bmod 20 = 1$
+- $7 \times 1 = 7 \bmod 20 = 7$ ✗
+- $7 \times 2 = 14 \bmod 20 = 14$ ✗
+- $7 \times 3 = 21 \bmod 20 = 1$ ✓
+
+故 $d = 3$
+
+> 💡 小数直接试算最快；大数用扩展欧几里得算法（考试通常给小数）。
+
 ## RSA 安全性
 
 - 基于**大整数分解难题**：已知 $n$ 难以分解出 $p, q$
 - 安全密钥长度：**≥ 2048 位**（1024 位已不推荐）
-- 选择密文攻击、共模攻击、低指数攻击是经典考点
+- 选择密文攻击、共模攻击、低指数攻击（$e=3$ 时）是经典考点
 
 ## RSA 数字签名
 
