@@ -17,7 +17,7 @@ const sidebars: SidebarsConfig = {
         {
             type: 'category',
             label: '三、网络安全',
-            items: ['network/index', 'network/protocol-security', 'network/firewall', 'network/ids-ips', 'network/vpn-ipsec', 'network/tls-https', 'network/attacks'],
+            items: ['network/index', 'network/protocol-security', 'network/firewall', 'network/ids-ips', 'network/vpn-ipsec', 'network/tls-https', 'network/attacks', 'network/security-system-model', 'network/physical-security', 'network/physical-isolation', 'network/security-audit', 'network/attack-principles', 'network/active-defense'],
         },
         {
             type: 'category',

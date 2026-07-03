@@ -14,13 +14,13 @@ import DiffieHellman from '@site/src/components/DiffieHellman';
 
 ## 非对称加密总览
 
-| 算法 | 全拼 | 数学难题 | 用途 |
-|------|------|----------|------|
-| **RSA** | Rivest-Shamir-Adleman | 大整数分解 | 加密/签名/密钥交换 |
-| **ECC** | Elliptic Curve Cryptography | 椭圆曲线离散对数 | 签名/密钥交换(短密钥) |
-| **ElGamal** | Elgamal(人名) | 离散对数 | 加密/签名 |
-| **DH** | Diffie-Hellman | 离散对数 | 密钥协商(不能加密) |
-| **SM2** | ShangMi 2(国密) | 椭圆曲线 | 国密公钥加密/签名 |
+| 算法        | 全拼                        | 数学难题         | 用途                  |
+| ----------- | --------------------------- | ---------------- | --------------------- |
+| **RSA**     | Rivest-Shamir-Adleman       | 大整数分解       | 加密/签名/密钥交换    |
+| **ECC**     | Elliptic Curve Cryptography | 椭圆曲线离散对数 | 签名/密钥交换(短密钥) |
+| **ElGamal** | Elgamal(人名)               | 离散对数         | 加密/签名             |
+| **DH**      | Diffie-Hellman              | 离散对数         | 密钥协商(不能加密)    |
+| **SM2**     | ShangMi 2(国密)             | 椭圆曲线         | 国密公钥加密/签名     |
 
 > 特点：**公钥加密/私钥解密**；速度远慢于对称加密（约慢 100~1000 倍）；
 > 实践中常**混合加密**：非对称加密对称密钥，对称加密数据。
@@ -56,6 +56,7 @@ $$C^d = (M^e)^d = M^{ed} = M^{k\varphi(n)+1} = M \cdot (M^{\varphi(n)})^k \equiv
 **示例**：$e=7, \varphi(n)=20$，求 $d$
 
 方法：试算 $7d \bmod 20 = 1$
+
 - $7 \times 1 = 7 \bmod 20 = 7$ ✗
 - $7 \times 2 = 14 \bmod 20 = 14$ ✗
 - $7 \times 3 = 21 \bmod 20 = 1$ ✓
