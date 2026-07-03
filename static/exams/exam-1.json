@@ -1,0 +1,32 @@
+{
+  "title": "模拟套卷一（上午·基础知识）",
+  "type": "morning",
+  "duration": 120,
+  "questions": [
+    {"id": "m1-1", "question": "信息安全的基本属性 CIA 不包括？", "options": ["机密性", "完整性", "可用性", "不可否认性"], "answer": 3, "explanation": "CIA = 机密性/完整性/可用性，不可否认性是扩展属性。"},
+    {"id": "m1-2", "question": "BLP 安全模型的规则是？", "options": ["上读下写", "下读上写", "全读全写", "不读不写"], "answer": 1, "explanation": "BLP 保机密性：下读上写，防信息下泄。Biba 相反。"},
+    {"id": "m1-3", "question": "AES 算法的分组长度是？", "options": ["64位", "128位", "192位", "256位"], "answer": 1, "explanation": "AES 分组固定128位，密钥128/192/256对应10/12/14轮。"},
+    {"id": "m1-4", "question": "DES 的有效密钥长度是？", "options": ["64位", "56位", "48位", "128位"], "answer": 1, "explanation": "DES密钥64位含8位校验，有效56位。"},
+    {"id": "m1-5", "question": "RSA 的安全性基于？", "options": ["离散对数", "大整数分解", "椭圆曲线", "背包问题"], "answer": 1, "explanation": "RSA基于大整数分解难题。"},
+    {"id": "m1-6", "question": "数字签名使用发送方的哪个密钥？", "options": ["发送方公钥", "发送方私钥", "接收方公钥", "接收方私钥"], "answer": 1, "explanation": "私钥签名、公钥验签（发送方密钥对）。"},
+    {"id": "m1-7", "question": "下列哈希算法已被攻破的是？", "options": ["SHA-256", "SM3", "MD5", "SHA-512"], "answer": 2, "explanation": "MD5和SHA-1均已被破，可构造碰撞。"},
+    {"id": "m1-8", "question": "国密SM4是哪种算法？", "options": ["非对称", "哈希", "对称分组", "签名"], "answer": 2, "explanation": "SM4对称分组(128/128/32轮)，对标AES。"},
+    {"id": "m1-9", "question": "IPSec中提供加密的协议是？", "options": ["AH", "ESP", "IKE", "ISAKMP"], "answer": 1, "explanation": "AH仅认证不加密，ESP加密+认证。"},
+    {"id": "m1-10", "question": "IDS与IPS的关键区别？", "options": ["IDS串联可阻断，IPS旁路告警", "IDS旁路告警，IPS串联阻断", "两者相同", "IDS加密IPS认证"], "answer": 1, "explanation": "IDS旁路仅告警，IPS串联可阻断。"},
+    {"id": "m1-11", "question": "防御SQL注入的根本措施？", "options": ["输入过滤", "参数化查询", "前端校验", "隐藏错误"], "answer": 1, "explanation": "参数化查询从根本上隔离代码与数据。"},
+    {"id": "m1-12", "question": "XSS的核心防护措施？", "options": ["参数化查询", "输出编码", "CSRF Token", "HTTPS"], "answer": 1, "explanation": "XSS防输出编码+CSP+HttpOnly。"},
+    {"id": "m1-13", "question": "等保2.0中需定期测评的级别是？", "options": ["一级及以上", "二级及以上", "三级及以上", "五级"], "answer": 2, "explanation": "三级及以上需定期测评(每年)。"},
+    {"id": "m1-14", "question": "应急响应六阶段的正确顺序？", "options": ["检测→准备→抑制→根除→恢复→总结", "准备→检测→抑制→根除→恢复→总结", "准备→检测→根除→抑制→恢复→总结", "检测→抑制→准备→根除→恢复→总结"], "answer": 1, "explanation": "准备→检测→抑制→根除→恢复→总结。"},
+    {"id": "m1-15", "question": "网络安全法要求日志留存不少于？", "options": ["3个月", "6个月", "1年", "2年"], "answer": 1, "explanation": "网安法规定日志留存≥6个月。"},
+    {"id": "m1-16", "question": "SSE-CMM共有几个等级？", "options": ["3级", "4级", "5级", "7级"], "answer": 2, "explanation": "SSE-CMM共5级：1非正式→5持续改进。"},
+    {"id": "m1-17", "question": "Diffie-Hellman的主要安全缺陷？", "options": ["无法加密", "易受中间人攻击", "密钥太短", "计算量大"], "answer": 1, "explanation": "DH无认证，易遭中间人攻击。"},
+    {"id": "m1-18", "question": "下列哪种是被动攻击？", "options": ["篡改", "伪造", "窃听", "DoS"], "answer": 2, "explanation": "窃听是被动攻击(不修改)，其余是主动攻击。"},
+    {"id": "m1-19", "question": "RBAC的核心是？", "options": ["所有者决定", "系统强制", "用户通过角色获权限", "属性动态判定"], "answer": 2, "explanation": "RBAC: 用户→角色→权限，企业最常用。"},
+    {"id": "m1-20", "question": "PGP邮件加密使用的信任模型？", "options": ["PKI证书", "信任网", "CA中心", "KDC"], "answer": 1, "explanation": "PGP用信任网(无CA)，S/MIME用PKI证书。"},
+    {"id": "m1-21", "question": "ECB模式最不安全的原因？", "options": ["不能并行", "相同明文块产生相同密文块", "需要IV", "速度慢"], "answer": 1, "explanation": "ECB相同明文→相同密文，暴露明文模式。"},
+    {"id": "m1-22", "question": "Feistel网络的加解密关系？", "options": ["结构不同", "结构相同子密钥相同", "结构相同子密钥逆序", "公钥加密私钥解密"], "answer": 2, "explanation": "Feistel加解密结构相同，子密钥逆序。"},
+    {"id": "m1-23", "question": "防重放攻击的措施？", "options": ["加密", "时间戳/Nonce", "签名", "哈希"], "answer": 1, "explanation": "重放防时间戳/序列号/一次性令牌。"},
+    {"id": "m1-24", "question": "CC通用准则中商业产品最高级别？", "options": ["EAL1", "EAL3", "EAL4", "EAL7"], "answer": 2, "explanation": "EAL4是商业产品通常最高级。"},
+    {"id": "m1-25", "question": "ALE的计算公式？", "options": ["AV×EF", "SLE×ARO", "AV×ARO", "SLE×EF"], "answer": 1, "explanation": "ALE=SLE×ARO=(AV×EF)×ARO。"}
+  ]
+}
