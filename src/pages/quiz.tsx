@@ -1,7 +1,6 @@
 import {useState, useEffect} from 'react';
 import Layout from '@theme/Layout';
 import BrowserOnly from '@docusaurus/BrowserOnly';
-import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import Quiz, {type Question} from '../components/Quiz';
 import {useWrongQuestions} from '../components/useWrongQuestions';
 
@@ -15,7 +14,7 @@ interface Category {
   color: string;
 }
 
-// file 用相对路径，运行时拼 baseUrl 前缀（兼容 dev `/` 和 prod `/infosec-exam/`）
+// file 用相对路径，浏览器基于当前页 URL 自动解析（dev `/` 和 prod `/infosec-exam/` 均兼容）
 const CATEGORIES: Category[] = [
   {key: 'crypto', label: '密码学', desc: 'AES/DES/RSA/哈希/国密 ⭐', file: 'questions/crypto.json', color: '#2563eb'},
   {key: 'network', label: '网络安全', desc: '防火墙/IDS/IPSec/TLS', file: 'questions/network.json', color: '#10b981'},
@@ -25,8 +24,6 @@ const CATEGORIES: Category[] = [
 ];
 
 function QuizPageContent() {
-  const {siteConfig} = useDocusaurusContext();
-  const baseUrl = siteConfig.baseUrl;
   const [mode, setMode] = useState<Mode>('menu');
   const [questions, setQuestions] = useState<Question[]>([]);
   const [title, setTitle] = useState('');
@@ -39,7 +36,7 @@ function QuizPageContent() {
     setLoading(true);
     setError('');
     try {
-      const res = await fetch(baseUrl + cat.file);
+      const res = await fetch(cat.file);
       if (!res.ok) throw new Error('加载失败');
       const data = await res.json();
       setQuestions(data);
@@ -61,7 +58,7 @@ function QuizPageContent() {
       // 合并所有题库，筛选错题
       const all = await Promise.all(
         CATEGORIES.map(async (c) => {
-          const res = await fetch(baseUrl + c.file);
+          const res = await fetch(c.file);
           return res.ok ? res.json() : [];
         }),
       );

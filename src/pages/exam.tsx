@@ -1,7 +1,6 @@
 import {useState, useEffect, useRef} from 'react';
 import Layout from '@theme/Layout';
 import BrowserOnly from '@docusaurus/BrowserOnly';
-import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import {motion, AnimatePresence} from 'framer-motion';
 
 interface ExamQuestion {
@@ -25,8 +24,6 @@ function fmt(sec: number): string {
 }
 
 function ExamPageContent() {
-  const {siteConfig} = useDocusaurusContext();
-  const baseUrl = siteConfig.baseUrl;
   const [phase, setPhase] = useState<'menu' | 'exam' | 'result'>('menu');
   const [exam, setExam] = useState<Exam | null>(null);
   const [answers, setAnswers] = useState<Record<number, number>>({});
@@ -35,7 +32,7 @@ function ExamPageContent() {
   const timerRef = useRef<ReturnType<typeof setInterval> | null>(null);
 
   const startExam = async (file: string) => {
-    const res = await fetch(baseUrl + file);
+    const res = await fetch(file);
     const data: Exam = await res.json();
     setExam(data);
     setAnswers({});
