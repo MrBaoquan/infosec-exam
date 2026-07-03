@@ -1,10 +1,11 @@
-import {useDoc} from '@docusaurus/plugin-content-docs/client';
 import BrowserOnly from '@docusaurus/BrowserOnly';
 import {useStudyProgress} from './useStudyProgress';
 
-function ProgressMarkerInner() {
-  const {metadata} = useDoc();
-  const docId = metadata.id;
+interface Props {
+  docId: string;
+}
+
+function ProgressMarkerInner({docId}: Props) {
   const {getStatus, cycleStatus, LABELS} = useStudyProgress();
   const status = getStatus(docId);
 
@@ -50,10 +51,10 @@ function ProgressMarkerInner() {
   );
 }
 
-export default function ProgressMarker() {
+export default function ProgressMarker({docId}: Props): JSX.Element {
   return (
     <BrowserOnly fallback={null}>
-      {() => <ProgressMarkerInner />}
+      {() => <ProgressMarkerInner docId={docId} />}
     </BrowserOnly>
   );
 }
