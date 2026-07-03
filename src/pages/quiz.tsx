@@ -1,6 +1,7 @@
 import {useState, useEffect} from 'react';
 import Layout from '@theme/Layout';
 import BrowserOnly from '@docusaurus/BrowserOnly';
+import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import Quiz, {type Question} from '../components/Quiz';
 import {useWrongQuestions} from '../components/useWrongQuestions';
 
@@ -14,15 +15,18 @@ interface Category {
   color: string;
 }
 
+// file 用相对路径，运行时拼 baseUrl 前缀（兼容 dev `/` 和 prod `/infosec-exam/`）
 const CATEGORIES: Category[] = [
-  {key: 'crypto', label: '密码学', desc: 'AES/DES/RSA/哈希/国密 ⭐', file: '/questions/crypto.json', color: '#2563eb'},
-  {key: 'network', label: '网络安全', desc: '防火墙/IDS/IPSec/TLS', file: '/questions/network.json', color: '#10b981'},
-  {key: 'system', label: '系统安全', desc: 'OS/访问控制/恶意代码', file: '/questions/system.json', color: '#f97316'},
-  {key: 'application', label: '应用安全', desc: 'SQL注入/XSS/CSRF', file: '/questions/application.json', color: '#f59e0b'},
-  {key: 'others', label: '基础/管理/工程', desc: 'CIA/等保/SSE-CMM', file: '/questions/others.json', color: '#8b5cf6'},
+  {key: 'crypto', label: '密码学', desc: 'AES/DES/RSA/哈希/国密 ⭐', file: 'questions/crypto.json', color: '#2563eb'},
+  {key: 'network', label: '网络安全', desc: '防火墙/IDS/IPSec/TLS', file: 'questions/network.json', color: '#10b981'},
+  {key: 'system', label: '系统安全', desc: 'OS/访问控制/恶意代码', file: 'questions/system.json', color: '#f97316'},
+  {key: 'application', label: '应用安全', desc: 'SQL注入/XSS/CSRF', file: 'questions/application.json', color: '#f59e0b'},
+  {key: 'others', label: '基础/管理/工程', desc: 'CIA/等保/SSE-CMM', file: 'questions/others.json', color: '#8b5cf6'},
 ];
 
 function QuizPageContent() {
+  const {siteConfig} = useDocusaurusContext();
+  const baseUrl = siteConfig.baseUrl;
   const [mode, setMode] = useState<Mode>('menu');
   const [questions, setQuestions] = useState<Question[]>([]);
   const [title, setTitle] = useState('');
@@ -35,7 +39,7 @@ function QuizPageContent() {
     setLoading(true);
     setError('');
     try {
-      const res = await fetch(cat.file);
+      const res = await fetch(baseUrl + cat.file);
       if (!res.ok) throw new Error('加载失败');
       const data = await res.json();
       setQuestions(data);
@@ -57,7 +61,7 @@ function QuizPageContent() {
       // 合并所有题库，筛选错题
       const all = await Promise.all(
         CATEGORIES.map(async (c) => {
-          const res = await fetch(c.file);
+          const res = await fetch(baseUrl + c.file);
           return res.ok ? res.json() : [];
         }),
       );

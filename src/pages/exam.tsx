@@ -1,6 +1,7 @@
 import {useState, useEffect, useRef} from 'react';
 import Layout from '@theme/Layout';
 import BrowserOnly from '@docusaurus/BrowserOnly';
+import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import {motion, AnimatePresence} from 'framer-motion';
 
 interface ExamQuestion {
@@ -24,6 +25,8 @@ function fmt(sec: number): string {
 }
 
 function ExamPageContent() {
+  const {siteConfig} = useDocusaurusContext();
+  const baseUrl = siteConfig.baseUrl;
   const [phase, setPhase] = useState<'menu' | 'exam' | 'result'>('menu');
   const [exam, setExam] = useState<Exam | null>(null);
   const [answers, setAnswers] = useState<Record<number, number>>({});
@@ -32,7 +35,7 @@ function ExamPageContent() {
   const timerRef = useRef<ReturnType<typeof setInterval> | null>(null);
 
   const startExam = async (file: string) => {
-    const res = await fetch(file);
+    const res = await fetch(baseUrl + file);
     const data: Exam = await res.json();
     setExam(data);
     setAnswers({});
@@ -83,7 +86,7 @@ function ExamPageContent() {
         </p>
         <button
           className="crypto-btn"
-          onClick={() => startExam('/infosec-exam/exams/exam-1.json')}
+          onClick={() => startExam('exams/exam-1.json')}
           style={{minHeight: 48, padding: '12px 24px', fontSize: 16}}
         >
           📝 模拟套卷一（上午·25题·120分钟）
