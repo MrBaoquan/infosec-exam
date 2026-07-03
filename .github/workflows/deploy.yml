@@ -25,8 +25,8 @@ jobs:
         with:
           node-version: 20
           cache: npm
-      # 用 npm install 替代 npm ci，避免 lock 不一致导致崩溃
-      - run: npm install --no-audit --no-fund
+      # 删除 lock 文件后安装，规避 npm optional dependencies 平台 bug（rollup native）
+      - run: rm -f package-lock.json && npm install --no-audit --no-fund
       - name: Build website
         run: npm run build
         env:
