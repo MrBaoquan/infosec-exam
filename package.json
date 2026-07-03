@@ -1,0 +1,56 @@
+{
+  "name": "infosec-exam-site",
+  "version": "1.0.0",
+  "private": true,
+  "description": "软考中级信息安全工程师备考站点 - 含密码学动画演示",
+  "scripts": {
+    "docusaurus": "docusaurus",
+    "start": "docusaurus start --no-open",
+    "build": "docusaurus build",
+    "swizzle": "docusaurus swizzle",
+    "deploy": "docusaurus deploy",
+    "clear": "docusaurus clear",
+    "serve": "docusaurus serve",
+    "write-translations": "docusaurus write-translations",
+    "write-heading-ids": "docusaurus write-heading-ids",
+    "typecheck": "tsc"
+  },
+  "dependencies": {
+    "@docusaurus/core": "3.7.0",
+    "@docusaurus/plugin-pwa": "^3.7.0",
+    "@docusaurus/preset-classic": "3.7.0",
+    "@mdx-js/react": "^3.0.0",
+    "clsx": "^2.0.0",
+    "framer-motion": "^11.3.0",
+    "katex": "^0.16.47",
+    "prism-react-renderer": "^2.3.0",
+    "react": "^18.3.0",
+    "react-dom": "^18.3.0",
+    "rehype-katex": "^7.0.1",
+    "remark-math": "^6.0.0"
+  },
+  "devDependencies": {
+    "@docusaurus/module-type-aliases": "3.7.0",
+    "@docusaurus/tsconfig": "3.7.0",
+    "@docusaurus/types": "3.7.0",
+    "typescript": "^5.4.0"
+  },
+  "browserslist": {
+    "production": [
+      ">0.5%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "engines": {
+    "node": ">=18.0"
+  },
+  "overrides": {
+    "webpack": "5.95.0"
+  }
+}

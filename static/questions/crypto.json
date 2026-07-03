@@ -1,0 +1,82 @@
+[
+  {
+    "id": "crypto-1",
+    "category": "crypto",
+    "question": "AES 算法的分组长度固定为多少位？",
+    "options": ["64 位", "128 位", "192 位", "256 位"],
+    "answer": 1,
+    "explanation": "AES 分组固定 128 位（4×4 字节状态矩阵）；密钥长度可为 128/192/256 位，对应轮数 10/12/14。"
+  },
+  {
+    "id": "crypto-2",
+    "category": "crypto",
+    "question": "DES 算法的有效密钥长度是多少位？",
+    "options": ["64 位", "56 位", "48 位", "128 位"],
+    "answer": 1,
+    "explanation": "DES 密钥 64 位，其中 8 位为奇偶校验位，有效密钥 56 位。这正是 DES 不安全的主因。"
+  },
+  {
+    "id": "crypto-3",
+    "category": "crypto",
+    "question": "Feistel 网络结构（如 DES）的加解密关系是？",
+    "options": ["加解密结构不同", "加解密结构相同，子密钥顺序相同", "加解密结构相同，子密钥逆序使用", "加密用公钥，解密用私钥"],
+    "answer": 2,
+    "explanation": "Feistel 网络的精妙：加解密结构完全相同，解密只需将子密钥逆序使用（K16→K1）。"
+  },
+  {
+    "id": "crypto-4",
+    "category": "crypto",
+    "question": "RSA 算法的安全性基于以下哪个数学难题？",
+    "options": ["离散对数问题", "大整数分解问题", "椭圆曲线问题", "背包问题"],
+    "answer": 1,
+    "explanation": "RSA 基于大整数分解难题（由 n 求 p、q 困难）。ECC 基于椭圆曲线离散对数。"
+  },
+  {
+    "id": "crypto-5",
+    "category": "crypto",
+    "question": "数字签名使用发送方的哪个密钥进行签名？",
+    "options": ["发送方公钥", "发送方私钥", "接收方公钥", "接收方私钥"],
+    "answer": 1,
+    "explanation": "签名用发送方私钥（只有持有者能签→不可否认），验签用发送方公钥。注意：加密用接收方公钥。"
+  },
+  {
+    "id": "crypto-6",
+    "category": "crypto",
+    "question": "下列哈希算法中，目前已被认为不安全（可构造碰撞）的是？",
+    "options": ["SHA-256", "SM3", "MD5", "SHA-512"],
+    "answer": 2,
+    "explanation": "MD5（128位）和 SHA-1（160位）均已被攻破，可构造碰撞。新系统应使用 SHA-256/SM3。"
+  },
+  {
+    "id": "crypto-7",
+    "category": "crypto",
+    "question": "国密算法 SM4 是什么类型的算法？",
+    "options": ["非对称加密", "哈希", "对称分组加密", "数字签名"],
+    "answer": 2,
+    "explanation": "SM4 是对称分组密码，分组128位/密钥128位/32轮，对标 AES。SM2=公钥，SM3=哈希，SM9=标识密码。"
+  },
+  {
+    "id": "crypto-8",
+    "category": "crypto",
+    "question": "Diffie-Hellman 密钥交换协议的主要安全缺陷是？",
+    "options": ["无法加密", "易受中间人攻击", "密钥空间太小", "计算量过大"],
+    "answer": 1,
+    "explanation": "DH 用于密钥协商但不提供身份认证，易遭中间人攻击。需结合数字签名/证书防御。"
+  },
+  {
+    "id": "crypto-9",
+    "category": "crypto",
+    "question": "下列分组密码工作模式中，相同明文块产生相同密文块、最不安全的是？",
+    "options": ["ECB", "CBC", "CTR", "CFB"],
+    "answer": 0,
+    "explanation": "ECB 模式相同明文块→相同密文块，不能隐藏明文模式，最不安全。CBC/CTR 最常用。"
+  },
+  {
+    "id": "crypto-10",
+    "category": "crypto",
+    "question": "哈希函数的“雪崩效应”指：",
+    "options": ["输入任意长度输出定长", "输入 1 bit 变化使输出约 50% bit 翻转", "无法由输出反推输入", "难以找到两个相同输出的输入"],
+    "answer": 1,
+    "explanation": "雪崩效应：输入微小变化→输出剧烈变化（约50% bit翻转）。A是定长性，C是单向性，D是抗碰撞。"
+  }
+]

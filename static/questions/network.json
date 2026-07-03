@@ -1,0 +1,42 @@
+[
+  {
+    "id": "network-1",
+    "category": "network",
+    "question": "IPSec 协议中，提供机密性（加密）的是哪个协议？",
+    "options": ["AH", "ESP", "IKE", "ISAKMP"],
+    "answer": 1,
+    "explanation": "AH（认证头）仅提供完整性/认证，不加密；ESP（封装安全载荷）提供机密性+完整性。"
+  },
+  {
+    "id": "network-2",
+    "category": "network",
+    "question": "IDS 与 IPS 的关键区别是？",
+    "options": ["IDS 串联可阻断，IPS 旁路仅告警", "IDS 旁路仅告警，IPS 串联可阻断", "两者完全相同", "IDS 用于加密，IPS 用于认证"],
+    "answer": 1,
+    "explanation": "IDS 入侵检测旁路部署仅告警；IPS 入侵防御串联部署可阻断。"
+  },
+  {
+    "id": "network-3",
+    "category": "network",
+    "question": "下列哪种入侵检测方式依靠已知攻击特征库，只能检测已知攻击？",
+    "options": ["异常检测", "误用检测", "行为检测", "启发式检测"],
+    "answer": 1,
+    "explanation": "误用检测=特征匹配，只能检测已知攻击；异常检测=基于基线，可发现未知攻击但误报高。"
+  },
+  {
+    "id": "network-4",
+    "category": "network",
+    "question": "HTTPS 采用的加密协议是？",
+    "options": ["SSL 2.0", "SSL 3.0", "TLS", "IPSec"],
+    "answer": 2,
+    "explanation": "HTTPS = HTTP over TLS。SSL 各版本已废弃，现代使用 TLS 1.2/1.3。"
+  },
+  {
+    "id": "network-5",
+    "category": "network",
+    "question": "防范 ARP 欺骗的有效措施是？",
+    "options": ["部署 DNSSEC", "ARP 静态绑定", "启用 HTTPS", "修改默认端口"],
+    "answer": 1,
+    "explanation": "ARP 欺骗针对 ARP 表，可通过静态 ARP 绑定、动态 ARP 检测(DAI)防御。DNSSEC 防 DNS 欺骗。"
+  }
+]

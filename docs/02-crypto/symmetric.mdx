@@ -1,0 +1,49 @@
+---
+title: 对称加密-AES
+description: AES 状态矩阵与轮变换动画演示
+---
+
+import AesStateMatrix from '@site/src/components/AesStateMatrix';
+
+# 对称加密：AES
+
+## AES 基本参数（必背）
+
+| 参数 | AES-128 | AES-192 | AES-256 |
+|------|---------|---------|---------|
+| 密钥长度 | 128 | 192 | 256 |
+| 分组长度 | 128 | 128 | 128 |
+| 轮数 | **10** | 12 | 14 |
+| 状态矩阵 | 4×4 字节 | 4×4 字节 | 4×4 字节 |
+
+> 分组**固定 128 位**；轮数随密钥长度变化；状态矩阵**列优先**填入。
+
+## 一轮的四步变换
+
+1. **SubBytes 字节代换** — S 盒查表，非线性，提供**混淆**
+2. **ShiftRows 行移位** — 第 i 行循环左移 i 字节，提供**扩散**
+3. **MixColumns 列混淆** — GF(2⁸) 矩阵乘法，进一步扩散
+4. **AddRoundKey 轮密钥加** — 与轮密钥异或
+
+> 第 1 轮前有一次 AddRoundKey（白化）；**末轮无 MixColumns**。
+
+<AesStateMatrix />
+
+## 密钥扩展 Key Expansion
+
+- 128 位主密钥 → 扩展出 **11 个** 128 位轮密钥（含初始）
+- 用字(32位)为单位，递归生成，涉及 S 盒和轮常数 Rcon
+
+## AES 安全性
+
+- 目前**无已知有效攻击**（差分/线性密码分析对 AES 失效）
+- 暴力破解 2¹²⁸ 不可行
+- 替代 DES 成为对称加密标准（FIPS 197，2001）
+
+## 考点速记
+
+- AES 分组 **128 位**，密钥 128/192/256，轮数 **10/12/14**
+- 状态矩阵 **4×4 列优先**
+- 四步：SubBytes→ShiftRows→MixColumns→AddRoundKey
+- **末轮无 MixColumns**
+- SubBytes 用 S 盒（混淆），ShiftRows/MixColumns（扩散）

@@ -1,0 +1,42 @@
+[
+  {
+    "id": "fund-1",
+    "category": "fundamentals",
+    "question": "BLP 安全模型主要保护的是信息的？",
+    "options": ["机密性", "完整性", "可用性", "不可否认性"],
+    "answer": 0,
+    "explanation": "BLP 模型保护机密性，规则“向下读、向上写”，防高密级信息流向低密级。Biba 保护完整性，方向相反。"
+  },
+  {
+    "id": "fund-2",
+    "category": "fundamentals",
+    "question": "信息安全的 CIA 三性是指？",
+    "options": ["认证、完整、可用", "机密、完整、可用", "机密、认证、可控", "完整、可用、不可否认"],
+    "answer": 1,
+    "explanation": "CIA = 机密性(Confidentiality)、完整性(Integrity)、可用性(Availability)，安全目标基石。"
+  },
+  {
+    "id": "mgmt-1",
+    "category": "management",
+    "question": "等级保护 2.0 中，哪个级别及以上必须定期进行安全测评？",
+    "options": ["第一级", "第二级", "第三级", "第五级"],
+    "answer": 2,
+    "explanation": "等保 2.0 第三级（监督保护）及以上需定期测评。流程：定级→备案→建设整改→测评→运维。"
+  },
+  {
+    "id": "mgmt-2",
+    "category": "management",
+    "question": "灾难恢复中，RPO（恢复点目标）的含义是？",
+    "options": ["系统恢复的最长时间", "可容忍的数据丢失量", "业务中断的最长时间", "备份的频率"],
+    "answer": 1,
+    "explanation": "RPO=可容忍数据丢失量（决定备份频率）；RTO=恢复时间目标；RTO≤MTD（最大容忍中断时间）。"
+  },
+  {
+    "id": "eng-1",
+    "category": "engineering",
+    "question": "SSE-CMM 安全工程能力成熟度模型共有几个等级？",
+    "options": ["3 级", "4 级", "5 级", "7 级"],
+    "answer": 2,
+    "explanation": "SSE-CMM 共 5 级：1非正式→2计划跟踪→3充分定义→4量化控制→5持续改进。"
+  }
+]

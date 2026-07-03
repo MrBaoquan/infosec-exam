@@ -1,0 +1,114 @@
+:root {
+  --ifm-color-primary: #2563eb;
+  --ifm-color-primary-dark: #1d4ed8;
+  --ifm-color-primary-darker: #1e40af;
+  --ifm-color-primary-darkest: #1e3a8a;
+  --ifm-color-primary-light: #3b82f6;
+  --ifm-color-primary-lighter: #60a5fa;
+  --ifm-color-primary-lightest: #93c5fd;
+  --ifm-code-font-size: 95%;
+}
+
+/* 固定导航栏不遮挡锚点/滚动定位的元素（含动画按钮），移动端关键 */
+html {
+  scroll-padding-top: calc(var(--ifm-navbar-height, 60px) + 8px);
+}
+
+[data-theme='dark'] {
+  --ifm-color-primary: #60a5fa;
+  --ifm-color-primary-dark: #3b82f6;
+}
+
+.docusaurus-highlight-code-line {
+  background-color: rgba(0, 0, 0, 0.1);
+  display: block;
+  margin: 0 calc(-1 * var(--ifm-pre-padding));
+  padding: 0 var(--ifm-pre-padding);
+}
+
+/* 动画组件公共样式 */
+.crypto-card {
+  border: 1px solid var(--ifm-color-emphasis-300);
+  border-radius: 12px;
+  padding: 20px;
+  margin: 16px 0;
+  background: var(--ifm-card-background-color);
+}
+
+.crypto-btn {
+  border: 1px solid var(--ifm-color-primary);
+  background: var(--ifm-color-primary);
+  color: #fff;
+  padding: 6px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  margin: 0 4px;
+  font-size: 14px;
+}
+.crypto-btn:hover { opacity: 0.9; }
+.crypto-btn:disabled { opacity: 0.4; cursor: not-allowed; }
+
+.crypto-btn-ghost {
+  background: transparent;
+  color: var(--ifm-color-primary);
+}
+
+.crypto-step-text {
+  font-size: 13px;
+  color: var(--ifm-color-emphasis-700);
+  margin-top: 12px;
+  line-height: 1.7;
+}
+
+/* ===== 移动端响应式优化 ===== */
+/* 触摸友好的按钮：最小触控目标 40px */
+.crypto-btn {
+  min-height: 40px;
+  padding: 8px 16px;
+  font-size: 14px;
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
+}
+
+/* 表格横向滚动，防止窄屏撑破布局（考点表格多） */
+.theme-doc-markdown table {
+  display: block;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  max-width: 100%;
+}
+
+/* 防止动画组件内的 SVG/Canvas 溢出视口 */
+.crypto-card svg,
+.crypto-card canvas {
+  max-width: 100%;
+  height: auto;
+}
+
+/* 双栏布局工具类：窄屏自动折叠为单栏 */
+.crypto-grid-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin: 12px 0;
+}
+
+/* 文档段落与列表在窄屏收紧间距 */
+@media screen and (max-width: 600px) {
+  .crypto-card {
+    padding: 14px;
+  }
+  .crypto-grid-2 {
+    grid-template-columns: 1fr;
+  }
+  .crypto-step-text {
+    font-size: 12.5px;
+  }
+  :root {
+    --ifm-code-font-size: 85%;
+  }
+  /* 首页模块卡片单列 */
+  .hero-grid {
+    grid-template-columns: 1fr !important;
+  }
+}

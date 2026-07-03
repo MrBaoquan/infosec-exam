@@ -1,0 +1,42 @@
+[
+  {
+    "id": "app-1",
+    "category": "application",
+    "question": "防御 SQL 注入最有效的根本措施是？",
+    "options": ["输入过滤", "参数化查询（预编译）", "前端校验", "隐藏数据库错误"],
+    "answer": 1,
+    "explanation": "参数化查询/预编译从根本上隔离代码与数据，是防 SQL 注入的根本措施。输入过滤是辅助。"
+  },
+  {
+    "id": "app-2",
+    "category": "application",
+    "question": "XSS 跨站脚本攻击的核心防护措施是？",
+    "options": ["参数化查询", "输出编码（转义）", "CSRF Token", "HTTPS"],
+    "answer": 1,
+    "explanation": "XSS 防护核心是输出编码（对输出到页面的内容转义），配合 CSP、HttpOnly Cookie。"
+  },
+  {
+    "id": "app-3",
+    "category": "application",
+    "question": "防御 CSRF 跨站请求伪造的常用措施是？",
+    "options": ["输出编码", "Anti-CSRF Token", "参数化查询", "WAF"],
+    "answer": 1,
+    "explanation": "CSRF 防御：Anti-CSRF Token、Referer 校验、SameSite Cookie。Token 是主流方案。"
+  },
+  {
+    "id": "app-4",
+    "category": "application",
+    "question": "用户 A 能查看同级别用户 B 的数据，这属于哪种越权？",
+    "options": ["垂直越权", "水平越权", "SQL注入", "XSS"],
+    "answer": 1,
+    "explanation": "水平越权=同级别用户间互访；垂直越权=低权限访问高权限（提权）。每次操作都应校验权限。"
+  },
+  {
+    "id": "app-5",
+    "category": "application",
+    "question": "OWASP Top 10 中，连续多年排名第一的 Web 漏洞类别是？",
+    "options": ["注入", "XSS", "失效访问控制", "安全配置错误"],
+    "answer": 0,
+    "explanation": "注入（含 SQL 注入）长期居 OWASP 前列；近年 A01 已调整为失效访问控制，但注入仍是高频考点。"
+  }
+]
