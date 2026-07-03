@@ -38,5 +38,45 @@
     "options": ["部署 DNSSEC", "ARP 静态绑定", "启用 HTTPS", "修改默认端口"],
     "answer": 1,
     "explanation": "ARP 欺骗针对 ARP 表，可通过静态 ARP 绑定、动态 ARP 检测(DAI)防御。DNSSEC 防 DNS 欺骗。"
+  },
+  {
+    "id": "network-6",
+    "category": "network",
+    "question": "IPSec 的 SA（安全关联）是单向的，由以下哪三项唯一标识？",
+    "options": ["SPI、源IP、协议", "SPI、目的IP、协议", "SPI、目的IP、端口", "源IP、目的IP、协议"],
+    "answer": 1,
+    "explanation": "SA 三元组：SPI（安全参数索引）、目的IP、协议（AH/ESP）。SA 是单向的，双向通信需两个 SA。"
+  },
+  {
+    "id": "network-7",
+    "category": "network",
+    "question": "关于防火墙 DMZ 区域，下列哪个规则是正确的？",
+    "options": ["DMZ 可主动访问内网", "外网可直接访问内网", "DMZ 不能主动访问内网", "内网不能访问 DMZ"],
+    "answer": 2,
+    "explanation": "DMZ 规则：内网可访问 DMZ；外网只能访问 DMZ；DMZ 不能主动访问内网（防 DMZ 被攻陷后跳板攻击内网）。"
+  },
+  {
+    "id": "network-8",
+    "category": "network",
+    "question": "SYN Flood 攻击利用了 TCP 三次握手的什么机制？",
+    "options": ["全连接耗尽", "半连接耗尽", "FIN 包伪造", "序列号预测"],
+    "answer": 1,
+    "explanation": "SYN Flood 发送大量 SYN 但不完成第三次握手，耗尽服务器半连接队列。防御：SYN Cookie。"
+  },
+  {
+    "id": "network-9",
+    "category": "network",
+    "question": "防御重放攻击的有效措施是？",
+    "options": ["加密", "时间戳/Nonce/一次性令牌", "数字签名", "哈希"],
+    "answer": 1,
+    "explanation": "重放攻击防：时间戳、序列号/Nonce、一次性令牌。加密/签名不能防重放（重放的是合法报文）。"
+  },
+  {
+    "id": "network-10",
+    "category": "network",
+    "question": "渗透测试与黑客攻击的根本区别是？",
+    "options": ["使用工具不同", "经授权、不破坏、出报告", "技术水平不同", "目标不同"],
+    "answer": 1,
+    "explanation": "渗透测试：经授权、不破坏系统、产出报告。分黑盒/白盒/灰盒。"
   }
 ]

@@ -38,5 +38,45 @@
     "options": ["注入", "XSS", "失效访问控制", "安全配置错误"],
     "answer": 0,
     "explanation": "注入（含 SQL 注入）长期居 OWASP 前列；近年 A01 已调整为失效访问控制，但注入仍是高频考点。"
+  },
+  {
+    "id": "app-6",
+    "category": "application",
+    "question": "XSS 跨站脚本攻击中，危害最大的是哪种类型？",
+    "options": ["反射型", "DOM 型", "存储型", "CSS 型"],
+    "answer": 2,
+    "explanation": "存储型 XSS 存入数据库，他人访问即触发，影响范围最大。反射型需点击链接，DOM 型在前端渲染。"
+  },
+  {
+    "id": "app-7",
+    "category": "application",
+    "question": "CSRF 与 XSS 的关键区别是？",
+    "options": ["CSRF 偷 Cookie，XSS 借身份", "CSRF 借身份，XSS 偷身份", "两者相同", "CSRF 加密，XSS 不加密"],
+    "answer": 1,
+    "explanation": "CSRF 借受害者已登录身份发请求（不偷 Cookie）；XSS 偷 Cookie/执行脚本。防 CSRF 用 Token，防 XSS 用输出编码。"
+  },
+  {
+    "id": "app-8",
+    "category": "application",
+    "question": "文件上传漏洞的防护，下列哪种做法最有效？",
+    "options": ["黑名单校验扩展名", "白名单校验+重命名+存非Web目录", "仅校验 MIME", "仅限制大小"],
+    "answer": 1,
+    "explanation": "白名单（非黑名单）+重命名+存储到不可执行目录+校验文件头，组合防护最有效。黑名单易绕过。"
+  },
+  {
+    "id": "app-9",
+    "category": "application",
+    "question": "PGP 和 S/MIME 邮件加密方案的主要区别是？",
+    "options": ["PGP 用 PKI 证书，S/MIME 用信任网", "PGP 用信任网，S/MIME 用 PKI 证书", "两者相同", "PGP 不加密"],
+    "answer": 1,
+    "explanation": "PGP 用信任网(Web of Trust, 无CA)；S/MIME 基于 PKI/X.509 证书(有CA)。两者都支持加密+签名。"
+  },
+  {
+    "id": "app-10",
+    "category": "application",
+    "question": "SSRF 服务端请求伪造的核心防御措施是？",
+    "options": ["输出编码", "白名单限制内网访问", "参数化查询", "CSRF Token"],
+    "answer": 1,
+    "explanation": "SSRF 防：白名单限制可访问的 IP/域名（禁内网）、禁用危险协议(file://)。其他选项针对不同攻击。"
   }
 ]

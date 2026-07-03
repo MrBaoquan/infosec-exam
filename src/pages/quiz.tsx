@@ -17,6 +17,7 @@ interface Category {
 const CATEGORIES: Category[] = [
   {key: 'crypto', label: '密码学', desc: 'AES/DES/RSA/哈希/国密 ⭐', file: '/questions/crypto.json', color: '#2563eb'},
   {key: 'network', label: '网络安全', desc: '防火墙/IDS/IPSec/TLS', file: '/questions/network.json', color: '#10b981'},
+  {key: 'system', label: '系统安全', desc: 'OS/访问控制/恶意代码', file: '/questions/system.json', color: '#f97316'},
   {key: 'application', label: '应用安全', desc: 'SQL注入/XSS/CSRF', file: '/questions/application.json', color: '#f59e0b'},
   {key: 'others', label: '基础/管理/工程', desc: 'CIA/等保/SSE-CMM', file: '/questions/others.json', color: '#8b5cf6'},
 ];

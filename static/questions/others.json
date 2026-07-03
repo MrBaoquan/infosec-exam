@@ -38,5 +38,53 @@
     "options": ["3 级", "4 级", "5 级", "7 级"],
     "answer": 2,
     "explanation": "SSE-CMM 共 5 级：1非正式→2计划跟踪→3充分定义→4量化控制→5持续改进。"
+  },
+  {
+    "id": "mgmt-3",
+    "category": "management",
+    "question": "风险 = 资产 × 威胁 × ？，缺失的要素是？",
+    "options": ["安全措施", "脆弱性", "影响", "概率"],
+    "answer": 1,
+    "explanation": "风险 = 资产 × 威胁 × 脆弱性。威胁利用脆弱性危害资产形成风险。"
+  },
+  {
+    "id": "mgmt-4",
+    "category": "management",
+    "question": "ALE（年度预期损失）的计算公式是？",
+    "options": ["AV × EF", "SLE × ARO", "AV × ARO", "SLE × EF"],
+    "answer": 1,
+    "explanation": "ALE = SLE × ARO = (AV × EF) × ARO。SLE=单次损失，ARO=年发生率。"
+  },
+  {
+    "id": "mgmt-5",
+    "category": "management",
+    "question": "信息安全管理体系 ISMS 基于的标准是？其核心方法是？",
+    "options": ["ISO 27001，PDCA 循环", "ISO 27002，瀑布模型", "ISO 9001，六西格玛", "GB 22239，PDCA"],
+    "answer": 0,
+    "explanation": "ISMS 基于 ISO/IEC 27001，核心是 PDCA 循环（计划-实施-检查-改进）。27002 是控制措施指南。"
+  },
+  {
+    "id": "mgmt-6",
+    "category": "management",
+    "question": "《网络安全法》要求网络日志留存不少于？",
+    "options": ["3 个月", "6 个月", "1 年", "2 年"],
+    "answer": 1,
+    "explanation": "《网络安全法》规定网络日志留存不少于 6 个月。"
+  },
+  {
+    "id": "eng-2",
+    "category": "engineering",
+    "question": "CC 通用准则中，商业产品通常达到的最高评估保证级是？",
+    "options": ["EAL1", "EAL3", "EAL4", "EAL7"],
+    "answer": 2,
+    "explanation": "EAL4 是商业产品通常达到的最高级别；EAL5-7 多用于军方/高安全产品。EAL7 最高（形式化验证）。"
+  },
+  {
+    "id": "eng-3",
+    "category": "engineering",
+    "question": "Kerckhoffs 原则的核心思想是？",
+    "options": ["算法应保密", "安全不应依赖算法保密", "密钥应公开", "加密越复杂越安全"],
+    "answer": 1,
+    "explanation": "Kerckhoffs 原则：安全应基于密钥保密而非算法保密（开放设计）。假设攻击者知道算法，安全只依赖密钥。"
   }
 ]

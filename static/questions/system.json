@@ -1,0 +1,82 @@
+[
+  {
+    "id": "system-1",
+    "category": "system",
+    "question": "Linux 系统中 chmod 命令实现的访问控制属于哪种模型？",
+    "options": ["MAC 强制访问控制", "DAC 自主访问控制", "RBAC 基于角色", "ABAC 基于属性"],
+    "answer": 1,
+    "explanation": "chmod 由文件所有者自主决定权限，属 DAC。SELinux/AppArmor 是 MAC。"
+  },
+  {
+    "id": "system-2",
+    "category": "system",
+    "question": "SELinux 实现的访问控制模型是？",
+    "options": ["DAC", "MAC 强制访问控制", "RBAC", "自由访问控制"],
+    "answer": 1,
+    "explanation": "SELinux 是强制访问控制(MAC)，系统按安全标签强制，用户不能自主改。chmod 才是 DAC。"
+  },
+  {
+    "id": "system-3",
+    "category": "system",
+    "question": "BLP 安全模型的规则是“向下读、向上写”，它保护的是信息的？",
+    "options": ["完整性", "机密性", "可用性", "不可否认性"],
+    "answer": 1,
+    "explanation": "BLP 保机密性（防高密级信息流向低密级）。Biba 保完整性，规则相反（上读下写）。"
+  },
+  {
+    "id": "system-4",
+    "category": "system",
+    "question": "下列关于病毒与蠕虫的描述，正确的是？",
+    "options": ["病毒独立运行，蠕虫需宿主", "病毒需宿主被动传播，蠕虫独立主动传播", "两者完全相同", "蠕虫需用户执行"],
+    "answer": 1,
+    "explanation": "病毒需宿主文件、被动传播；蠕虫独立运行、主动利用漏洞传播。"
+  },
+  {
+    "id": "system-5",
+    "category": "system",
+    "question": "应急响应的六个阶段，正确顺序是？",
+    "options": ["检测→准备→抑制→根除→恢复→总结", "准备→检测→抑制→根除→恢复→总结", "准备→检测→根除→抑制→恢复→总结", "检测→抑制→准备→根除→恢复→总结"],
+    "answer": 1,
+    "explanation": "六阶段：准备→检测→抑制→根除→恢复→总结。抑制是控制范围（如断网），根除才是清除威胁。"
+  },
+  {
+    "id": "system-6",
+    "category": "system",
+    "question": "0day 漏洞是指？",
+    "options": ["已有补丁的漏洞", "尚无补丁的漏洞", "低危漏洞", "已公开的漏洞"],
+    "answer": 1,
+    "explanation": "0day = 厂商尚未知晓或无补丁的漏洞，最危险。Nday 是已有补丁但未修复的。"
+  },
+  {
+    "id": "system-7",
+    "category": "system",
+    "question": "电子取证时应遵循的数据获取顺序是？",
+    "options": ["磁盘优先，内存后取", "内存优先，磁盘后取", "随机获取", "日志优先"],
+    "answer": 1,
+    "explanation": "易失性优先：内存数据易丢失，应关机前先抓内存镜像，再取磁盘。"
+  },
+  {
+    "id": "system-8",
+    "category": "system",
+    "question": "口令安全存储应采用的方式是？",
+    "options": ["明文存储", "Base64 编码", "哈希+盐(salt)", "对称加密"],
+    "answer": 2,
+    "explanation": "口令存储用哈希+盐，防彩虹表攻击。慢哈希(bcrypt/scrypt)进一步增加破解成本。"
+  },
+  {
+    "id": "system-9",
+    "category": "system",
+    "question": "Windows 的 BitLocker 提供的安全功能是？",
+    "options": ["防病毒", "全盘加密", "防火墙", "访问控制"],
+    "answer": 1,
+    "explanation": "BitLocker 是全盘加密，防物理窃取硬盘后读取数据。EFS 是文件级加密。"
+  },
+  {
+    "id": "system-10",
+    "category": "system",
+    "question": "RBAC 访问控制模型的核心是？",
+    "options": ["客体所有者决定权限", "系统按标签强制", "用户通过角色获得权限", "属性策略动态判定"],
+    "answer": 2,
+    "explanation": "RBAC：用户→角色→权限，不直接关联权限。是企业系统最常用的模型，便于管理。"
+  }
+]
