@@ -71,7 +71,47 @@ description: 邮件安全协议、移动应用安全
 - 通信加密（防窃听）
 - 数据本地加密存储
 
-## 考点速记
+## 5. 易错辨析
+
+### 易错1：PGP vs S/MIME
+- **PGP**：**信任网**(Web of Trust)，无CA，去中心化
+- **S/MIME**：基于**PKI证书**(X.509)，有CA，企业常用
+- 考题："哪个无CA用信任网"→PGP
+
+### 易错2：SPF/DKIM/DMARC
+- **SPF**：声明合法发件服务器IP（防伪造源）
+- **DKIM**：邮件数字签名（防篡改+防伪造）
+- **DMARC**：综合SPF+DKIM，告知如何处理伪造
+- 三者都是防邮件伪造
+
+### 易错3：Android vs iOS 沙箱
+- Android：基于UID沙箱，权限运行时申请
+- iOS：沙箱更严格+Apple签名+上架审核
+- iOS比Android封闭但更安全
+
+## 6. 真题示例及解析
+
+### 真题1（上午·单选）
+
+> PGP 邮件加密使用的信任模型是？
+> A. PKI证书  B. 信任网(Web of Trust)  C. CA中心  D. KDC
+
+**答案：B**
+
+**解析**：PGP用信任网(无CA，用户互相签名)。S/MIME用PKI/X.509证书(有CA)。
+
+---
+
+### 真题2（上午·单选）
+
+> Android 系统的沙箱机制基于？
+> A. 文件权限  B. UID(每个App独立UID)  C. 虚拟机  D. 加密
+
+**答案：B**
+
+**解析**：Android每个App分配独立UID，沙箱隔离基于UID。iOS沙箱更严格。
+
+## 7. 考点速记
 
 - **PGP 用信任网（无CA）**；**S/MIME 用 PKI 证书（有CA）**
 - 邮件防伪造：**SPF+DKIM+DMARC**
