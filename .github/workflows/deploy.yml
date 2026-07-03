@@ -29,10 +29,6 @@ jobs:
       - run: rm -f package-lock.json && npm install --no-audit --no-fund
       - name: Build website
         run: npm run build
-        env:
-          # 注入站点 URL 与 base 路径；configure-pages 的 base_url 形如 https://user.github.io/repo/
-          URL: ${{ steps.pages.outputs.origin }}
-          BASE_URL: ${{ steps.pages.outputs.base_path }}
       - uses: actions/upload-pages-artifact@v3
         with:
           path: build

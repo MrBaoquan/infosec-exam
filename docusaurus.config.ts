@@ -9,8 +9,8 @@ const config: Config = {
   title: '信息安全工程师备考',
   tagline: '软考中级 · 考点速记 + 密码学动画演示',
   favicon: 'img/favicon.ico',
-  url: process.env.URL || 'https://your-name.github.io',
-  baseUrl: process.env.BASE_URL || '/',
+  url: 'https://mrbaoquan.github.io',
+  baseUrl: '/infosec-exam/',
   trailingSlash: false,
 
   onBrokenLinks: 'warn',
