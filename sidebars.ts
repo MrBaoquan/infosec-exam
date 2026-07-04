@@ -20,6 +20,7 @@ const sidebars: SidebarsConfig = {
             items: [
                 'network/index',
                 'network/protocol-security',
+                'network/osi-model',
                 'network/firewall',
                 'network/ids-ips',
                 'network/vpn-ipsec',
