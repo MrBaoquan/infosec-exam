@@ -57,16 +57,19 @@ import SignatureDemo from '@site/src/components/SignatureDemo';
 ## 5. 易错辨析
 
 ### 易错1：签名用谁的密钥
+
 - 签名用**发送方私钥**
 - 验签用**发送方公钥**
 - 与加密相反：加密用接收方公钥
 
 ### 易错2：签名不提供机密性
+
 - 数字签名提供：完整性+认证+不可否认
 - **不提供机密性**（签名不加密内容）
 - 要同时保密+签名：**先签后密**
 
 ### 易错3：MAC vs 签名
+
 - MAC：对称密钥，有认证但**无不可否认**
 - 签名：非对称，**有不可否认**
 
@@ -75,7 +78,7 @@ import SignatureDemo from '@site/src/components/SignatureDemo';
 ### 真题1（上午·单选）
 
 > 数字签名使用发送方的哪个密钥？
-> A. 发送方公钥  B. 发送方私钥  C. 接收方公钥  D. 接收方私钥
+> A. 发送方公钥 B. 发送方私钥 C. 接收方公钥 D. 接收方私钥
 
 **答案：B**
 
@@ -86,7 +89,7 @@ import SignatureDemo from '@site/src/components/SignatureDemo';
 ### 真题2（上午·单选）
 
 > 数字签名不能提供的是？
-> A. 完整性  B. 认证性  C. 不可否认性  D. 机密性
+> A. 完整性 B. 认证性 C. 不可否认性 D. 机密性
 
 **答案：D**
 
@@ -97,7 +100,7 @@ import SignatureDemo from '@site/src/components/SignatureDemo';
 ### 真题3（上午·单选）
 
 > 同时保证机密性和不可否认性，应？
-> A. 只签名  B. 只加密  C. 先签名后加密  D. 先加密后签名
+> A. 只签名 B. 只加密 C. 先签名后加密 D. 先加密后签名
 
 **答案：C**
 

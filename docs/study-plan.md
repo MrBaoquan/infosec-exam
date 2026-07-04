@@ -15,18 +15,18 @@ sidebar_position: 0
 | 1 | 信息安全概念、CIA 三性 | 1h | ★★★ | [基础](../fundamentals/concepts) |
 | 2 | 安全模型(BLP/Biba) | 1h | ★★★ | [安全模型](../fundamentals/models) |
 | 3 | 法律法规、等保简介 | 1h | ★★ | [法律法规](../fundamentals/laws) |
-| 4 | 古典密码 + 对称加密 AES | 1.5h | ★★★ | [古典](../crypto/classical) / [AES](../crypto/symmetric) |
-| 5 | DES + 非对称 RSA | 1.5h | ★★★ | [DES](../crypto/des) / [RSA](../crypto/asymmetric) |
-| 6 | 哈希 + 数字签名 + PKI | 1.5h | ★★★ | [哈希](../crypto/hash) / [签名](../crypto/signature) |
+| 4 | 古典密码 + DES + AES | 1.5h | ★★★ | [古典](../crypto/classical) / [DES](../crypto/des) / [AES](../crypto/symmetric) |
+| 5 | 哈希 + 非对称 RSA + DH | 1.5h | ★★★ | [哈希](../crypto/hash) / [RSA](../crypto/asymmetric) |
+| 6 | 数字签名 + PKI + Kerberos | 1.5h | ★★★ | [签名](../crypto/signature) / [PKI](../crypto/pki) / [Kerberos](../crypto/kerberos-x509) |
 | 7 | 国密算法 + 密码学大题练习 | 1.5h | ★★ | [国密](../crypto/national-crypto) / [大题](../exam-cases/crypto-case) |
 
 ## 第 2 周：网络安全 + 系统安全（占 35%）
 
 | 日 | 学习内容 | 时长 | 重要度 | 链接 |
 |:--:|----------|:----:|:------:|------|
-| 8 | 协议安全 + 防火墙 | 1.5h | ★★★ | [协议](../network/protocol-security) / [防火墙](../network/firewall) |
-| 9 | IDS/IPS + VPN/IPSec | 1.5h | ★★★ | [IDS](../network/ids-ips) / [IPSec](../network/vpn-ipsec) |
-| 10 | TLS/HTTPS + 网络攻击 | 1.5h | ★★★ | [TLS](../network/tls-https) / [攻击](../network/attacks) |
+| 8 | OSI七层 + 协议安全 + 安全模型 | 1.5h | ★★★ | [OSI](../network/osi-model) / [协议](../network/protocol-security) / [体系模型](../network/security-system-model) |
+| 9 | 攻击原理 + 网络攻击 + 防火墙 | 1.5h | ★★★ | [攻击原理](../network/attack-principles) / [攻击](../network/attacks) / [防火墙](../network/firewall) |
+| 10 | IDS/IPS + VPN/IPSec + TLS/HTTPS | 1.5h | ★★★ | [IDS](../network/ids-ips) / [IPSec](../network/vpn-ipsec) / [TLS](../network/tls-https) |
 | 11 | 操作系统安全 + 访问控制 | 1.5h | ★★★ | [OS](../system/os-security) / [访问控制](../system/access-control) |
 | 12 | 恶意代码 + 漏洞应急 | 1h | ★★ | [恶意代码](../system/malware) / [漏洞](../system/vulnerability-incident) |
 | 13 | 网络安全大题练习 | 1h | ★★★ | [网络大题](../exam-cases/network-case) |
