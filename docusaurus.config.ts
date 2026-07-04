@@ -78,6 +78,7 @@ const config: Config = {
                 { type: 'docSidebar', sidebarId: 'tutorialSidebar', position: 'left', label: '考点笔记' },
                 { to: '/quiz', label: '题库练习', position: 'left' },
                 { to: '/exam', label: '套卷模拟', position: 'left' },
+                { to: '/stats', label: '答题分析', position: 'left' },
                 {
                     href: 'https://www.ruankao.org.cn/',
                     label: '软考官网',
