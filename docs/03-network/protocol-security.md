@@ -52,7 +52,46 @@ description: TCP/IP 各层安全协议与脆弱性
 | 交换机 | 端口安全、VLAN 隔离、DHCP Snooping、DAI |
 | 防火墙 | 见防火墙专题 |
 
-## 考点速记
+## 5. 易错辨析
+
+### 易错1：ARP vs DNS 欺骗防护
+- ARP欺骗防：**静态绑定/DAI**
+- DNS欺骗防：**DNSSEC**
+- 别混
+
+### 易错2：SYN Flood
+- 利用TCP三次握手，半连接耗尽
+- 防：**SYN Cookie**
+
+### 易错3：各层安全协议
+- 链路层：PPTP/L2TP
+- 网络层：**IPSec**
+- 传输层：**TLS/SSH**
+- 应用层：HTTPS/S-MIME/PGP
+
+## 6. 真题示例及解析
+
+### 真题1（上午·单选）
+
+> 防范 ARP 欺骗的有效措施是？
+> A. 部署DNSSEC  B. ARP静态绑定  C. 启用HTTPS  D. 修改默认端口
+
+**答案：B**
+
+**解析**：ARP欺骗防静态绑定/DAI。DNSSEC防DNS欺骗。
+
+---
+
+### 真题2（上午·单选）
+
+> 工作在传输层的安全协议是？
+> A. IPSec  B. TLS  C. PPTP  D. HTTPS
+
+**答案：B**
+
+**解析**：TLS工作在传输层。IPSec网络层，PPTP链路层，HTTPS应用层。
+
+## 7. 考点速记
 
 - ARP 无认证→ARP 欺骗；防：静态绑定/DAI
 - DNS 明文无认证→DNS 欺骗；防：**DNSSEC**
