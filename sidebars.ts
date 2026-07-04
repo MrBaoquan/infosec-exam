@@ -33,6 +33,7 @@ const sidebars: SidebarsConfig = {
                 'network/attack-principles',
                 'network/active-defense',
                 'network/security-assessment',
+                'network/security-architecture',
             ],
         },
         {
@@ -47,12 +48,13 @@ const sidebars: SidebarsConfig = {
                 'system/malware-advanced',
                 'system/vulnerability-incident',
                 'system/vulnerability-management',
+                'system/security-operations',
             ],
         },
         {
             type: 'category',
             label: '五、应用安全',
-            items: ['application/index', 'application/web-attacks', 'application/database', 'application/email-mobile', 'application/cloud-iot'],
+            items: ['application/index', 'application/web-attacks', 'application/web-security-extra', 'application/database', 'application/email-mobile', 'application/cloud-iot'],
         },
         {
             type: 'category',
