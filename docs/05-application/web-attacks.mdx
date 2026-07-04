@@ -104,23 +104,27 @@ import SqlInjection from '@site/src/components/SqlInjection';
 ## 5. 易错辨析
 
 ### 易错1：SQL注入 vs XSS vs CSRF 核心防护
-| 攻击 | 根因 | 核心防护 |
-|------|------|----------|
-| SQL注入 | 输入拼入SQL | **参数化查询** |
-| XSS | 输入未编码输出 | **输出编码** |
-| CSRF | 借身份发请求 | **Anti-CSRF Token** |
+
+| 攻击    | 根因           | 核心防护            |
+| ------- | -------------- | ------------------- |
+| SQL注入 | 输入拼入SQL    | **参数化查询**      |
+| XSS     | 输入未编码输出 | **输出编码**        |
+| CSRF    | 借身份发请求   | **Anti-CSRF Token** |
 
 ### 易错2：CSRF vs XSS 偷不偷Cookie
+
 - **CSRF**：**借身份**（不偷Cookie，借已登录状态发请求）
 - **XSS**：**偷身份**（偷Cookie/执行脚本）
 - 考题："不偷Cookie但借身份"→CSRF
 
 ### 易错3：文件上传防护
+
 - 用**白名单**非黑名单（黑名单易绕过）
 - **重命名**（避免原名攻击）
 - 存**非Web目录**（不可执行）
 
 ### 易错4：水平 vs 垂直越权
+
 - **水平**：同级互访（A看B的订单）
 - **垂直**：低权限访问高权限（提权）
 - 防：**每次操作校验权限**
@@ -130,7 +134,7 @@ import SqlInjection from '@site/src/components/SqlInjection';
 ### 真题1（上午·单选）
 
 > 防御 SQL 注入最根本的措施是？
-> A. 输入过滤  B. 参数化查询  C. 前端校验  D. 隐藏错误
+> A. 输入过滤 B. 参数化查询 C. 前端校验 D. 隐藏错误
 
 **答案：B**
 
@@ -141,7 +145,7 @@ import SqlInjection from '@site/src/components/SqlInjection';
 ### 真题2（上午·单选）
 
 > XSS 跨站脚本攻击的核心防护措施是？
-> A. 参数化查询  B. 输出编码  C. CSRF Token  D. HTTPS
+> A. 参数化查询 B. 输出编码 C. CSRF Token D. HTTPS
 
 **答案：B**
 
@@ -152,7 +156,7 @@ import SqlInjection from '@site/src/components/SqlInjection';
 ### 真题3（上午·单选）
 
 > CSRF 与 XSS 的关键区别是？
-> A. CSRF偷Cookie，XSS借身份  B. CSRF借身份，XSS偷身份  C. 两者相同  D. CSRF加密
+> A. CSRF偷Cookie，XSS借身份 B. CSRF借身份，XSS偷身份 C. 两者相同 D. CSRF加密
 
 **答案：B**
 
@@ -163,7 +167,7 @@ import SqlInjection from '@site/src/components/SqlInjection';
 ### 真题4（上午·单选）
 
 > 用户A能查看同级用户B的数据，这属于？
-> A. 垂直越权  B. 水平越权  C. SQL注入  D. XSS
+> A. 垂直越权 B. 水平越权 C. SQL注入 D. XSS
 
 **答案：B**
 
@@ -174,7 +178,7 @@ import SqlInjection from '@site/src/components/SqlInjection';
 ### 真题5（上午·单选）
 
 > 文件上传漏洞最有效的防护是？
-> A. 黑名单校验  B. 白名单+重命名+存非Web目录  C. 仅校验MIME  D. 仅限制大小
+> A. 黑名单校验 B. 白名单+重命名+存非Web目录 C. 仅校验MIME D. 仅限制大小
 
 **答案：B**
 

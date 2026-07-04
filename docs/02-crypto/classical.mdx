@@ -16,6 +16,7 @@ import CaesarCipher from '@site/src/components/CaesarCipher';
 ## 2. 古典密码是什么？
 
 > 🎯 **形象比喻**：
+>
 > - **替换密码** = 暗号本——每个字母换成另一个字母（A→D, B→E...）
 > - **置换密码** = 洗牌——字母本身不变，只改位置（HELLO→LELHO）
 
@@ -49,16 +50,19 @@ import CaesarCipher from '@site/src/components/CaesarCipher';
 ## 5. 易错辨析（考试怎么考）
 
 ### 易错1：替换 vs 置换
+
 - **替换密码**：字母**本身变**（A→D），位置不变
 - **置换密码**：字母**位置变**，本身不变
 - 考题："哪个改变字母值"→替换；"哪个改变位置"→置换
 
 ### 易错2：凯撒密钥空间
+
 - 凯撒密钥 K 范围 0-25，**有效密钥空间仅 25**（K=0 是不加密）
 - 不是 26！K=26 等于 K=0（不加密）
 - 暴力穷举只需 25 次，秒破
 
 ### 易错3：单表 vs 多表替换
+
 - **单表替换**（凯撒）：同一字母始终替换为同一字母→**频率分析**可破
 - **多表替换**（维吉尼亚）：同一字母在不同位置替换为不同字母→频率分析失效，但可用**重合指数法**破
 - 考题："什么方法破单表替换"→频率分析；"什么方法破多表替换"→重合指数/Kasiski
@@ -68,7 +72,7 @@ import CaesarCipher from '@site/src/components/CaesarCipher';
 ### 真题1（上午·单选）
 
 > 凯撒密码的密钥空间（可能的密钥数量）是？
-> A. 25  B. 26  C. 256  D. 无限
+> A. 25 B. 26 C. 256 D. 无限
 
 **答案：A**
 
@@ -79,7 +83,7 @@ import CaesarCipher from '@site/src/components/CaesarCipher';
 ### 真题2（上午·单选）
 
 > 已知凯撒密码密钥 K=3，明文 "HELLO" 加密后的密文是？
-> A. KHOOR  B. EBII  C. IFMMP  D. LIPPS
+> A. KHOOR B. EBII C. IFMMP D. LIPPS
 
 **答案：A**
 
@@ -90,7 +94,7 @@ import CaesarCipher from '@site/src/components/CaesarCipher';
 ### 真题3（上午·单选）
 
 > 破解单表替换密码（如凯撒）最有效的经典方法是？
-> A. 暴力破解  B. 频率分析  C. 差分分析  D. 量子计算
+> A. 暴力破解 B. 频率分析 C. 差分分析 D. 量子计算
 
 **答案：B**
 
@@ -101,7 +105,7 @@ import CaesarCipher from '@site/src/components/CaesarCipher';
 ### 真题4（上午·单选）
 
 > 维吉尼亚密码（Vigenère）属于哪种类型？
-> A. 单表替换  B. 多表替换  C. 置换密码  D. 流密码
+> A. 单表替换 B. 多表替换 C. 置换密码 D. 流密码
 
 **答案：B**
 
