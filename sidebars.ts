@@ -104,12 +104,5 @@ const sidebars: SidebarsConfig = {
         },
     ],
 };
-        {
-            type: 'category',
-            label: '八、下午大题专项 ⭐',
-            items: ['exam-cases/index', 'exam-cases/crypto-case', 'exam-cases/network-case', 'exam-cases/web-case', 'exam-cases/management-case', 'exam-cases/comprehensive-case'],
-        },
-    ],
-};
 
 export default sidebars;
