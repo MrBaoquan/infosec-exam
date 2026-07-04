@@ -109,6 +109,124 @@
     "question": "蜜罐(Honeypot)的主要价值是？",
     "options": ["直接阻断攻击", "收集攻击手法与预警", "加密流量", "替代防火墙"],
     "answer": 1,
-    "explanation": "蜜罐是伪装的靶机，主动吸引攻击，收集攻击手法、转移注意力、早期预警，属主动防御。"
-  }
+    "explanation": "蜜罐是伪装的靶机，主动吸引攻击，收集攻击手法、转移注意力、早期预警，属主动防御。"  },
+  {
+    "id": "network-15",
+    "category": "network",
+    "question": "IPSec 工作在 OSI 模型的哪一层？",
+    "options": ["数据链路层", "网络层", "传输层", "应用层"],
+    "answer": 1,
+    "explanation": "IPSec工作在网络层(第3层)。TLS在传输层，HTTPS在应用层，ARP在数据链路层。"
+  },
+  {
+    "id": "network-16",
+    "category": "network",
+    "question": "ARP 协议工作在 OSI 模型的哪一层？",
+    "options": ["物理层", "数据链路层", "网络层", "传输层"],
+    "answer": 1,
+    "explanation": "ARP做IP到MAC地址映射，工作在数据链路层(第2层)。虽与IP相关但不属网络层。"
+  },
+  {
+    "id": "network-17",
+    "category": "network",
+    "question": "OSI 模型中，负责数据加密和格式转换的是哪一层？",
+    "options": ["应用层", "表示层", "会话层", "传输层"],
+    "answer": 1,
+    "explanation": "表示层(第6层)负责数据格式转换、加密、压缩。SSL/TLS的部分功能涉及表示层。"
+  },
+  {
+    "id": "network-18",
+    "category": "network",
+    "question": "TEMPEST 技术用于防范？",
+    "options": ["网络攻击", "电磁泄露", "恶意代码", "口令破解"],
+    "answer": 1,
+    "explanation": "TEMPEST是防电磁泄露技术，防止通过电磁辐射窃取信息。"
+  },
+  {
+    "id": "network-19",
+    "category": "network",
+    "question": "涉密存储介质销毁应采用？",
+    "options": ["格式化", "删除文件", "物理粉碎或消磁", "加密"],
+    "answer": 2,
+    "explanation": "涉密介质必须物理粉碎或消磁。格式化/删除不安全(数据可恢复)。"
+  },
+  {
+    "id": "network-20",
+    "category": "network",
+    "question": "网闸(Gap)能防网络攻击穿透的核心原理是？",
+    "options": ["加密传输", "任一时刻只连通一端", "防火墙过滤", "VLAN隔离"],
+    "answer": 1,
+    "explanation": "网闸硬件开关切换，任一时刻只与一端连接，物理上不存在同时连通的通路。"
+  },
+  {
+    "id": "network-21",
+    "category": "network",
+    "question": "Syslog 日志消息的严重等级(severity)数值与严重程度的关系是？",
+    "options": ["数值越大越严重", "数值越小越严重", "偶数严重", "与数值无关"],
+    "answer": 1,
+    "explanation": "severity范围0-7，0最严重(emerg)，7最轻微(debug)，数值越小越严重。"
+  },
+  {
+    "id": "network-22",
+    "category": "network",
+    "question": "PDRR 模型相比 PDR 增加了哪个环节？",
+    "options": ["分析", "恢复", "防护", "检测"],
+    "answer": 1,
+    "explanation": "PDR=防护→检测→响应；PDRR加恢复(Recovery)。APPDRR再加分析。"
+  },
+  {
+    "id": "network-23",
+    "category": "network",
+    "question": "软件白名单技术的优势是？",
+    "options": ["速度快", "可有效防未知恶意代码(0day)", "维护简单", "不需更新"],
+    "answer": 1,
+    "explanation": "白名单只放行已知安全软件，其余一律阻止，可防未知恶意代码(0day)。黑名单只能拦已知。"
+  },
+  {
+    "id": "network-24",
+    "category": "network",
+    "question": "渗透测试的正确流程顺序是？",
+    "options": ["委托受理→准备→实施→综合评估→结题", "准备→实施→委托→评估→结题", "实施→评估→委托→准备→结题", "委托→实施→评估→准备→结题"],
+    "answer": 0,
+    "explanation": "渗透测试5阶段：委托受理→准备→实施→综合评估→结题。必须先委托授权。"
+  },
+  {
+    "id": "network-25",
+    "category": "network",
+    "question": "网络流量采集中，交换机端口镜像(SPAN)的作用是？",
+    "options": ["修改原始流量", "将端口流量复制到审计口", "阻断异常流量", "加密流量"],
+    "answer": 1,
+    "explanation": "SPAN将指定端口流量复制一份到镜像口，审计设备接镜像口收到流量副本，不影响生产。"
+  },
+  {
+    "id": "network-26",
+    "category": "network",
+    "question": "网络生存模型的3R能力是指？",
+    "options": ["抵抗/识别/恢复", "读/写/执行", "冗余/备份/容灾", "检测/阻断/告警"],
+    "answer": 0,
+    "explanation": "网络生存3R：抵抗(Resistance)、识别(Recognition)、恢复(Recovery)。系统被攻击后仍能提供核心服务。"
+  },
+  {
+    "id": "network-27",
+    "category": "network",
+    "question": "下列关于零信任(Zero Trust)的说法，正确的是？",
+    "options": ["信任内网不信任外网", "从不信任，始终验证", "只需一次登录", "依赖防火墙边界"],
+    "answer": 1,
+    "explanation": "零信任核心理念：从不信任，始终验证。不再区分内外网，所有访问都需认证授权，持续验证。"
+  },
+  {
+    "id": "network-28",
+    "category": "network",
+    "question": "Kill Chain 攻击模型的阶段数和最后阶段是？",
+    "options": ["5阶段，最后是行动", "7阶段，最后是行动", "7阶段，最后是侦察", "6阶段，最后是恢复"],
+    "answer": 1,
+    "explanation": "Kill Chain共7阶段：侦察→武器化→投递→利用→安装→C2(命令控制)→行动(目标达成)。"
+  },
+  {
+    "id": "network-29",
+    "category": "network",
+    "question": "SOC(安全运营中心)的核心职能是？",
+    "options": ["仅部署防火墙", "7x24小时安全监控与响应", "仅做日志存储", "仅做渗透测试"],
+    "answer": 1,
+    "explanation": "SOC是7x24小时安全监控响应团队，职能：监控→检测→分析→响应→恢复。"  }
 ]

@@ -150,5 +150,85 @@
     "options": ["单层强防护", "多层防护，单层突破不致全盘崩溃", "只防网络层", "只防应用层"],
     "answer": 1,
     "explanation": "Defense in Depth 多层防护：网络边界/传输/应用/数据/终端/管理，单层被突破仍有其他层保护。"
+  },
+  {
+    "id": "mgmt-11",
+    "category": "management",
+    "question": "《数据安全法》的施行时间是？",
+    "options": ["2017年6月1日", "2021年9月1日", "2021年11月1日", "2020年1月1日"],
+    "answer": 1,
+    "explanation": "数据安全法2021年9月1日施行。网安法2017.6.1，个保法2021.11.1。"
+  },
+  {
+    "id": "mgmt-12",
+    "category": "management",
+    "question": "个人信息保护法的核心原则是？",
+    "options": ["公开透明", "最小必要、告知同意", "数据共享", "免费使用"],
+    "answer": 1,
+    "explanation": "个保法核心：最小必要+告知同意。敏感信息需单独同意。"
+  },
+  {
+    "id": "mgmt-13",
+    "category": "management",
+    "question": "等保2.0中，三级系统的测评频率是？",
+    "options": ["每半年一次", "每年一次", "每两年一次", "不需要测评"],
+    "answer": 1,
+    "explanation": "三级及以上每年测评一次。三级=监督保护，重要系统。"
+  },
+  {
+    "id": "mgmt-14",
+    "category": "management",
+    "question": "等保2.0技术安全测评的5大内容包括？",
+    "options": ["防火墙/IDS/IPS/VPN/WAF", "安全物理环境/通信网络/区域边界/计算环境/管理中心", "制度/机构/人员/建设/运维", "定级/备案/整改/测评/运维"],
+    "answer": 1,
+    "explanation": "技术测评5内容：安全物理环境+安全通信网络+安全区域边界+安全计算环境+安全管理中心。"
+  },
+  {
+    "id": "mgmt-15",
+    "category": "management",
+    "question": "RTO 与 MTD 的关系是？",
+    "options": ["RTO大于等于MTD", "RTO小于等于MTD", "两者相等", "无关"],
+    "answer": 1,
+    "explanation": "RTO(恢复时间)必须小于等于MTD(最大容忍中断时间)。"
+  },
+  {
+    "id": "mgmt-16",
+    "category": "management",
+    "question": "电子取证时应遵循的数据获取顺序是？",
+    "options": ["磁盘优先", "内存优先(易失性优先)", "随机获取", "日志优先"],
+    "answer": 1,
+    "explanation": "易失性优先：内存数据易丢失，关机前先抓内存镜像，再取磁盘。"
+  },
+  {
+    "id": "eng-6",
+    "category": "engineering",
+    "question": "ISO 22301 标准对应的是？",
+    "options": ["信息安全管理体系", "业务连续性管理体系", "风险评估标准", "等保测评标准"],
+    "answer": 1,
+    "explanation": "ISO 22301=业务连续性管理体系(BCMS)。ISO 27001=ISMS。"
+  },
+  {
+    "id": "eng-7",
+    "category": "engineering",
+    "question": "CC通用准则(ISO/IEC 15408)的评估保证级共有几级？",
+    "options": ["5级", "6级", "7级", "10级"],
+    "answer": 2,
+    "explanation": "CC的EAL共7级(EAL1到EAL7)。EAL4是商业产品最高实用级。"
+  },
+  {
+    "id": "fund-5",
+    "category": "fundamentals",
+    "question": "下列哪项不属于CIA三性？",
+    "options": ["机密性", "完整性", "可用性", "可控性"],
+    "answer": 3,
+    "explanation": "CIA=机密性/完整性/可用性。可控性是扩展属性，不属于CIA三性。"
+  },
+  {
+    "id": "fund-6",
+    "category": "fundamentals",
+    "question": "被动攻击的防护手段主要是？",
+    "options": ["认证", "加密", "访问控制", "审计"],
+    "answer": 1,
+    "explanation": "被动攻击(窃听/嗅探)防加密。主动攻击防认证+完整性+访问控制。"
   }
 ]
