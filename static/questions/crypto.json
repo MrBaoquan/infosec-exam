@@ -718,5 +718,29 @@
     "explanation": "SM4是128位分组、128位密钥、32轮的对称分组密码，答案B。A是对DES参数的混淆；C混入AES参数；D错误扩大了分组和密钥长度。",
     "topic": "national-crypto",
     "type": "parameter"
+  },
+  {
+    "id": "crypto-49", "category": "crypto",
+    "question": "某系统需要证明文件确实由发送方发出且未被篡改，发送方应如何使用数字签名？",
+    "options": ["用发送方私钥对摘要签名，接收方用发送方公钥验签", "用接收方私钥签名，发送方公钥验签", "只对文件做哈希，不保存摘要", "用发送方公钥加密后由发送方公钥解密"],
+    "answer": 0,
+    "explanation": "数字签名通常由发送方私钥对消息摘要签名，接收方用发送方公钥验证签名并重新计算摘要，从而验证来源和完整性。",
+    "topic": "signature", "type": "scenario"
+  },
+  {
+    "id": "crypto-50", "category": "crypto",
+    "question": "某国密系统需要对称分组加密，密钥和分组长度均为128位，应选用？",
+    "options": ["SM2", "SM3", "SM4", "RSA"],
+    "answer": 2,
+    "explanation": "SM4是对称分组密码，分组长度和密钥长度均为128位；SM2是椭圆曲线公钥密码，SM3是密码杂凑算法。",
+    "topic": "national-crypto", "type": "scenario"
+  },
+  {
+    "id": "crypto-51", "category": "crypto",
+    "question": "数字签名主要用于提供哪组安全属性？",
+    "options": ["发送方身份认证、消息完整性和不可否认性", "只提供机密性", "只提供可用性", "只隐藏通信双方身份"],
+    "answer": 0,
+    "explanation": "数字签名通过私钥签名和公钥验签，主要支持来源认证、完整性验证和不可否认性；需要机密性时还要采用加密机制。",
+    "topic": "signature", "type": "concept"
   }
 ]

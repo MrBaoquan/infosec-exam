@@ -583,5 +583,29 @@
     "explanation": "CVSS 3.x中9.0至10.0通常为严重等级，9.5选D。7.0至8.9为高危；4.0至6.9为中危；0.1至3.9为低危。",
     "topic": "vulnerability-incident",
     "type": "parameter"
+  },
+  {
+    "id": "system-40", "category": "system",
+    "question": "某主机发现异常进程正在加密大量文件并删除备份，响应人员首先应采取什么措施？",
+    "options": ["立即对外公开全部日志", "在保留证据的前提下隔离受影响主机并启动事件响应", "删除所有可疑文件后结束调查", "关闭全网审计"],
+    "answer": 1,
+    "explanation": "疑似勒索事件需要先控制扩散，在保留证据和必要日志的前提下隔离主机，再按预案开展研判、根除、恢复和复盘。",
+    "topic": "vulnerability-incident", "type": "scenario"
+  },
+  {
+    "id": "system-41", "category": "system",
+    "question": "某系统漏洞扫描发现高危漏洞，但厂商补丁尚未发布，临时措施最合理的是？",
+    "options": ["忽略漏洞直到下次年度检查", "结合风险临时隔离、限制暴露面并加强监测", "关闭所有日志", "将漏洞名称改为低危"],
+    "answer": 1,
+    "explanation": "没有补丁时仍应基于风险采取虚拟补丁、访问限制、隔离和监测等缓解措施，并跟踪厂商修复和后续验证。",
+    "topic": "vulnerability-management", "type": "scenario"
+  },
+  {
+    "id": "system-42", "category": "system",
+    "question": "漏洞管理的完整闭环通常包括哪些活动？",
+    "options": ["发现、评估、修复或缓解、验证和持续跟踪", "只扫描一次并删除报告", "只升级办公软件", "只在事件发生后关闭网络"],
+    "answer": 0,
+    "explanation": "漏洞管理不是一次性扫描，而是发现、评估优先级、修复或缓解、复测验证并持续跟踪的闭环过程。",
+    "topic": "vulnerability-management", "type": "concept"
   }
 ]

@@ -46,9 +46,17 @@ for (const file of files) {
 
 const typeCounts = Object.fromEntries([...allowedTypes].map((type) => [type, 0]));
 const topicCounts = {};
+const topicTypes = {};
 for (const question of questions) {
   typeCounts[question.type] += 1;
   topicCounts[question.topic] = (topicCounts[question.topic] || 0) + 1;
+  topicTypes[question.topic] ||= new Set();
+  topicTypes[question.topic].add(question.type);
+}
+
+for (const [topic, types] of Object.entries(topicTypes)) {
+  if (!types.has('concept')) errors.push(`${topic}: topic must include at least one concept question`);
+  if (!types.has('scenario')) errors.push(`${topic}: topic must include at least one scenario question`);
 }
 
 const total = questions.length;

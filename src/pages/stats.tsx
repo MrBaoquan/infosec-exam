@@ -11,10 +11,23 @@ const CATEGORIES = [
   {key: 'others', label: '基础/管理/工程', color: '#8b5cf6'},
 ];
 
+const TYPE_LABELS: Record<string, string> = {
+  scenario: '场景应用',
+  concept: '概念辨析',
+  parameter: '参数记忆',
+  comprehensive: '综合分析',
+  calculation: '计算题',
+};
+
 function StatsContent() {
-  const {records, stats, getOverallStats, getCategoryStats, downloadExport, clearAll} = useAnswerRecords();
+  const {records, stats, getOverallStats, getCategoryStats, getDimensionStats, downloadExport, clearAll} = useAnswerRecords();
   const [confirmClear, setConfirmClear] = useState(false);
   const overall = getOverallStats();
+  const typeStats = getDimensionStats('type').sort((a, b) => b.totalAttempts - a.totalAttempts);
+  const weakTopics = getDimensionStats('topic')
+    .filter((item) => item.totalAttempts > 0)
+    .sort((a, b) => a.accuracy - b.accuracy || b.totalAttempts - a.totalAttempts)
+    .slice(0, 10);
 
   return (
     <div>
@@ -85,6 +98,43 @@ function StatsContent() {
             </div>
           );
         })}
+      </div>
+
+      {/* 分题型统计 */}
+      <div className="crypto-card" style={{marginBottom: 16}}>
+        <h3 style={{marginTop: 0}}>分题型统计</h3>
+        {typeStats.map((item) => (
+          <div key={item.key} style={{marginBottom: 12}}>
+            <div style={{display: 'flex', justifyContent: 'space-between', gap: 8, flexWrap: 'wrap', fontSize: 13}}>
+              <b>{TYPE_LABELS[item.key] || item.key}</b>
+              <span style={{color: 'var(--ifm-color-emphasis-600)'}}>
+                {item.totalAttempts} 次 · {item.uniqueQuestions} 题 · 正确率 {item.accuracy}%
+              </span>
+            </div>
+            <div style={{height: 6, background: 'var(--ifm-color-emphasis-200)', borderRadius: 3, marginTop: 6}}>
+              <div style={{width: `${item.accuracy}%`, height: '100%', background: item.accuracy >= 60 ? '#10b981' : '#ef4444', borderRadius: 3}} />
+            </div>
+          </div>
+        ))}
+        {typeStats.length === 0 && (
+          <p style={{color: 'var(--ifm-color-emphasis-500)', fontSize: 13}}>完成新版题库练习后显示题型统计。</p>
+        )}
+      </div>
+
+      {/* 薄弱知识点 */}
+      <div className="crypto-card" style={{marginBottom: 16}}>
+        <h3 style={{marginTop: 0}}>薄弱知识点</h3>
+        {weakTopics.map((item, index) => (
+          <div key={item.key} style={{display: 'flex', justifyContent: 'space-between', gap: 8, padding: '8px 0', borderBottom: '1px solid var(--ifm-color-emphasis-200)', fontSize: 13}}>
+            <span style={{overflowWrap: 'anywhere'}}>{index + 1}. {item.key}</span>
+            <span style={{color: item.accuracy >= 60 ? '#10b981' : '#ef4444', whiteSpace: 'nowrap'}}>
+              {item.accuracy}% · {item.totalAttempts} 次
+            </span>
+          </div>
+        ))}
+        {weakTopics.length === 0 && (
+          <p style={{color: 'var(--ifm-color-emphasis-500)', fontSize: 13}}>暂无知识点答题数据。</p>
+        )}
       </div>
 
       {/* 高频错题 */}

@@ -19,6 +19,8 @@ const MAX_RECORDS = 2000; // 防止 localStorage 溢出
 export interface AnswerRecord {
   questionId: string;       // 题目id（如 crypto-1）
   category: string;         // 模块（crypto/network/system/application/others）
+  topic?: string;           // 知识点（兼容接入前的历史记录）
+  type?: QuestionType;      // 题型（兼容接入前的历史记录）
   selected: number;         // 用户选择的选项索引
   correctAnswer: number;    // 正确答案索引
   isCorrect: boolean;       // 是否答对
@@ -31,6 +33,8 @@ export interface AnswerRecord {
 export interface QuestionStat {
   questionId: string;
   category: string;
+  topic?: string;
+  type?: QuestionType;
   totalAttempts: number;    // 总答题次数
   correctCount: number;     // 答对次数
   wrongCount: number;       // 答错次数
@@ -39,6 +43,16 @@ export interface QuestionStat {
   avgDurationMs: number;    // 平均用时
   streak: number;           // 连续答对次数（间隔重复用）
   mastered: boolean;        // 是否已掌握（连续答对≥2次）
+}
+
+export type QuestionType = 'scenario' | 'concept' | 'parameter' | 'comprehensive' | 'calculation';
+
+export interface DimensionStat {
+  key: string;
+  totalAttempts: number;
+  correctCount: number;
+  accuracy: number;
+  uniqueQuestions: number;
 }
 
 export function useAnswerRecords() {
@@ -83,6 +97,8 @@ export function useAnswerRecords() {
         const existing = prev[record.questionId] || {
           questionId: record.questionId,
           category: record.category,
+          topic: record.topic,
+          type: record.type,
           totalAttempts: 0,
           correctCount: 0,
           wrongCount: 0,
@@ -96,6 +112,9 @@ export function useAnswerRecords() {
         const newStreak = record.isCorrect ? existing.streak + 1 : 0;
         const updated: QuestionStat = {
           ...existing,
+          category: record.category,
+          topic: record.topic || existing.topic,
+          type: record.type || existing.type,
           totalAttempts: existing.totalAttempts + 1,
           correctCount: existing.correctCount + (record.isCorrect ? 1 : 0),
           wrongCount: existing.wrongCount + (record.isCorrect ? 0 : 1),
@@ -156,6 +175,31 @@ export function useAnswerRecords() {
     };
   }, [stats]);
 
+  /** 按知识点或题型聚合，旧记录缺少维度时自动忽略 */
+  const getDimensionStats = useCallback(
+    (dimension: 'topic' | 'type'): DimensionStat[] => {
+      const grouped = new Map<string, QuestionStat[]>();
+      for (const stat of Object.values(stats)) {
+        const key = stat[dimension];
+        if (!key) continue;
+        grouped.set(key, [...(grouped.get(key) || []), stat]);
+      }
+
+      return [...grouped.entries()].map(([key, values]) => {
+        const totalAttempts = values.reduce((sum, item) => sum + item.totalAttempts, 0);
+        const correctCount = values.reduce((sum, item) => sum + item.correctCount, 0);
+        return {
+          key,
+          totalAttempts,
+          correctCount,
+          accuracy: totalAttempts > 0 ? Math.round((correctCount / totalAttempts) * 100) : 0,
+          uniqueQuestions: values.length,
+        };
+      });
+    },
+    [stats],
+  );
+
   /** 获取错题列表（未掌握的题目id） */
   const getUnmasteredQuestions = useCallback(() => {
     return Object.values(stats)
@@ -177,10 +221,12 @@ export function useAnswerRecords() {
 
   /** 导出为CSV（供Excel/AI分析） */
   const exportCSV = useCallback(() => {
-    const headers = ['questionId', 'category', 'selected', 'correctAnswer', 'isCorrect', 'timestamp', 'durationMs', 'source'];
+    const headers = ['questionId', 'category', 'topic', 'type', 'selected', 'correctAnswer', 'isCorrect', 'timestamp', 'durationMs', 'source'];
     const rows = records.map((r) => [
       r.questionId,
       r.category,
+      r.topic || '',
+      r.type || '',
       r.selected,
       r.correctAnswer,
       r.isCorrect ? '1' : '0',
@@ -221,6 +267,7 @@ export function useAnswerRecords() {
     recordAnswer,
     getCategoryStats,
     getOverallStats,
+    getDimensionStats,
     getUnmasteredQuestions,
     exportJSON,
     exportCSV,

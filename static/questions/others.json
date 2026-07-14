@@ -778,5 +778,29 @@
     "explanation": "SSE-CMM共有5级：非正式、计划与跟踪、充分定义、量化控制、持续改进，答案B。7级对应CC的EAL数量。",
     "topic": "engineering-detail",
     "type": "parameter"
+  },
+  {
+    "id": "eng-13", "category": "others",
+    "question": "某组织开展风险评估时，发现同一漏洞在不同资产上的影响不同。应如何确定风险优先级？",
+    "options": ["只按漏洞数量排序", "结合资产价值、威胁可能性和脆弱性综合判断", "只修复名称最长的漏洞", "先处理所有低影响资产"],
+    "answer": 1,
+    "explanation": "风险需要结合资产价值、威胁发生可能性和脆弱性等因素评估，不能只按漏洞数量或名称排序。",
+    "topic": "risk-assessment", "type": "scenario"
+  },
+  {
+    "id": "eng-14", "category": "others",
+    "question": "某单位准备建立安全管理制度，制度内容应首先覆盖什么？",
+    "options": ["只规定采购品牌", "明确责任、流程、权限和检查改进机制", "只规定员工密码长度", "只规定机房温度"],
+    "answer": 1,
+    "explanation": "安全管理制度需要明确责任边界、操作流程、权限审批、监督检查和持续改进，单一技术参数不能替代管理体系。",
+    "topic": "laws", "type": "scenario"
+  },
+  {
+    "id": "eng-15", "category": "others",
+    "question": "某项目采用成熟度模型评估安全工程能力，评估结果应主要用于？",
+    "options": ["证明系统绝对安全", "识别过程能力差距并制定改进计划", "替代所有技术测试", "只比较设备采购价格"],
+    "answer": 1,
+    "explanation": "成熟度模型关注过程能力和改进方向，结果用于发现差距、设定目标并持续改进，不能证明系统绝对安全或替代技术测试。",
+    "topic": "models", "type": "scenario"
   }
 ]

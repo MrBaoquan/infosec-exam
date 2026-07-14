@@ -1,7 +1,8 @@
-import {useState, useMemo} from 'react';
+import {useState, useMemo, useRef} from 'react';
 import {motion, AnimatePresence} from 'framer-motion';
 import BrowserOnly from '@docusaurus/BrowserOnly';
 import {useWrongQuestions} from './useWrongQuestions';
+import {useAnswerRecords} from './useAnswerRecords';
 
 export interface Question {
   id: string;
@@ -24,6 +25,7 @@ interface QuizProps {
 
 function QuizContent({questions, title, wrongOnly, onExit}: QuizProps) {
   const {addWrong, removeWrong} = useWrongQuestions();
+  const {recordAnswer} = useAnswerRecords();
   const list = useMemo(
     () => (wrongOnly ? questions.filter((q) => wrongOnly.includes(q.id)) : questions),
     [questions, wrongOnly],
@@ -34,6 +36,7 @@ function QuizContent({questions, title, wrongOnly, onExit}: QuizProps) {
   const [submitted, setSubmitted] = useState(false);
   const [correctCount, setCorrectCount] = useState(0);
   const [done, setDone] = useState(false);
+  const questionStartedAt = useRef(Date.now());
 
   if (list.length === 0) {
     return (
@@ -52,6 +55,18 @@ function QuizContent({questions, title, wrongOnly, onExit}: QuizProps) {
     if (selected === null || submitted) return;
     setSubmitted(true);
     const isCorrect = selected === cur.answer;
+    recordAnswer({
+      questionId: cur.id,
+      category: cur.category,
+      topic: cur.topic,
+      type: cur.type,
+      selected,
+      correctAnswer: cur.answer,
+      isCorrect,
+      durationMs: Date.now() - questionStartedAt.current,
+      source: 'practice',
+      questionText: cur.question,
+    });
     if (isCorrect) {
       setCorrectCount((c) => c + 1);
       removeWrong(cur.id); // 答对则移出错题本
@@ -68,6 +83,7 @@ function QuizContent({questions, title, wrongOnly, onExit}: QuizProps) {
     setIdx((i) => i + 1);
     setSelected(null);
     setSubmitted(false);
+    questionStartedAt.current = Date.now();
   };
 
   if (done) {

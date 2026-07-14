@@ -1,9 +1,13 @@
 import {useState, useEffect, useRef, useMemo} from 'react';
 import {motion, AnimatePresence} from 'framer-motion';
 import BrowserOnly from '@docusaurus/BrowserOnly';
+import {useAnswerRecords, type QuestionType} from './useAnswerRecords';
 
 interface Question {
   id: string;
+  category: string;
+  topic: string;
+  type: QuestionType;
   question: string;
   options: string[];
   answer: number;
@@ -39,6 +43,7 @@ interface Props {
  * 灵感来自 SM-2 / Anki 算法，简化为题内间隔。
  */
 function SpacedRepetitionContent({questions, title, onExit}: Props) {
+  const {recordAnswer} = useAnswerRecords();
   // 队列：当前待答题目有序列表，index 0 是当前题
   const [queue, setQueue] = useState<QueueItem[]>(() =>
     questions.map((q) => ({
@@ -55,6 +60,7 @@ function SpacedRepetitionContent({questions, title, onExit}: Props) {
   const [stats, setStats] = useState({answered: 0, correct: 0, mastered: 0});
   const [done, setDone] = useState(false);
   const [feedback, setFeedback] = useState('');
+  const questionStartedAt = useRef(Date.now());
 
   // 打乱初始顺序
   const shuffled = useMemo(() => {
@@ -77,6 +83,18 @@ function SpacedRepetitionContent({questions, title, onExit}: Props) {
     if (selected === null || submitted || !cur) return;
     setSubmitted(true);
     const isCorrect = selected === cur.q.answer;
+    recordAnswer({
+      questionId: cur.q.id,
+      category: cur.q.category,
+      topic: cur.q.topic,
+      type: cur.q.type,
+      selected,
+      correctAnswer: cur.q.answer,
+      isCorrect,
+      durationMs: Date.now() - questionStartedAt.current,
+      source: 'spaced',
+      questionText: cur.q.question,
+    });
     setLastResult(isCorrect ? 'correct' : 'wrong');
     setStats((s) => ({
       answered: s.answered + 1,
@@ -131,6 +149,7 @@ function SpacedRepetitionContent({questions, title, onExit}: Props) {
     setSubmitted(false);
     setLastResult(null);
     setFeedback('');
+    questionStartedAt.current = Date.now();
   };
 
   if (done || (!cur && !submitted)) {

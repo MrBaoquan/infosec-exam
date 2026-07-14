@@ -2,9 +2,13 @@ import {useState, useEffect, useRef} from 'react';
 import Layout from '@theme/Layout';
 import BrowserOnly from '@docusaurus/BrowserOnly';
 import {motion, AnimatePresence} from 'framer-motion';
+import {useAnswerRecords, type QuestionType} from '../components/useAnswerRecords';
 
 interface ExamQuestion {
   id: string;
+  category?: string;
+  topic?: string;
+  type?: QuestionType;
   question: string;
   options: string[];
   answer: number;
@@ -24,12 +28,15 @@ function fmt(sec: number): string {
 }
 
 function ExamPageContent() {
+  const {recordAnswer} = useAnswerRecords();
   const [phase, setPhase] = useState<'menu' | 'exam' | 'result'>('menu');
   const [exam, setExam] = useState<Exam | null>(null);
   const [answers, setAnswers] = useState<Record<number, number>>({});
   const [curIdx, setCurIdx] = useState(0);
   const [remain, setRemain] = useState(0);
   const timerRef = useRef<ReturnType<typeof setInterval> | null>(null);
+  const examStartedAt = useRef(0);
+  const recordedExam = useRef(false);
 
   const startExam = async (file: string) => {
     const res = await fetch(file);
@@ -38,6 +45,8 @@ function ExamPageContent() {
     setAnswers({});
     setCurIdx(0);
     setRemain(data.duration * 60);
+    examStartedAt.current = Date.now();
+    recordedExam.current = false;
     setPhase('exam');
   };
 
@@ -58,6 +67,32 @@ function ExamPageContent() {
     };
   }, [phase, remain === 0]);
 
+  useEffect(() => {
+    if (phase !== 'result' || !exam || recordedExam.current) return;
+    recordedExam.current = true;
+    const answeredCount = Object.keys(answers).length;
+    const averageDuration = answeredCount > 0
+      ? Math.round((Date.now() - examStartedAt.current) / answeredCount)
+      : 0;
+
+    exam.questions.forEach((question, index) => {
+      const selected = answers[index];
+      if (selected === undefined) return;
+      recordAnswer({
+        questionId: question.id,
+        category: question.category || 'others',
+        topic: question.topic,
+        type: question.type,
+        selected,
+        correctAnswer: question.answer,
+        isCorrect: selected === question.answer,
+        durationMs: averageDuration,
+        source: 'exam',
+        questionText: question.question,
+      });
+    });
+  }, [answers, exam, phase, recordAnswer]);
+
   const submit = () => setPhase('result');
 
   // 结果统计
@@ -77,16 +112,16 @@ function ExamPageContent() {
   if (phase === 'menu') {
     return (
       <div>
-        <h2 style={{marginTop: 0}}>📋 套卷模拟</h2>
+        <h2 style={{marginTop: 0}}>📋 限时综合测验</h2>
         <p style={{color: 'var(--ifm-color-emphasis-600)', fontSize: 14}}>
-          模拟真实考试环境：倒计时、答题卡、交卷判分。建议在掌握各章知识点后再做。
+          25 题限时训练，提供倒计时、答题卡和交卷判分；题量少于正式上午科目，用于阶段性检测。
         </p>
         <button
           className="crypto-btn"
           onClick={() => startExam('exams/exam-1.json')}
           style={{minHeight: 48, padding: '12px 24px', fontSize: 16}}
         >
-          📝 模拟套卷一（上午·25题·120分钟）
+          📝 综合测验一（25题·120分钟）
         </button>
       </div>
     );
@@ -255,7 +290,7 @@ function ExamPageContent() {
 
 export default function ExamPage() {
   return (
-    <Layout title="套卷模拟" description="软考信息安全工程师模拟套卷">
+    <Layout title="限时综合测验" description="软考信息安全工程师限时综合测验">
       <main style={{padding: '24px 16px', maxWidth: 760, margin: '0 auto'}}>
         <BrowserOnly fallback={<div>加载中…</div>}>
           {() => <ExamPageContent />}

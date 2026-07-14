@@ -520,7 +520,7 @@
       "VPN"
     ],
     "answer": 1,
-    "explanation": "场景题。涉密网与互联网需物理隔离(非逻辑隔离)。网闸(硬件开关切换,任一时刻只连一端)是最高级别隔离。防火墙/VLAN是逻辑隔离。",
+    "explanation": "场景题。涉密网与互联网需要按要求实施物理隔离。典型网闸通过硬件或受控机制避免两侧同时连通；防火墙/VLAN主要是逻辑隔离，具体方案仍需结合管理要求和数据交换流程。",
     "topic": "physical-isolation",
     "type": "comprehensive"
   },
@@ -793,5 +793,61 @@
     "explanation": "IKEv1快速模式用于第二阶段协商IPSec SA，答案C。主模式和野蛮模式属于第一阶段；传输模式是IPSec数据保护模式，不是IKE协商模式。",
     "topic": "vpn-ipsec",
     "type": "parameter"
+  },
+  {
+    "id": "network-54", "category": "network",
+    "question": "某企业在蜜罐中发现来自公网的扫描行为，希望提前发现同类攻击并分析攻击手法。最合适的做法是？",
+    "options": ["将蜜罐作为生产服务器", "集中收集蜜罐告警并与真实资产隔离", "关闭蜜罐日志以减少误报", "用蜜罐替代边界防火墙"],
+    "answer": 1,
+    "explanation": "蜜罐用于诱捕、预警和取证，应与生产资产隔离并集中收集日志。蜜罐不能代替防火墙，也不应承载真实业务。",
+    "topic": "active-defense", "type": "scenario"
+  },
+  {
+    "id": "network-55", "category": "network",
+    "question": "某单位要求涉密网络与互联网之间在物理链路上不能同时连通，适合采用哪种隔离方式？",
+    "options": ["普通VLAN", "网闸按策略进行单端切换", "共享密钥的VPN", "仅配置ACL"],
+    "answer": 1,
+    "explanation": "网闸通过硬件或受控机制使网络连接不同时贯通两侧，满足物理隔离场景。VLAN、ACL和VPN主要是逻辑或密码学隔离。",
+    "topic": "physical-isolation", "type": "scenario"
+  },
+  {
+    "id": "network-56", "category": "network",
+    "question": "某机房担心未授权人员通过拆卸磁盘恢复涉密数据，报废介质的首要措施是？",
+    "options": ["快速格式化", "修改文件名", "按要求进行物理销毁或可靠消磁", "移动到普通机房"],
+    "answer": 2,
+    "explanation": "格式化和改名不能消除底层数据。涉密介质报废应按管理要求物理销毁或采用经验证的消磁等方式，并保留处置记录。",
+    "topic": "physical-security", "type": "scenario"
+  },
+  {
+    "id": "network-57", "category": "network",
+    "question": "审计员发现关键服务器日志只保存在本机，主机被入侵后日志可能被删除。改进方案是？",
+    "options": ["关闭日志", "只增加本机磁盘", "集中采集并保护日志，同时校验时间和访问权限", "只记录登录成功事件"],
+    "answer": 2,
+    "explanation": "集中采集可降低单机日志被篡改或删除的风险，还需统一时间、限制访问并保护完整性，才能支撑审计和溯源。",
+    "topic": "security-audit", "type": "scenario"
+  },
+  {
+    "id": "network-58", "category": "network",
+    "question": "某组织希望安全能力覆盖防护、检测、响应和恢复四个环节，选择哪种模型更合适？",
+    "options": ["只强调边界防护的单点模型", "包含恢复环节的PDRR模型", "只做漏洞扫描的模型", "只记录资产的模型"],
+    "answer": 1,
+    "explanation": "PDRR分别强调防护、检测、响应和恢复，覆盖事件发生前后的安全闭环；只做边界防护或扫描不能代表完整安全能力。",
+    "topic": "security-system-model", "type": "scenario"
+  },
+  {
+    "id": "network-59", "category": "network",
+    "question": "某企业使用NGFW保护Web业务，但发现应用层攻击仍需专门规则检测。下列理解正确的是？",
+    "options": ["NGFW能替代所有安全设备", "NGFW具备应用识别等能力，但仍需按业务采用WAF等专用防护", "只要隐藏端口就不需检测", "只部署IDS即可修改恶意请求"],
+    "answer": 1,
+    "explanation": "NGFW扩展了传统防火墙的识别和检测能力，但不意味着替代所有专用设备。Web应用层防护仍需结合WAF、代码修复和安全配置。",
+    "topic": "firewall", "type": "scenario"
+  },
+  {
+    "id": "network-60", "category": "network",
+    "question": "安全审计的核心目标是？",
+    "options": ["记录、分析和追溯安全相关活动", "替代身份认证", "保证网络永不中断", "只统计磁盘容量"],
+    "answer": 0,
+    "explanation": "安全审计通过记录、保护和分析操作及安全事件，为责任认定、异常发现、调查取证和持续改进提供依据。",
+    "topic": "security-audit", "type": "concept"
   }
 ]

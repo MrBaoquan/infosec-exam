@@ -523,5 +523,13 @@
     "explanation": "HSTS的max-age单位是秒，答案B。例如max-age=31536000约为一年。其他单位会导致对策略有效期的错误理解。",
     "topic": "web-attacks",
     "type": "parameter"
+  },
+  {
+    "id": "app-36", "category": "application",
+    "question": "某工厂将办公网与生产控制网互联，攻击者可通过办公网影响PLC。首要整改方向是？",
+    "options": ["只更换办公网密码", "按业务边界分区隔离并严格控制跨区通信", "开放所有端口便于维护", "关闭生产网审计"],
+    "answer": 1,
+    "explanation": "工业控制系统应按业务和安全域分区，使用受控边界限制跨区通信，并结合专用运维、监测和应急措施。只改口令不能消除网络横向路径。",
+    "topic": "cloud-iot", "type": "concept"
   }
 ]

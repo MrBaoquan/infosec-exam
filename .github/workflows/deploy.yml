@@ -27,6 +27,8 @@ jobs:
           cache: npm
       # 删除 lock 文件后安装，规避 npm optional dependencies 平台 bug（rollup native）
       - run: rm -f package-lock.json && npm install --no-audit --no-fund
+      - name: Validate question bank
+        run: npm run validate:questions
       - name: Build website
         run: npm run build
       - uses: actions/upload-pages-artifact@v3
