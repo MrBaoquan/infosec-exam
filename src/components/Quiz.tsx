@@ -6,6 +6,8 @@ import {useWrongQuestions} from './useWrongQuestions';
 export interface Question {
   id: string;
   category: string;
+  topic: string;
+  type: 'scenario' | 'concept' | 'parameter' | 'comprehensive' | 'calculation';
   question: string;
   options: string[];
   answer: number;

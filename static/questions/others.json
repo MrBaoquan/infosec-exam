@@ -3,320 +3,600 @@
     "id": "fund-1",
     "category": "fundamentals",
     "question": "BLP 安全模型主要保护的是信息的？",
-    "options": ["机密性", "完整性", "可用性", "不可否认性"],
+    "options": [
+      "机密性",
+      "完整性",
+      "可用性",
+      "不可否认性"
+    ],
     "answer": 0,
-    "explanation": "BLP 模型保护机密性，规则“向下读、向上写”，防高密级信息流向低密级。Biba 保护完整性，方向相反。"
+    "explanation": "BLP 模型保护机密性，规则“向下读、向上写”，防高密级信息流向低密级。Biba 保护完整性，方向相反。",
+    "topic": "models",
+    "type": "concept"
   },
   {
     "id": "fund-2",
     "category": "fundamentals",
     "question": "信息安全的 CIA 三性是指？",
-    "options": ["认证、完整、可用", "机密、完整、可用", "机密、认证、可控", "完整、可用、不可否认"],
+    "options": [
+      "认证、完整、可用",
+      "机密、完整、可用",
+      "机密、认证、可控",
+      "完整、可用、不可否认"
+    ],
     "answer": 1,
-    "explanation": "CIA = 机密性(Confidentiality)、完整性(Integrity)、可用性(Availability)，安全目标基石。"
+    "explanation": "CIA = 机密性(Confidentiality)、完整性(Integrity)、可用性(Availability)，安全目标基石。",
+    "topic": "concepts",
+    "type": "concept"
   },
   {
     "id": "mgmt-1",
     "category": "management",
     "question": "等级保护 2.0 中，哪个级别及以上必须定期进行安全测评？",
-    "options": ["第一级", "第二级", "第三级", "第五级"],
+    "options": [
+      "第一级",
+      "第二级",
+      "第三级",
+      "第五级"
+    ],
     "answer": 2,
-    "explanation": "等保 2.0 第三级（监督保护）及以上需定期测评。流程：定级→备案→建设整改→测评→运维。"
+    "explanation": "等保 2.0 第三级（监督保护）及以上需定期测评。流程：定级→备案→建设整改→测评→运维。",
+    "topic": "level-protection",
+    "type": "concept"
   },
   {
     "id": "mgmt-2",
     "category": "management",
     "question": "灾难恢复中，RPO（恢复点目标）的含义是？",
-    "options": ["系统恢复的最长时间", "可容忍的数据丢失量", "业务中断的最长时间", "备份的频率"],
+    "options": [
+      "系统恢复的最长时间",
+      "可容忍的数据丢失量",
+      "业务中断的最长时间",
+      "备份的频率"
+    ],
     "answer": 1,
-    "explanation": "RPO=可容忍数据丢失量（决定备份频率）；RTO=恢复时间目标；RTO≤MTD（最大容忍中断时间）。"
+    "explanation": "RPO=可容忍数据丢失量（决定备份频率）；RTO=恢复时间目标；RTO≤MTD（最大容忍中断时间）。",
+    "topic": "bcp-drp",
+    "type": "concept"
   },
   {
     "id": "eng-1",
     "category": "engineering",
     "question": "SSE-CMM 安全工程能力成熟度模型共有几个等级？",
-    "options": ["3 级", "4 级", "5 级", "7 级"],
+    "options": [
+      "3 级",
+      "4 级",
+      "5 级",
+      "7 级"
+    ],
     "answer": 2,
-    "explanation": "SSE-CMM 共 5 级：1非正式→2计划跟踪→3充分定义→4量化控制→5持续改进。"
+    "explanation": "SSE-CMM 共 5 级：1非正式→2计划跟踪→3充分定义→4量化控制→5持续改进。",
+    "topic": "engineering-detail",
+    "type": "parameter"
   },
   {
     "id": "mgmt-3",
     "category": "management",
     "question": "风险 = 资产 × 威胁 × ？，缺失的要素是？",
-    "options": ["安全措施", "脆弱性", "影响", "概率"],
+    "options": [
+      "安全措施",
+      "脆弱性",
+      "影响",
+      "概率"
+    ],
     "answer": 1,
-    "explanation": "风险 = 资产 × 威胁 × 脆弱性。威胁利用脆弱性危害资产形成风险。"
+    "explanation": "风险 = 资产 × 威胁 × 脆弱性。威胁利用脆弱性危害资产形成风险。",
+    "topic": "risk-assessment",
+    "type": "concept"
   },
   {
     "id": "mgmt-4",
     "category": "management",
     "question": "ALE（年度预期损失）的计算公式是？",
-    "options": ["AV × EF", "SLE × ARO", "AV × ARO", "SLE × EF"],
+    "options": [
+      "AV × EF",
+      "SLE × ARO",
+      "AV × ARO",
+      "SLE × EF"
+    ],
     "answer": 1,
-    "explanation": "ALE = SLE × ARO = (AV × EF) × ARO。SLE=单次损失，ARO=年发生率。"
+    "explanation": "ALE = SLE × ARO = (AV × EF) × ARO。SLE=单次损失，ARO=年发生率。",
+    "topic": "risk-assessment",
+    "type": "concept"
   },
   {
     "id": "mgmt-5",
     "category": "management",
     "question": "信息安全管理体系 ISMS 基于的标准是？其核心方法是？",
-    "options": ["ISO 27001，PDCA 循环", "ISO 27002，瀑布模型", "ISO 9001，六西格玛", "GB 22239，PDCA"],
+    "options": [
+      "ISO 27001，PDCA 循环",
+      "ISO 27002，瀑布模型",
+      "ISO 9001，六西格玛",
+      "GB 22239，PDCA"
+    ],
     "answer": 0,
-    "explanation": "ISMS 基于 ISO/IEC 27001，核心是 PDCA 循环（计划-实施-检查-改进）。27002 是控制措施指南。"
+    "explanation": "ISMS 基于 ISO/IEC 27001，核心是 PDCA 循环（计划-实施-检查-改进）。27002 是控制措施指南。",
+    "topic": "security-management",
+    "type": "concept"
   },
   {
     "id": "mgmt-6",
     "category": "management",
     "question": "《网络安全法》要求网络日志留存不少于？",
-    "options": ["3 个月", "6 个月", "1 年", "2 年"],
+    "options": [
+      "3 个月",
+      "6 个月",
+      "1 年",
+      "2 年"
+    ],
     "answer": 1,
-    "explanation": "《网络安全法》规定网络日志留存不少于 6 个月。"
+    "explanation": "《网络安全法》规定网络日志留存不少于 6 个月。",
+    "topic": "security-management",
+    "type": "scenario"
   },
   {
     "id": "eng-2",
     "category": "engineering",
     "question": "CC 通用准则中，商业产品通常达到的最高评估保证级是？",
-    "options": ["EAL1", "EAL3", "EAL4", "EAL7"],
+    "options": [
+      "EAL1",
+      "EAL3",
+      "EAL4",
+      "EAL7"
+    ],
     "answer": 2,
-    "explanation": "EAL4 是商业产品通常达到的最高级别；EAL5-7 多用于军方/高安全产品。EAL7 最高（形式化验证）。"
+    "explanation": "EAL4 是商业产品通常达到的最高级别；EAL5-7 多用于军方/高安全产品。EAL7 最高（形式化验证）。",
+    "topic": "engineering-detail",
+    "type": "parameter"
   },
   {
     "id": "eng-3",
     "category": "engineering",
     "question": "Kerckhoffs 原则的核心思想是？",
-    "options": ["算法应保密", "安全不应依赖算法保密", "密钥应公开", "加密越复杂越安全"],
+    "options": [
+      "算法应保密",
+      "安全不应依赖算法保密",
+      "密钥应公开",
+      "加密越复杂越安全"
+    ],
     "answer": 1,
-    "explanation": "Kerckhoffs 原则：安全应基于密钥保密而非算法保密（开放设计）。假设攻击者知道算法，安全只依赖密钥。"
+    "explanation": "Kerckhoffs 原则：安全应基于密钥保密而非算法保密（开放设计）。假设攻击者知道算法，安全只依赖密钥。",
+    "topic": "engineering-detail",
+    "type": "concept"
   },
   {
     "id": "fund-3",
     "category": "fundamentals",
     "question": "下列属于主动攻击的是？",
-    "options": ["窃听", "流量分析", "篡改", "嗅探"],
+    "options": [
+      "窃听",
+      "流量分析",
+      "篡改",
+      "嗅探"
+    ],
     "answer": 2,
-    "explanation": "篡改是主动攻击（修改数据）。窃听/流量分析/嗅探是被动攻击（只监听不修改）。被动攻击防加密，主动攻击防认证+完整性。"
+    "explanation": "篡改是主动攻击（修改数据）。窃听/流量分析/嗅探是被动攻击（只监听不修改）。被动攻击防加密，主动攻击防认证+完整性。",
+    "topic": "concepts",
+    "type": "concept"
   },
   {
     "id": "fund-4",
     "category": "fundamentals",
     "question": "Biba 模型的规则是？",
-    "options": ["下读上写(保机密性)", "上读下写(保完整性)", "全读全写", "只读不写"],
+    "options": [
+      "下读上写(保机密性)",
+      "上读下写(保完整性)",
+      "全读全写",
+      "只读不写"
+    ],
     "answer": 1,
-    "explanation": "Biba 保完整性：上读下写，与 BLP(下读上写)方向相反。防低完整性数据污染高完整性。"
+    "explanation": "Biba 保完整性：上读下写，与 BLP(下读上写)方向相反。防低完整性数据污染高完整性。",
+    "topic": "models",
+    "type": "concept"
   },
   {
     "id": "mgmt-7",
     "category": "management",
     "question": "风险处置的四种策略是？",
-    "options": ["降低/转移/规避/接受", "删除/复制/移动/备份", "加密/签名/哈希/认证", "检测/阻断/告警/记录"],
+    "options": [
+      "降低/转移/规避/接受",
+      "删除/复制/移动/备份",
+      "加密/签名/哈希/认证",
+      "检测/阻断/告警/记录"
+    ],
     "answer": 0,
-    "explanation": "风险处置：降低(控制)、转移(保险)、规避(停止活动)、接受(可容忍)。"
+    "explanation": "风险处置：降低(控制)、转移(保险)、规避(停止活动)、接受(可容忍)。",
+    "topic": "risk-assessment",
+    "type": "concept"
   },
   {
     "id": "mgmt-8",
     "category": "management",
     "question": "RPO 的含义是？",
-    "options": ["系统恢复的最长时间", "可容忍的数据丢失量", "业务中断最长时间", "备份频率"],
+    "options": [
+      "系统恢复的最长时间",
+      "可容忍的数据丢失量",
+      "业务中断最长时间",
+      "备份频率"
+    ],
     "answer": 1,
-    "explanation": "RPO(Recovery Point Objective)恢复点目标=可容忍数据丢失量，决定备份频率。RTO=恢复时间。RTO≤MTD。"
+    "explanation": "RPO(Recovery Point Objective)恢复点目标=可容忍数据丢失量，决定备份频率。RTO=恢复时间。RTO≤MTD。",
+    "topic": "bcp-drp",
+    "type": "concept"
   },
   {
     "id": "mgmt-9",
     "category": "management",
     "question": "备份的 3-2-1 原则是指？",
-    "options": ["3份/2介质/1异地", "3天/2次/1份", "3个服务器/2个机房/1个备份", "3种算法/2个密钥/1个管理员"],
+    "options": [
+      "3份/2介质/1异地",
+      "3天/2次/1份",
+      "3个服务器/2个机房/1个备份",
+      "3种算法/2个密钥/1个管理员"
+    ],
     "answer": 0,
-    "explanation": "3-2-1：3份数据(1原始+2备份)、2种不同介质、1份异地存放。"
+    "explanation": "3-2-1：3份数据(1原始+2备份)、2种不同介质、1份异地存放。",
+    "topic": "bcp-drp",
+    "type": "concept"
   },
   {
     "id": "mgmt-10",
     "category": "management",
     "question": "ISMS 基于 ISO 27001，其核心方法是？",
-    "options": ["瀑布模型", "PDCA循环", "敏捷开发", "六西格玛"],
+    "options": [
+      "瀑布模型",
+      "PDCA循环",
+      "敏捷开发",
+      "六西格玛"
+    ],
     "answer": 1,
-    "explanation": "ISMS 基于 ISO/IEC 27001，核心是 PDCA(Plan-Do-Check-Act)循环。27002 是控制措施指南。"
+    "explanation": "ISMS 基于 ISO/IEC 27001，核心是 PDCA(Plan-Do-Check-Act)循环。27002 是控制措施指南。",
+    "topic": "security-management",
+    "type": "concept"
   },
   {
     "id": "eng-4",
     "category": "engineering",
     "question": "失败安全(Fail Safe)原则的含义是？",
-    "options": ["失败时允许访问", "失败时进入安全状态(默认拒绝)", "失败时忽略", "失败时记录即可"],
+    "options": [
+      "失败时允许访问",
+      "失败时进入安全状态(默认拒绝)",
+      "失败时忽略",
+      "失败时记录即可"
+    ],
     "answer": 1,
-    "explanation": "Fail Safe：系统异常/失败时进入安全状态，默认拒绝访问，防止失败导致开放。"
+    "explanation": "Fail Safe：系统异常/失败时进入安全状态，默认拒绝访问，防止失败导致开放。",
+    "topic": "engineering-detail",
+    "type": "concept"
   },
   {
     "id": "eng-5",
     "category": "engineering",
     "question": "纵深防御(Defense in Depth)的核心思想是？",
-    "options": ["单层强防护", "多层防护，单层突破不致全盘崩溃", "只防网络层", "只防应用层"],
+    "options": [
+      "单层强防护",
+      "多层防护，单层突破不致全盘崩溃",
+      "只防网络层",
+      "只防应用层"
+    ],
     "answer": 1,
-    "explanation": "Defense in Depth 多层防护：网络边界/传输/应用/数据/终端/管理，单层被突破仍有其他层保护。"
+    "explanation": "Defense in Depth 多层防护：网络边界/传输/应用/数据/终端/管理，单层被突破仍有其他层保护。",
+    "topic": "engineering-detail",
+    "type": "concept"
   },
   {
     "id": "mgmt-11",
     "category": "management",
     "question": "《数据安全法》的施行时间是？",
-    "options": ["2017年6月1日", "2021年9月1日", "2021年11月1日", "2020年1月1日"],
+    "options": [
+      "2017年6月1日",
+      "2021年9月1日",
+      "2021年11月1日",
+      "2020年1月1日"
+    ],
     "answer": 1,
-    "explanation": "数据安全法2021年9月1日施行。网安法2017.6.1，个保法2021.11.1。"
+    "explanation": "数据安全法2021年9月1日施行。网安法2017.6.1，个保法2021.11.1。",
+    "topic": "laws",
+    "type": "parameter"
   },
   {
     "id": "mgmt-12",
     "category": "management",
     "question": "个人信息保护法的核心原则是？",
-    "options": ["公开透明", "最小必要、告知同意", "数据共享", "免费使用"],
+    "options": [
+      "公开透明",
+      "最小必要、告知同意",
+      "数据共享",
+      "免费使用"
+    ],
     "answer": 1,
-    "explanation": "个保法核心：最小必要+告知同意。敏感信息需单独同意。"
+    "explanation": "个保法核心：最小必要+告知同意。敏感信息需单独同意。",
+    "topic": "laws",
+    "type": "concept"
   },
   {
     "id": "mgmt-13",
     "category": "management",
     "question": "等保2.0中，三级系统的测评频率是？",
-    "options": ["每半年一次", "每年一次", "每两年一次", "不需要测评"],
+    "options": [
+      "每半年一次",
+      "每年一次",
+      "每两年一次",
+      "不需要测评"
+    ],
     "answer": 1,
-    "explanation": "三级及以上每年测评一次。三级=监督保护，重要系统。"
+    "explanation": "三级及以上每年测评一次。三级=监督保护，重要系统。",
+    "topic": "level-protection",
+    "type": "parameter"
   },
   {
     "id": "mgmt-14",
     "category": "management",
     "question": "等保2.0技术安全测评的5大内容包括？",
-    "options": ["防火墙/IDS/IPS/VPN/WAF", "安全物理环境/通信网络/区域边界/计算环境/管理中心", "制度/机构/人员/建设/运维", "定级/备案/整改/测评/运维"],
+    "options": [
+      "防火墙/IDS/IPS/VPN/WAF",
+      "安全物理环境/通信网络/区域边界/计算环境/管理中心",
+      "制度/机构/人员/建设/运维",
+      "定级/备案/整改/测评/运维"
+    ],
     "answer": 1,
-    "explanation": "技术测评5内容：安全物理环境+安全通信网络+安全区域边界+安全计算环境+安全管理中心。"
+    "explanation": "技术测评5内容：安全物理环境+安全通信网络+安全区域边界+安全计算环境+安全管理中心。",
+    "topic": "level-protection",
+    "type": "concept"
   },
   {
     "id": "mgmt-15",
     "category": "management",
     "question": "RTO 与 MTD 的关系是？",
-    "options": ["RTO大于等于MTD", "RTO小于等于MTD", "两者相等", "无关"],
+    "options": [
+      "RTO大于等于MTD",
+      "RTO小于等于MTD",
+      "两者相等",
+      "无关"
+    ],
     "answer": 1,
-    "explanation": "RTO(恢复时间)必须小于等于MTD(最大容忍中断时间)。"
+    "explanation": "RTO(恢复时间)必须小于等于MTD(最大容忍中断时间)。",
+    "topic": "bcp-drp",
+    "type": "concept"
   },
   {
     "id": "mgmt-16",
     "category": "management",
     "question": "电子取证时应遵循的数据获取顺序是？",
-    "options": ["磁盘优先", "内存优先(易失性优先)", "随机获取", "日志优先"],
+    "options": [
+      "磁盘优先",
+      "内存优先(易失性优先)",
+      "随机获取",
+      "日志优先"
+    ],
     "answer": 1,
-    "explanation": "易失性优先：内存数据易丢失，关机前先抓内存镜像，再取磁盘。"
+    "explanation": "易失性优先：内存数据易丢失，关机前先抓内存镜像，再取磁盘。",
+    "topic": "security-management",
+    "type": "concept"
   },
   {
     "id": "eng-6",
     "category": "engineering",
     "question": "ISO 22301 标准对应的是？",
-    "options": ["信息安全管理体系", "业务连续性管理体系", "风险评估标准", "等保测评标准"],
+    "options": [
+      "信息安全管理体系",
+      "业务连续性管理体系",
+      "风险评估标准",
+      "等保测评标准"
+    ],
     "answer": 1,
-    "explanation": "ISO 22301=业务连续性管理体系(BCMS)。ISO 27001=ISMS。"
+    "explanation": "ISO 22301=业务连续性管理体系(BCMS)。ISO 27001=ISMS。",
+    "topic": "engineering-detail",
+    "type": "concept"
   },
   {
     "id": "eng-7",
     "category": "engineering",
     "question": "CC通用准则(ISO/IEC 15408)的评估保证级共有几级？",
-    "options": ["5级", "6级", "7级", "10级"],
+    "options": [
+      "5级",
+      "6级",
+      "7级",
+      "10级"
+    ],
     "answer": 2,
-    "explanation": "CC的EAL共7级(EAL1到EAL7)。EAL4是商业产品最高实用级。"
+    "explanation": "CC的EAL共7级(EAL1到EAL7)。EAL4是商业产品最高实用级。",
+    "topic": "engineering-detail",
+    "type": "parameter"
   },
   {
     "id": "fund-5",
     "category": "fundamentals",
     "question": "下列哪项不属于CIA三性？",
-    "options": ["机密性", "完整性", "可用性", "可控性"],
+    "options": [
+      "机密性",
+      "完整性",
+      "可用性",
+      "可控性"
+    ],
     "answer": 3,
-    "explanation": "CIA=机密性/完整性/可用性。可控性是扩展属性，不属于CIA三性。"
+    "explanation": "CIA=机密性/完整性/可用性。可控性是扩展属性，不属于CIA三性。",
+    "topic": "concepts",
+    "type": "concept"
   },
   {
     "id": "fund-6",
     "category": "fundamentals",
     "question": "被动攻击的防护手段主要是？",
-    "options": ["认证", "加密", "访问控制", "审计"],
+    "options": [
+      "认证",
+      "加密",
+      "访问控制",
+      "审计"
+    ],
     "answer": 1,
-    "explanation": "被动攻击(窃听/嗅探)防加密。主动攻击防认证+完整性+访问控制。"
+    "explanation": "被动攻击(窃听/嗅探)防加密。主动攻击防认证+完整性+访问控制。",
+    "topic": "concepts",
+    "type": "scenario"
   },
   {
     "id": "fund-7",
     "category": "fundamentals",
     "question": "某公司委托第三方进行安全评估，评估方模拟真实攻击寻找系统漏洞。这属于？",
-    "options": ["漏洞扫描", "渗透测试", "安全审计", "风险评估"],
+    "options": [
+      "漏洞扫描",
+      "渗透测试",
+      "安全审计",
+      "风险评估"
+    ],
     "answer": 1,
-    "explanation": "场景题。模拟真实攻击找漏洞=渗透测试。需经授权、不破坏、出报告。漏洞扫描是自动化工具扫描(非模拟攻击)。"
+    "explanation": "场景题。模拟真实攻击找漏洞=渗透测试。需经授权、不破坏、出报告。漏洞扫描是自动化工具扫描(非模拟攻击)。",
+    "topic": "security-assessment",
+    "type": "scenario"
   },
   {
     "id": "fund-8",
     "category": "fundamentals",
     "question": "某评估人员只知道目标IP地址，不知道任何内部信息。这种测试属于？",
-    "options": ["白盒测试", "黑盒测试", "灰盒测试", "透明测试"],
+    "options": [
+      "白盒测试",
+      "黑盒测试",
+      "灰盒测试",
+      "透明测试"
+    ],
     "answer": 1,
-    "explanation": "场景题。黑盒测试=不知内部信息，模拟外部攻击者。白盒=完全知情(源码/架构)，深度测试。灰盒=部分知情。"
+    "explanation": "场景题。黑盒测试=不知内部信息，模拟外部攻击者。白盒=完全知情(源码/架构)，深度测试。灰盒=部分知情。",
+    "topic": "security-assessment",
+    "type": "scenario"
   },
   {
     "id": "mgmt-17",
     "category": "management",
     "question": "某公司资产价值200万，黑客攻击暴露因子30%，年发生率0.5次。求ALE。",
-    "options": ["60万", "30万", "200万", "100万"],
+    "options": [
+      "60万",
+      "30万",
+      "200万",
+      "100万"
+    ],
     "answer": 1,
-    "explanation": "计算题。SLE=AV×EF=200万×30%=60万。ALE=SLE×ARO=60万×0.5=30万。"
+    "explanation": "计算题。SLE=AV×EF=200万×30%=60万。ALE=SLE×ARO=60万×0.5=30万。",
+    "topic": "risk-assessment",
+    "type": "calculation"
   },
   {
     "id": "mgmt-18",
     "category": "management",
     "question": "某省级政务系统存储大量公民信息，若被破坏可能对社会秩序造成严重损害。其等保级别应为？",
-    "options": ["第二级", "第三级", "第四级", "第五级"],
+    "options": [
+      "第二级",
+      "第三级",
+      "第四级",
+      "第五级"
+    ],
     "answer": 1,
-    "explanation": "场景题。损害社会秩序+严重损害→第三级(监督保护)。省级政务+大量公民信息属重要系统。三级需每年测评。"
+    "explanation": "场景题。损害社会秩序+严重损害→第三级(监督保护)。省级政务+大量公民信息属重要系统。三级需每年测评。",
+    "topic": "level-protection",
+    "type": "scenario"
   },
   {
     "id": "mgmt-19",
     "category": "management",
     "question": "某公司发生数据泄露事件，应急响应团队首先应做的是？",
-    "options": ["删除恶意代码", "断网隔离控制影响范围", "通知媒体", "重装系统"],
+    "options": [
+      "删除恶意代码",
+      "断网隔离控制影响范围",
+      "通知媒体",
+      "重装系统"
+    ],
     "answer": 1,
-    "explanation": "场景题。应急响应六阶段：准备→检测→**抑制**→根除→恢复→总结。检测确认后首先抑制(断网隔离)控制范围，然后才根除(清恶意代码)。"
+    "explanation": "场景题。应急响应六阶段：准备→检测→**抑制**→根除→恢复→总结。检测确认后首先抑制(断网隔离)控制范围，然后才根除(清恶意代码)。",
+    "topic": "security-management",
+    "type": "scenario"
   },
   {
     "id": "mgmt-20",
     "category": "management",
     "question": "某公司投入10万元安全措施，可将ALE从20万降至5万。该措施是否划算？",
-    "options": ["划算(ALE降幅15万>成本10万)", "不划算", "无法判断", "需更多数据"],
+    "options": [
+      "划算(ALE降幅15万>成本10万)",
+      "不划算",
+      "无法判断",
+      "需更多数据"
+    ],
     "answer": 0,
-    "explanation": "计算题。ALE降幅=20万-5万=15万。措施成本10万。15万>10万→划算。判断标准：措施成本<ALE降幅则划算。"
+    "explanation": "计算题。ALE降幅=20万-5万=15万。措施成本10万。15万>10万→划算。判断标准：措施成本<ALE降幅则划算。",
+    "topic": "risk-assessment",
+    "type": "calculation"
   },
   {
     "id": "mgmt-21",
     "category": "management",
     "question": "某公司制定BCP(业务连续性计划)后从未演练。安全评估指出问题。BCP/DRP必须定期？",
-    "options": ["更新版本号", "演练", "加密存储", "提交审批"],
+    "options": [
+      "更新版本号",
+      "演练",
+      "加密存储",
+      "提交审批"
+    ],
     "answer": 1,
-    "explanation": "场景题。BCP/DRP必须定期演练。不演练=纸面计划，真出事时可能执行不了。演练发现的问题用于改进计划。"
+    "explanation": "场景题。BCP/DRP必须定期演练。不演练=纸面计划，真出事时可能执行不了。演练发现的问题用于改进计划。",
+    "topic": "bcp-drp",
+    "type": "scenario"
   },
   {
     "id": "mgmt-22",
     "category": "management",
     "question": "某系统等保测评发现以下问题：①未启用审计 ②数据库默认口令 ③远程管理用Telnet。下列整改方案对应正确的是？",
-    "options": ["①开审计 ②改强口令 ③改用SSH", "①加密 ②改口令 ③用HTTP", "①防火墙 ②改口令 ③用VPN", "①IDS ②加密 ③用SSH"],
+    "options": [
+      "①开审计 ②改强口令 ③改用SSH",
+      "①加密 ②改口令 ③用HTTP",
+      "①防火墙 ②改口令 ③用VPN",
+      "①IDS ②加密 ③用SSH"
+    ],
     "answer": 0,
-    "explanation": "综合题。未审计→开审计日志(≥6月)；默认口令→改强口令；Telnet明文→改用SSH(加密远程管理)。"
+    "explanation": "综合题。未审计→开审计日志(≥6月)；默认口令→改强口令；Telnet明文→改用SSH(加密远程管理)。",
+    "topic": "level-protection",
+    "type": "comprehensive"
   },
   {
     "id": "mgmt-23",
     "category": "management",
     "question": "某公司安全策略规定'所有员工每年必须参加安全意识培训'。这主要为了防御？",
-    "options": ["SQL注入", "社会工程攻击", "DDoS", "SYN Flood"],
+    "options": [
+      "SQL注入",
+      "社会工程攻击",
+      "DDoS",
+      "SYN Flood"
+    ],
     "answer": 1,
-    "explanation": "场景题。技术手段无法完全防社会工程(钓鱼/伪装)。安全意识培训是防社会工程的核心措施。SQL注入/DDoS靠技术防护。"
+    "explanation": "场景题。技术手段无法完全防社会工程(钓鱼/伪装)。安全意识培训是防社会工程的核心措施。SQL注入/DDoS靠技术防护。",
+    "topic": "security-management",
+    "type": "scenario"
   },
   {
     "id": "mgmt-24",
     "category": "management",
     "question": "某企业数据备份策略为：每周日全量备份，每天增量备份。周三发生故障需恢复，需要哪些备份？",
-    "options": ["仅周日全量", "周日全量+周一二三增量", "仅周三增量", "周日全量+周三增量"],
+    "options": [
+      "仅周日全量",
+      "周日全量+周一二三增量",
+      "仅周三增量",
+      "周日全量+周三增量"
+    ],
     "answer": 1,
-    "explanation": "场景题。增量备份恢复需：最近全量(周日)+全量后所有增量(周一/二/三)。增量只备份上次任意备份后的变化，需逐个恢复。"
+    "explanation": "场景题。增量备份恢复需：最近全量(周日)+全量后所有增量(周一/二/三)。增量只备份上次任意备份后的变化，需逐个恢复。",
+    "topic": "bcp-drp",
+    "type": "scenario"
   },
   {
     "id": "eng-8",
     "category": "engineering",
     "question": "某安全产品声称通过了CC EAL5认证。这比EAL4更高，说明？",
-    "options": ["速度更快", "安全保证程度更高(半形式化验证)", "价格更便宜", "功能更多"],
+    "options": [
+      "速度更快",
+      "安全保证程度更高(半形式化验证)",
+      "价格更便宜",
+      "功能更多"
+    ],
     "answer": 1,
-    "explanation": "场景题。EAL5>EAL4，保证程度更高(半形式化设计与测试)。EAL4是商业最高实用级，EAL5-7多用于军方/高安全产品。"
+    "explanation": "场景题。EAL5>EAL4，保证程度更高(半形式化设计与测试)。EAL4是商业最高实用级，EAL5-7多用于军方/高安全产品。",
+    "topic": "engineering-detail",
+    "type": "scenario"
   }
 ]

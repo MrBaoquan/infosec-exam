@@ -3,351 +3,735 @@
     "id": "network-1",
     "category": "network",
     "question": "IPSec 协议中，提供机密性（加密）的是哪个协议？",
-    "options": ["AH", "ESP", "IKE", "ISAKMP"],
+    "options": [
+      "AH",
+      "ESP",
+      "IKE",
+      "ISAKMP"
+    ],
     "answer": 1,
-    "explanation": "AH（认证头）仅提供完整性/认证，不加密；ESP（封装安全载荷）提供机密性+完整性。"
+    "explanation": "AH（认证头）仅提供完整性/认证，不加密；ESP（封装安全载荷）提供机密性+完整性。",
+    "topic": "vpn-ipsec",
+    "type": "concept"
   },
   {
     "id": "network-2",
     "category": "network",
     "question": "IDS 与 IPS 的关键区别是？",
-    "options": ["IDS 串联可阻断，IPS 旁路仅告警", "IDS 旁路仅告警，IPS 串联可阻断", "两者完全相同", "IDS 用于加密，IPS 用于认证"],
+    "options": [
+      "IDS 串联可阻断，IPS 旁路仅告警",
+      "IDS 旁路仅告警，IPS 串联可阻断",
+      "两者完全相同",
+      "IDS 用于加密，IPS 用于认证"
+    ],
     "answer": 1,
-    "explanation": "IDS 入侵检测旁路部署仅告警；IPS 入侵防御串联部署可阻断。"
+    "explanation": "IDS 入侵检测旁路部署仅告警；IPS 入侵防御串联部署可阻断。",
+    "topic": "ids-ips",
+    "type": "concept"
   },
   {
     "id": "network-3",
     "category": "network",
     "question": "下列哪种入侵检测方式依靠已知攻击特征库，只能检测已知攻击？",
-    "options": ["异常检测", "误用检测", "行为检测", "启发式检测"],
+    "options": [
+      "异常检测",
+      "误用检测",
+      "行为检测",
+      "启发式检测"
+    ],
     "answer": 1,
-    "explanation": "误用检测=特征匹配，只能检测已知攻击；异常检测=基于基线，可发现未知攻击但误报高。"
+    "explanation": "误用检测=特征匹配，只能检测已知攻击；异常检测=基于基线，可发现未知攻击但误报高。",
+    "topic": "ids-ips",
+    "type": "concept"
   },
   {
     "id": "network-4",
     "category": "network",
     "question": "HTTPS 采用的加密协议是？",
-    "options": ["SSL 2.0", "SSL 3.0", "TLS", "IPSec"],
+    "options": [
+      "SSL 2.0",
+      "SSL 3.0",
+      "TLS",
+      "IPSec"
+    ],
     "answer": 2,
-    "explanation": "HTTPS = HTTP over TLS。SSL 各版本已废弃，现代使用 TLS 1.2/1.3。"
+    "explanation": "HTTPS = HTTP over TLS。SSL 各版本已废弃，现代使用 TLS 1.2/1.3。",
+    "topic": "tls-https",
+    "type": "concept"
   },
   {
     "id": "network-5",
     "category": "network",
     "question": "防范 ARP 欺骗的有效措施是？",
-    "options": ["部署 DNSSEC", "ARP 静态绑定", "启用 HTTPS", "修改默认端口"],
+    "options": [
+      "部署 DNSSEC",
+      "ARP 静态绑定",
+      "启用 HTTPS",
+      "修改默认端口"
+    ],
     "answer": 1,
-    "explanation": "ARP 欺骗针对 ARP 表，可通过静态 ARP 绑定、动态 ARP 检测(DAI)防御。DNSSEC 防 DNS 欺骗。"
+    "explanation": "ARP 欺骗针对 ARP 表，可通过静态 ARP 绑定、动态 ARP 检测(DAI)防御。DNSSEC 防 DNS 欺骗。",
+    "topic": "protocol-security",
+    "type": "concept"
   },
   {
     "id": "network-6",
     "category": "network",
     "question": "IPSec 的 SA（安全关联）是单向的，由以下哪三项唯一标识？",
-    "options": ["SPI、源IP、协议", "SPI、目的IP、协议", "SPI、目的IP、端口", "源IP、目的IP、协议"],
+    "options": [
+      "SPI、源IP、协议",
+      "SPI、目的IP、协议",
+      "SPI、目的IP、端口",
+      "源IP、目的IP、协议"
+    ],
     "answer": 1,
-    "explanation": "SA 三元组：SPI（安全参数索引）、目的IP、协议（AH/ESP）。SA 是单向的，双向通信需两个 SA。"
+    "explanation": "SA 三元组：SPI（安全参数索引）、目的IP、协议（AH/ESP）。SA 是单向的，双向通信需两个 SA。",
+    "topic": "vpn-ipsec",
+    "type": "concept"
   },
   {
     "id": "network-7",
     "category": "network",
     "question": "关于防火墙 DMZ 区域，下列哪个规则是正确的？",
-    "options": ["DMZ 可主动访问内网", "外网可直接访问内网", "DMZ 不能主动访问内网", "内网不能访问 DMZ"],
+    "options": [
+      "DMZ 可主动访问内网",
+      "外网可直接访问内网",
+      "DMZ 不能主动访问内网",
+      "内网不能访问 DMZ"
+    ],
     "answer": 2,
-    "explanation": "DMZ 规则：内网可访问 DMZ；外网只能访问 DMZ；DMZ 不能主动访问内网（防 DMZ 被攻陷后跳板攻击内网）。"
+    "explanation": "DMZ 规则：内网可访问 DMZ；外网只能访问 DMZ；DMZ 不能主动访问内网（防 DMZ 被攻陷后跳板攻击内网）。",
+    "topic": "firewall",
+    "type": "concept"
   },
   {
     "id": "network-8",
     "category": "network",
     "question": "SYN Flood 攻击利用了 TCP 三次握手的什么机制？",
-    "options": ["全连接耗尽", "半连接耗尽", "FIN 包伪造", "序列号预测"],
+    "options": [
+      "全连接耗尽",
+      "半连接耗尽",
+      "FIN 包伪造",
+      "序列号预测"
+    ],
     "answer": 1,
-    "explanation": "SYN Flood 发送大量 SYN 但不完成第三次握手，耗尽服务器半连接队列。防御：SYN Cookie。"
+    "explanation": "SYN Flood 发送大量 SYN 但不完成第三次握手，耗尽服务器半连接队列。防御：SYN Cookie。",
+    "topic": "protocol-security",
+    "type": "concept"
   },
   {
     "id": "network-9",
     "category": "network",
     "question": "防御重放攻击的有效措施是？",
-    "options": ["加密", "时间戳/Nonce/一次性令牌", "数字签名", "哈希"],
+    "options": [
+      "加密",
+      "时间戳/Nonce/一次性令牌",
+      "数字签名",
+      "哈希"
+    ],
     "answer": 1,
-    "explanation": "重放攻击防：时间戳、序列号/Nonce、一次性令牌。加密/签名不能防重放（重放的是合法报文）。"
+    "explanation": "重放攻击防：时间戳、序列号/Nonce、一次性令牌。加密/签名不能防重放（重放的是合法报文）。",
+    "topic": "protocol-security",
+    "type": "concept"
   },
   {
     "id": "network-10",
     "category": "network",
     "question": "渗透测试与黑客攻击的根本区别是？",
-    "options": ["使用工具不同", "经授权、不破坏、出报告", "技术水平不同", "目标不同"],
+    "options": [
+      "使用工具不同",
+      "经授权、不破坏、出报告",
+      "技术水平不同",
+      "目标不同"
+    ],
     "answer": 1,
-    "explanation": "渗透测试：经授权、不破坏系统、产出报告。分黑盒/白盒/灰盒。"
+    "explanation": "渗透测试：经授权、不破坏系统、产出报告。分黑盒/白盒/灰盒。",
+    "topic": "security-assessment",
+    "type": "concept"
   },
   {
     "id": "network-11",
     "category": "network",
     "question": "IPSec 传输模式适合哪种场景？",
-    "options": ["网关到网关", "主机到主机", "客户端到网关", "任意场景"],
+    "options": [
+      "网关到网关",
+      "主机到主机",
+      "客户端到网关",
+      "任意场景"
+    ],
     "answer": 1,
-    "explanation": "传输模式(Transport)只保护IP载荷，原IP头不变，适合主机到主机。隧道模式(Tunnel)保护整个包，适合网关间。"
+    "explanation": "传输模式(Transport)只保护IP载荷，原IP头不变，适合主机到主机。隧道模式(Tunnel)保护整个包，适合网关间。",
+    "topic": "vpn-ipsec",
+    "type": "concept"
   },
   {
     "id": "network-12",
     "category": "network",
     "question": "下一代防火墙(NGFW)相比传统防火墙的增强是？",
-    "options": ["只做包过滤", "集成IDS/IPS/应用识别/深度检测", "速度更慢", "不支持日志"],
+    "options": [
+      "只做包过滤",
+      "集成IDS/IPS/应用识别/深度检测",
+      "速度更慢",
+      "不支持日志"
+    ],
     "answer": 1,
-    "explanation": "NGFW(Next-Generation Firewall)集成应用层识别、IDS/IPS、深度包检测(DPI)，多层防护。"
+    "explanation": "NGFW(Next-Generation Firewall)集成应用层识别、IDS/IPS、深度包检测(DPI)，多层防护。",
+    "topic": "firewall",
+    "type": "concept"
   },
   {
     "id": "network-13",
     "category": "network",
     "question": "HSTS 头的作用是？",
-    "options": ["允许降级到HTTP", "强制浏览器使用HTTPS，防SSL剥离", "加密Cookie", "防XSS"],
+    "options": [
+      "允许降级到HTTP",
+      "强制浏览器使用HTTPS，防SSL剥离",
+      "加密Cookie",
+      "防XSS"
+    ],
     "answer": 1,
-    "explanation": "HSTS(HTTP Strict Transport Security)强制浏览器仅用HTTPS访问，防止SSL剥离降级攻击。"
+    "explanation": "HSTS(HTTP Strict Transport Security)强制浏览器仅用HTTPS访问，防止SSL剥离降级攻击。",
+    "topic": "tls-https",
+    "type": "concept"
   },
   {
     "id": "network-14",
     "category": "network",
     "question": "蜜罐(Honeypot)的主要价值是？",
-    "options": ["直接阻断攻击", "收集攻击手法与预警", "加密流量", "替代防火墙"],
+    "options": [
+      "直接阻断攻击",
+      "收集攻击手法与预警",
+      "加密流量",
+      "替代防火墙"
+    ],
     "answer": 1,
-    "explanation": "蜜罐是伪装的靶机，主动吸引攻击，收集攻击手法、转移注意力、早期预警，属主动防御。"  },
+    "explanation": "蜜罐是伪装的靶机，主动吸引攻击，收集攻击手法、转移注意力、早期预警，属主动防御。",
+    "topic": "active-defense",
+    "type": "concept"
+  },
   {
     "id": "network-15",
     "category": "network",
     "question": "IPSec 工作在 OSI 模型的哪一层？",
-    "options": ["数据链路层", "网络层", "传输层", "应用层"],
+    "options": [
+      "数据链路层",
+      "网络层",
+      "传输层",
+      "应用层"
+    ],
     "answer": 1,
-    "explanation": "IPSec工作在网络层(第3层)。TLS在传输层，HTTPS在应用层，ARP在数据链路层。"
+    "explanation": "IPSec工作在网络层(第3层)。TLS在传输层，HTTPS在应用层，ARP在数据链路层。",
+    "topic": "vpn-ipsec",
+    "type": "parameter"
   },
   {
     "id": "network-16",
     "category": "network",
     "question": "ARP 协议工作在 OSI 模型的哪一层？",
-    "options": ["物理层", "数据链路层", "网络层", "传输层"],
+    "options": [
+      "物理层",
+      "数据链路层",
+      "网络层",
+      "传输层"
+    ],
     "answer": 1,
-    "explanation": "ARP做IP到MAC地址映射，工作在数据链路层(第2层)。虽与IP相关但不属网络层。"
+    "explanation": "ARP做IP到MAC地址映射，工作在数据链路层(第2层)。虽与IP相关但不属网络层。",
+    "topic": "protocol-security",
+    "type": "parameter"
   },
   {
     "id": "network-17",
     "category": "network",
     "question": "OSI 模型中，负责数据加密和格式转换的是哪一层？",
-    "options": ["应用层", "表示层", "会话层", "传输层"],
+    "options": [
+      "应用层",
+      "表示层",
+      "会话层",
+      "传输层"
+    ],
     "answer": 1,
-    "explanation": "表示层(第6层)负责数据格式转换、加密、压缩。SSL/TLS的部分功能涉及表示层。"
+    "explanation": "表示层(第6层)负责数据格式转换、加密、压缩。SSL/TLS的部分功能涉及表示层。",
+    "topic": "protocol-security",
+    "type": "parameter"
   },
   {
     "id": "network-18",
     "category": "network",
     "question": "TEMPEST 技术用于防范？",
-    "options": ["网络攻击", "电磁泄露", "恶意代码", "口令破解"],
+    "options": [
+      "网络攻击",
+      "电磁泄露",
+      "恶意代码",
+      "口令破解"
+    ],
     "answer": 1,
-    "explanation": "TEMPEST是防电磁泄露技术，防止通过电磁辐射窃取信息。"
+    "explanation": "TEMPEST是防电磁泄露技术，防止通过电磁辐射窃取信息。",
+    "topic": "physical-security",
+    "type": "concept"
   },
   {
     "id": "network-19",
     "category": "network",
     "question": "涉密存储介质销毁应采用？",
-    "options": ["格式化", "删除文件", "物理粉碎或消磁", "加密"],
+    "options": [
+      "格式化",
+      "删除文件",
+      "物理粉碎或消磁",
+      "加密"
+    ],
     "answer": 2,
-    "explanation": "涉密介质必须物理粉碎或消磁。格式化/删除不安全(数据可恢复)。"
+    "explanation": "涉密介质必须物理粉碎或消磁。格式化/删除不安全(数据可恢复)。",
+    "topic": "physical-security",
+    "type": "concept"
   },
   {
     "id": "network-20",
     "category": "network",
     "question": "网闸(Gap)能防网络攻击穿透的核心原理是？",
-    "options": ["加密传输", "任一时刻只连通一端", "防火墙过滤", "VLAN隔离"],
+    "options": [
+      "加密传输",
+      "任一时刻只连通一端",
+      "防火墙过滤",
+      "VLAN隔离"
+    ],
     "answer": 1,
-    "explanation": "网闸硬件开关切换，任一时刻只与一端连接，物理上不存在同时连通的通路。"
+    "explanation": "网闸硬件开关切换，任一时刻只与一端连接，物理上不存在同时连通的通路。",
+    "topic": "physical-isolation",
+    "type": "concept"
   },
   {
     "id": "network-21",
     "category": "network",
     "question": "Syslog 日志消息的严重等级(severity)数值与严重程度的关系是？",
-    "options": ["数值越大越严重", "数值越小越严重", "偶数严重", "与数值无关"],
+    "options": [
+      "数值越大越严重",
+      "数值越小越严重",
+      "偶数严重",
+      "与数值无关"
+    ],
     "answer": 1,
-    "explanation": "severity范围0-7，0最严重(emerg)，7最轻微(debug)，数值越小越严重。"
+    "explanation": "severity范围0-7，0最严重(emerg)，7最轻微(debug)，数值越小越严重。",
+    "topic": "security-audit",
+    "type": "parameter"
   },
   {
     "id": "network-22",
     "category": "network",
     "question": "PDRR 模型相比 PDR 增加了哪个环节？",
-    "options": ["分析", "恢复", "防护", "检测"],
+    "options": [
+      "分析",
+      "恢复",
+      "防护",
+      "检测"
+    ],
     "answer": 1,
-    "explanation": "PDR=防护→检测→响应；PDRR加恢复(Recovery)。APPDRR再加分析。"
+    "explanation": "PDR=防护→检测→响应；PDRR加恢复(Recovery)。APPDRR再加分析。",
+    "topic": "security-system-model",
+    "type": "concept"
   },
   {
     "id": "network-23",
     "category": "network",
     "question": "软件白名单技术的优势是？",
-    "options": ["速度快", "可有效防未知恶意代码(0day)", "维护简单", "不需更新"],
+    "options": [
+      "速度快",
+      "可有效防未知恶意代码(0day)",
+      "维护简单",
+      "不需更新"
+    ],
     "answer": 1,
-    "explanation": "白名单只放行已知安全软件，其余一律阻止，可防未知恶意代码(0day)。黑名单只能拦已知。"
+    "explanation": "白名单只放行已知安全软件，其余一律阻止，可防未知恶意代码(0day)。黑名单只能拦已知。",
+    "topic": "ids-ips",
+    "type": "concept"
   },
   {
     "id": "network-24",
     "category": "network",
     "question": "渗透测试的正确流程顺序是？",
-    "options": ["委托受理→准备→实施→综合评估→结题", "准备→实施→委托→评估→结题", "实施→评估→委托→准备→结题", "委托→实施→评估→准备→结题"],
+    "options": [
+      "委托受理→准备→实施→综合评估→结题",
+      "准备→实施→委托→评估→结题",
+      "实施→评估→委托→准备→结题",
+      "委托→实施→评估→准备→结题"
+    ],
     "answer": 0,
-    "explanation": "渗透测试5阶段：委托受理→准备→实施→综合评估→结题。必须先委托授权。"
+    "explanation": "渗透测试5阶段：委托受理→准备→实施→综合评估→结题。必须先委托授权。",
+    "topic": "security-assessment",
+    "type": "concept"
   },
   {
     "id": "network-25",
     "category": "network",
     "question": "网络流量采集中，交换机端口镜像(SPAN)的作用是？",
-    "options": ["修改原始流量", "将端口流量复制到审计口", "阻断异常流量", "加密流量"],
+    "options": [
+      "修改原始流量",
+      "将端口流量复制到审计口",
+      "阻断异常流量",
+      "加密流量"
+    ],
     "answer": 1,
-    "explanation": "SPAN将指定端口流量复制一份到镜像口，审计设备接镜像口收到流量副本，不影响生产。"
+    "explanation": "SPAN将指定端口流量复制一份到镜像口，审计设备接镜像口收到流量副本，不影响生产。",
+    "topic": "security-audit",
+    "type": "parameter"
   },
   {
     "id": "network-26",
     "category": "network",
     "question": "网络生存模型的3R能力是指？",
-    "options": ["抵抗/识别/恢复", "读/写/执行", "冗余/备份/容灾", "检测/阻断/告警"],
+    "options": [
+      "抵抗/识别/恢复",
+      "读/写/执行",
+      "冗余/备份/容灾",
+      "检测/阻断/告警"
+    ],
     "answer": 0,
-    "explanation": "网络生存3R：抵抗(Resistance)、识别(Recognition)、恢复(Recovery)。系统被攻击后仍能提供核心服务。"
+    "explanation": "网络生存3R：抵抗(Resistance)、识别(Recognition)、恢复(Recovery)。系统被攻击后仍能提供核心服务。",
+    "topic": "security-system-model",
+    "type": "concept"
   },
   {
     "id": "network-27",
     "category": "network",
     "question": "下列关于零信任(Zero Trust)的说法，正确的是？",
-    "options": ["信任内网不信任外网", "从不信任，始终验证", "只需一次登录", "依赖防火墙边界"],
+    "options": [
+      "信任内网不信任外网",
+      "从不信任，始终验证",
+      "只需一次登录",
+      "依赖防火墙边界"
+    ],
     "answer": 1,
-    "explanation": "零信任核心理念：从不信任，始终验证。不再区分内外网，所有访问都需认证授权，持续验证。"
+    "explanation": "零信任核心理念：从不信任，始终验证。不再区分内外网，所有访问都需认证授权，持续验证。",
+    "topic": "security-architecture",
+    "type": "concept"
   },
   {
     "id": "network-28",
     "category": "network",
     "question": "Kill Chain 攻击模型的阶段数和最后阶段是？",
-    "options": ["5阶段，最后是行动", "7阶段，最后是行动", "7阶段，最后是侦察", "6阶段，最后是恢复"],
+    "options": [
+      "5阶段，最后是行动",
+      "7阶段，最后是行动",
+      "7阶段，最后是侦察",
+      "6阶段，最后是恢复"
+    ],
     "answer": 1,
-    "explanation": "Kill Chain共7阶段：侦察→武器化→投递→利用→安装→C2(命令控制)→行动(目标达成)。"
+    "explanation": "Kill Chain共7阶段：侦察→武器化→投递→利用→安装→C2(命令控制)→行动(目标达成)。",
+    "topic": "security-architecture",
+    "type": "parameter"
   },
   {
     "id": "network-29",
     "category": "network",
     "question": "SOC(安全运营中心)的核心职能是？",
-    "options": ["仅部署防火墙", "7x24小时安全监控与响应", "仅做日志存储", "仅做渗透测试"],
+    "options": [
+      "仅部署防火墙",
+      "7x24小时安全监控与响应",
+      "仅做日志存储",
+      "仅做渗透测试"
+    ],
     "answer": 1,
-    "explanation": "SOC是7x24小时安全监控响应团队，职能：监控→检测→分析→响应→恢复。"
+    "explanation": "SOC是7x24小时安全监控响应团队，职能：监控→检测→分析→响应→恢复。",
+    "topic": "security-architecture",
+    "type": "concept"
   },
   {
     "id": "network-30",
     "category": "network",
     "question": "某企业网络分内网(192.168.1.0/24)、DMZ(Web服务器10.0.0.10)、外网。防火墙需满足：外网可访问DMZ Web服务；DMZ不能主动访问内网。下列ACL规则正确的是？",
-    "options": ["permit DMZ→内网 any", "permit 外网→10.0.0.10 80,443; deny DMZ→192.168.1.0/24", "permit 内网→外网 any; permit DMZ→内网 any", "deny all"],
+    "options": [
+      "permit DMZ→内网 any",
+      "permit 外网→10.0.0.10 80,443; deny DMZ→192.168.1.0/24",
+      "permit 内网→外网 any; permit DMZ→内网 any",
+      "deny all"
+    ],
     "answer": 1,
-    "explanation": "场景题。DMZ规则：外网只访问DMZ的80/443；DMZ不能主动访问内网(防跳板)。最后应有deny any any(默认拒绝)。"
+    "explanation": "场景题。DMZ规则：外网只访问DMZ的80/443；DMZ不能主动访问内网(防跳板)。最后应有deny any any(默认拒绝)。",
+    "topic": "firewall",
+    "type": "comprehensive"
   },
   {
     "id": "network-31",
     "category": "network",
     "question": "某公司总部和分公司需通过Internet安全互联，建立站点到站点VPN。应选用的IPSec模式和协议是？",
-    "options": ["传输模式+AH", "隧道模式+ESP", "传输模式+ESP", "隧道模式+AH"],
+    "options": [
+      "传输模式+AH",
+      "隧道模式+ESP",
+      "传输模式+ESP",
+      "隧道模式+AH"
+    ],
     "answer": 1,
-    "explanation": "场景题。站点到站点用隧道模式(保护整个IP包,加新头)；需加密用ESP(非AH, AH不加密)。隧道模式+ESP。"
+    "explanation": "场景题。站点到站点用隧道模式(保护整个IP包,加新头)；需加密用ESP(非AH, AH不加密)。隧道模式+ESP。",
+    "topic": "vpn-ipsec",
+    "type": "scenario"
   },
   {
     "id": "network-32",
     "category": "network",
     "question": "某IDS检测到大量来自不同IP的SYN包，目标端口80，无后续ACK完成握手。这最可能是？",
-    "options": ["端口扫描", "SYN Flood DDoS", "SQL注入", "XSS"],
+    "options": [
+      "端口扫描",
+      "SYN Flood DDoS",
+      "SQL注入",
+      "XSS"
+    ],
     "answer": 1,
-    "explanation": "场景题。大量SYN无ACK=半连接耗尽=SYN Flood。不同IP=分布式(DDoS)。防护：SYN Cookie。"
+    "explanation": "场景题。大量SYN无ACK=半连接耗尽=SYN Flood。不同IP=分布式(DDoS)。防护：SYN Cookie。",
+    "topic": "protocol-security",
+    "type": "scenario"
   },
   {
     "id": "network-33",
     "category": "network",
     "question": "某企业部署了IDS(旁路)后发现攻击告警频繁但无人处理。最有效的改进是？",
-    "options": ["升级为IPS(串联阻断)", "增加更多IDS", "部署WAF", "更换品牌"],
+    "options": [
+      "升级为IPS(串联阻断)",
+      "增加更多IDS",
+      "部署WAF",
+      "更换品牌"
+    ],
     "answer": 0,
-    "explanation": "场景题。IDS旁路只告警不阻断，需人工处理→告警堆积。升级为IPS(串联)可自动阻断。但需注意IPS误报会中断业务。"
+    "explanation": "场景题。IDS旁路只告警不阻断，需人工处理→告警堆积。升级为IPS(串联)可自动阻断。但需注意IPS误报会中断业务。",
+    "topic": "ids-ips",
+    "type": "scenario"
   },
   {
     "id": "network-34",
     "category": "network",
     "question": "某网站从HTTP升级到HTTPS后，仍发现部分流量被中间人窃听。可能的原因是？",
-    "options": ["TLS版本过低或密码套件弱", "服务器内存不足", "数据库慢查询", "DNS解析错误"],
+    "options": [
+      "TLS版本过低或密码套件弱",
+      "服务器内存不足",
+      "数据库慢查询",
+      "DNS解析错误"
+    ],
     "answer": 0,
-    "explanation": "场景题。HTTPS但仍被窃听→可能TLS版本低(SSL 3.0/TLS 1.0)或弱密码套件(RC4/DES)被破解/降级攻击。应升级TLS 1.2/1.3+强套件。"
+    "explanation": "场景题。HTTPS但仍被窃听→可能TLS版本低(SSL 3.0/TLS 1.0)或弱密码套件(RC4/DES)被破解/降级攻击。应升级TLS 1.2/1.3+强套件。",
+    "topic": "tls-https",
+    "type": "scenario"
   },
   {
     "id": "network-35",
     "category": "network",
     "question": "某政府涉密网络与互联网之间需实现最高级别的隔离。应采用？",
-    "options": ["防火墙", "网闸(物理隔离)", "VLAN", "VPN"],
+    "options": [
+      "防火墙",
+      "网闸(物理隔离)",
+      "VLAN",
+      "VPN"
+    ],
     "answer": 1,
-    "explanation": "场景题。涉密网与互联网需物理隔离(非逻辑隔离)。网闸(硬件开关切换,任一时刻只连一端)是最高级别隔离。防火墙/VLAN是逻辑隔离。"
+    "explanation": "场景题。涉密网与互联网需物理隔离(非逻辑隔离)。网闸(硬件开关切换,任一时刻只连一端)是最高级别隔离。防火墙/VLAN是逻辑隔离。",
+    "topic": "physical-isolation",
+    "type": "comprehensive"
   },
   {
     "id": "network-36",
     "category": "network",
     "question": "某公司发现内网多台主机被同一木马感染，溯源发现攻击者通过修改内网DNS解析将流量导向恶意服务器。该攻击是？",
-    "options": ["ARP欺骗", "DNS欺骗", "SYN Flood", "CSRF"],
+    "options": [
+      "ARP欺骗",
+      "DNS欺骗",
+      "SYN Flood",
+      "CSRF"
+    ],
     "answer": 1,
-    "explanation": "场景题。修改DNS解析将流量导向恶意服务器=DNS欺骗/DNS劫持。防护：DNSSEC(数字签名验证)。ARP欺骗是改MAC映射。"
+    "explanation": "场景题。修改DNS解析将流量导向恶意服务器=DNS欺骗/DNS劫持。防护：DNSSEC(数字签名验证)。ARP欺骗是改MAC映射。",
+    "topic": "protocol-security",
+    "type": "scenario"
   },
   {
     "id": "network-37",
     "category": "network",
     "question": "某安全运营中心(SOC)收到大量告警，分析员发现其中90%是误报。最有效的改进措施是？",
-    "options": ["关闭告警", "部署SOAR自动化降噪+关联分析", "增加更多IDS", "更换为IPS"],
+    "options": [
+      "关闭告警",
+      "部署SOAR自动化降噪+关联分析",
+      "增加更多IDS",
+      "更换为IPS"
+    ],
     "answer": 1,
-    "explanation": "场景题。大量误报→用SIEM关联分析+SOAR自动化降噪。关闭告警会漏报，增加IDS会更多误报。关联分析可将分散告警关联为真实事件。"
+    "explanation": "场景题。大量误报→用SIEM关联分析+SOAR自动化降噪。关闭告警会漏报，增加IDS会更多误报。关联分析可将分散告警关联为真实事件。",
+    "topic": "security-architecture",
+    "type": "scenario"
   },
   {
     "id": "network-38",
     "category": "network",
     "question": "某企业实施零信任架构后，员工访问内部应用不再区分内外网。下列不属于零信任核心原则的是？",
-    "options": ["持续验证", "最小权限", "默认拒绝", "信任内网"],
+    "options": [
+      "持续验证",
+      "最小权限",
+      "默认拒绝",
+      "信任内网"
+    ],
     "answer": 3,
-    "explanation": "概念题。零信任核心：从不信任始终验证/最小权限/默认拒绝/持续验证。'信任内网'正是零信任要消除的旧模式。"
+    "explanation": "概念题。零信任核心：从不信任始终验证/最小权限/默认拒绝/持续验证。'信任内网'正是零信任要消除的旧模式。",
+    "topic": "security-architecture",
+    "type": "scenario"
   },
   {
     "id": "network-39",
     "category": "network",
     "question": "某企业需要对外提供Web服务，同时保护内网。下列防火墙部署方案最合理的是？",
-    "options": ["Web服务器放内网，开放外网访问", "Web服务器放DMZ，内网可访问DMZ，DMZ不可访问内网", "不部署防火墙", "所有服务器都放DMZ"],
+    "options": [
+      "Web服务器放内网，开放外网访问",
+      "Web服务器放DMZ，内网可访问DMZ，DMZ不可访问内网",
+      "不部署防火墙",
+      "所有服务器都放DMZ"
+    ],
     "answer": 1,
-    "explanation": "场景题。Web服务器放DMZ(对外服务)，内网可访问DMZ，DMZ不可主动访问内网(防跳板)。这是标准三接口防火墙DMZ部署。"
+    "explanation": "场景题。Web服务器放DMZ(对外服务)，内网可访问DMZ，DMZ不可主动访问内网(防跳板)。这是标准三接口防火墙DMZ部署。",
+    "topic": "firewall",
+    "type": "comprehensive"
   },
   {
     "id": "network-40",
     "category": "network",
     "question": "某公司用Tcpdump抓包分析网络异常，命令 `tcpdump -i eth0 'tcp port 80 and host 1.2.3.4'` 的含义是？",
-    "options": ["抓所有80端口的包", "抓与1.2.3.4通信的80端口TCP包", "抓1.2.3.4的所有包", "抓所有UDP包"],
+    "options": [
+      "抓所有80端口的包",
+      "抓与1.2.3.4通信的80端口TCP包",
+      "抓1.2.3.4的所有包",
+      "抓所有UDP包"
+    ],
     "answer": 1,
-    "explanation": "场景题。tcpdump过滤表达式：tcp port 80 AND host 1.2.3.4 = 只抓与1.2.3.4通信的80端口TCP包。BPF语法支持and/or/not组合。"
+    "explanation": "场景题。tcpdump过滤表达式：tcp port 80 AND host 1.2.3.4 = 只抓与1.2.3.4通信的80端口TCP包。BPF语法支持and/or/not组合。",
+    "topic": "security-audit",
+    "type": "scenario"
   },
   {
     "id": "network-41",
     "category": "network",
     "question": "某系统被APT攻击者长期潜伏，攻击者通过C2服务器远程控制被控主机。C2的中文是？",
-    "options": ["命令与控制", "证书中心", "通信加密", "内容审查"],
+    "options": [
+      "命令与控制",
+      "证书中心",
+      "通信加密",
+      "内容审查"
+    ],
     "answer": 0,
-    "explanation": "概念题。C2=Command and Control(命令与控制)。APT攻击者通过C2服务器远程控制被控主机，下发指令、窃取数据。"
+    "explanation": "概念题。C2=Command and Control(命令与控制)。APT攻击者通过C2服务器远程控制被控主机，下发指令、窃取数据。",
+    "topic": "security-architecture",
+    "type": "scenario"
   },
   {
     "id": "network-42",
     "category": "network",
     "question": "某企业网络需实现：内网用户可访问互联网，但互联网不能主动访问内网。下列NAT配置正确的是？",
-    "options": ["静态NAT(一对一映射)", "动态NAT+PAT(端口地址转换)", "不配置NAT", "双向NAT"],
+    "options": [
+      "静态NAT(一对一映射)",
+      "动态NAT+PAT(端口地址转换)",
+      "不配置NAT",
+      "双向NAT"
+    ],
     "answer": 1,
-    "explanation": "场景题。PAT(端口地址转换)让多内网IP共享一个公网IP+不同端口。外网无法主动连内网(因内网IP不公开)，实现单向访问。"
+    "explanation": "场景题。PAT(端口地址转换)让多内网IP共享一个公网IP+不同端口。外网无法主动连内网(因内网IP不公开)，实现单向访问。",
+    "topic": "protocol-security",
+    "type": "comprehensive"
   },
   {
     "id": "network-43",
     "category": "network",
     "question": "Kill Chain模型中，攻击者向目标发送钓鱼邮件阶段属于？",
-    "options": ["侦察", "武器化", "投递", "利用"],
+    "options": [
+      "侦察",
+      "武器化",
+      "投递",
+      "利用"
+    ],
     "answer": 2,
-    "explanation": "场景题。Kill Chain 7阶段：侦察→武器化→投递→利用→安装→C2→行动。钓鱼邮件发送=投递阶段(将武器化载荷送达目标)。"
+    "explanation": "场景题。Kill Chain 7阶段：侦察→武器化→投递→利用→安装→C2→行动。钓鱼邮件发送=投递阶段(将武器化载荷送达目标)。",
+    "topic": "security-architecture",
+    "type": "scenario"
   },
   {
     "id": "network-44",
     "category": "network",
     "question": "某企业部署了SIEM系统收集全网日志。SIEM的核心价值是？",
-    "options": ["存储日志节省空间", "关联分析多源日志发现复合攻击", "替代防火墙", "加速网络传输"],
+    "options": [
+      "存储日志节省空间",
+      "关联分析多源日志发现复合攻击",
+      "替代防火墙",
+      "加速网络传输"
+    ],
     "answer": 1,
-    "explanation": "概念题。SIEM核心价值是关联分析——单条日志看不出问题，多源关联才能还原攻击链。如'登录失败1000次+登录成功+数据导出'关联后=完整攻击。"
+    "explanation": "概念题。SIEM核心价值是关联分析——单条日志看不出问题，多源关联才能还原攻击链。如'登录失败1000次+登录成功+数据导出'关联后=完整攻击。",
+    "topic": "security-architecture",
+    "type": "scenario"
+  },
+  {
+    "id": "network-45",
+    "category": "network",
+    "question": "某企业希望员工无线网络按个人账号认证，员工离职后可单独撤销访问权限。最合适的方案是？",
+    "options": [
+      "隐藏SSID并使用MAC地址白名单",
+      "WPA2-Personal并由全员共享PSK",
+      "WPA2/WPA3-Enterprise结合802.1X和RADIUS",
+      "开放热点并在登录后使用HTTPS"
+    ],
+    "answer": 2,
+    "explanation": "企业级802.1X结合RADIUS可按用户或设备独立认证和撤销，答案C正确。A中的SSID可被发现且MAC可伪造；B的共享PSK无法单独撤销员工；D未在接入阶段实施可靠认证和隔离。",
+    "topic": "wireless-security",
+    "type": "scenario"
+  },
+  {
+    "id": "network-46",
+    "category": "network",
+    "question": "关于WEP、WPA2和WPA3的说法，正确的是？",
+    "options": [
+      "WEP使用AES-CCMP，因此仍适合企业使用",
+      "WPA2-Personal使用SAE抵抗离线字典攻击",
+      "WPA3-Personal使用SAE，WEP因RC4和短IV等问题已淘汰",
+      "WPA3取消身份认证，只依赖隐藏SSID"
+    ],
+    "answer": 2,
+    "explanation": "C正确：WPA3-Personal使用SAE，WEP已不安全。A错误，WEP使用RC4且IV设计薄弱；B错误，SAE属于WPA3-Personal，WPA2-Personal使用PSK握手；D错误，隐藏SSID不是认证机制。",
+    "topic": "wireless-security",
+    "type": "concept"
+  },
+  {
+    "id": "network-47",
+    "category": "network",
+    "question": "攻击者在办公楼附近架设与企业同名的无线热点，诱导员工连接并窃取凭据。这种攻击称为？",
+    "options": [
+      "Evil Twin",
+      "SYN Flood",
+      "DNS放大",
+      "VLAN跳跃"
+    ],
+    "answer": 0,
+    "explanation": "Evil Twin通过冒充可信热点诱骗终端，答案A正确。SYN Flood和DNS放大属于拒绝服务；VLAN跳跃针对交换网络划分，均不符合伪造无线热点场景。",
+    "topic": "wireless-security",
+    "type": "scenario"
+  },
+  {
+    "id": "network-48",
+    "category": "network",
+    "question": "WPA2四次握手的主要作用是？",
+    "options": [
+      "在无线链路中直接传输PSK明文",
+      "确认双方掌握主密钥材料并派生、安装会话密钥",
+      "为终端分配IP地址",
+      "隐藏SSID以防止扫描"
+    ],
+    "answer": 1,
+    "explanation": "四次握手用于确认密钥材料并派生、安装会话密钥，答案B正确。它不直接传输PSK明文；IP地址通常由DHCP分配；隐藏SSID与密钥协商无关。",
+    "topic": "wireless-security",
+    "type": "concept"
+  },
+  {
+    "id": "network-49",
+    "category": "network",
+    "question": "某公司员工、访客和物联网设备共用同一无线网络。下列综合整改方案最合理的是？",
+    "options": [
+      "仅延长共享口令，继续使用同一网段",
+      "分别设置SSID和VLAN，员工使用企业级认证，访客禁止访问内网，并监测非法AP",
+      "隐藏SSID并关闭所有无线日志",
+      "只在出口增加带宽，不调整认证和隔离"
+    ],
+    "answer": 1,
+    "explanation": "B同时落实身份认证、网络分区、访客隔离和无线监测。A仍存在共享凭据和横向访问风险；C中的隐藏SSID不提供可靠安全且关闭日志削弱检测；D只扩容带宽，未解决访问控制问题。",
+    "topic": "wireless-security",
+    "type": "comprehensive"
   }
 ]

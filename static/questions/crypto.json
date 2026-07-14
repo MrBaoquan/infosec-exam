@@ -3,320 +3,600 @@
     "id": "crypto-1",
     "category": "crypto",
     "question": "AES 算法的分组长度固定为多少位？",
-    "options": ["64 位", "128 位", "192 位", "256 位"],
+    "options": [
+      "64 位",
+      "128 位",
+      "192 位",
+      "256 位"
+    ],
     "answer": 1,
-    "explanation": "AES 分组固定 128 位（4×4 字节状态矩阵）；密钥长度可为 128/192/256 位，对应轮数 10/12/14。"
+    "explanation": "AES 分组固定 128 位（4×4 字节状态矩阵）；密钥长度可为 128/192/256 位，对应轮数 10/12/14。",
+    "topic": "symmetric",
+    "type": "parameter"
   },
   {
     "id": "crypto-2",
     "category": "crypto",
     "question": "DES 算法的有效密钥长度是多少位？",
-    "options": ["64 位", "56 位", "48 位", "128 位"],
+    "options": [
+      "64 位",
+      "56 位",
+      "48 位",
+      "128 位"
+    ],
     "answer": 1,
-    "explanation": "DES 密钥 64 位，其中 8 位为奇偶校验位，有效密钥 56 位。这正是 DES 不安全的主因。"
+    "explanation": "DES 密钥 64 位，其中 8 位为奇偶校验位，有效密钥 56 位。这正是 DES 不安全的主因。",
+    "topic": "des",
+    "type": "parameter"
   },
   {
     "id": "crypto-3",
     "category": "crypto",
     "question": "Feistel 网络结构（如 DES）的加解密关系是？",
-    "options": ["加解密结构不同", "加解密结构相同，子密钥顺序相同", "加解密结构相同，子密钥逆序使用", "加密用公钥，解密用私钥"],
+    "options": [
+      "加解密结构不同",
+      "加解密结构相同，子密钥顺序相同",
+      "加解密结构相同，子密钥逆序使用",
+      "加密用公钥，解密用私钥"
+    ],
     "answer": 2,
-    "explanation": "Feistel 网络的精妙：加解密结构完全相同，解密只需将子密钥逆序使用（K16→K1）。"
+    "explanation": "Feistel 网络的精妙：加解密结构完全相同，解密只需将子密钥逆序使用（K16→K1）。",
+    "topic": "des",
+    "type": "concept"
   },
   {
     "id": "crypto-4",
     "category": "crypto",
     "question": "RSA 算法的安全性基于以下哪个数学难题？",
-    "options": ["离散对数问题", "大整数分解问题", "椭圆曲线问题", "背包问题"],
+    "options": [
+      "离散对数问题",
+      "大整数分解问题",
+      "椭圆曲线问题",
+      "背包问题"
+    ],
     "answer": 1,
-    "explanation": "RSA 基于大整数分解难题（由 n 求 p、q 困难）。ECC 基于椭圆曲线离散对数。"
+    "explanation": "RSA 基于大整数分解难题（由 n 求 p、q 困难）。ECC 基于椭圆曲线离散对数。",
+    "topic": "asymmetric",
+    "type": "concept"
   },
   {
     "id": "crypto-5",
     "category": "crypto",
     "question": "数字签名使用发送方的哪个密钥进行签名？",
-    "options": ["发送方公钥", "发送方私钥", "接收方公钥", "接收方私钥"],
+    "options": [
+      "发送方公钥",
+      "发送方私钥",
+      "接收方公钥",
+      "接收方私钥"
+    ],
     "answer": 1,
-    "explanation": "签名用发送方私钥（只有持有者能签→不可否认），验签用发送方公钥。注意：加密用接收方公钥。"
+    "explanation": "签名用发送方私钥（只有持有者能签→不可否认），验签用发送方公钥。注意：加密用接收方公钥。",
+    "topic": "signature",
+    "type": "scenario"
   },
   {
     "id": "crypto-6",
     "category": "crypto",
     "question": "下列哈希算法中，目前已被认为不安全（可构造碰撞）的是？",
-    "options": ["SHA-256", "SM3", "MD5", "SHA-512"],
+    "options": [
+      "SHA-256",
+      "SM3",
+      "MD5",
+      "SHA-512"
+    ],
     "answer": 2,
-    "explanation": "MD5（128位）和 SHA-1（160位）均已被攻破，可构造碰撞。新系统应使用 SHA-256/SM3。"
+    "explanation": "MD5（128位）和 SHA-1（160位）均已被攻破，可构造碰撞。新系统应使用 SHA-256/SM3。",
+    "topic": "hash",
+    "type": "scenario"
   },
   {
     "id": "crypto-7",
     "category": "crypto",
     "question": "国密算法 SM4 是什么类型的算法？",
-    "options": ["非对称加密", "哈希", "对称分组加密", "数字签名"],
+    "options": [
+      "非对称加密",
+      "哈希",
+      "对称分组加密",
+      "数字签名"
+    ],
     "answer": 2,
-    "explanation": "SM4 是对称分组密码，分组128位/密钥128位/32轮，对标 AES。SM2=公钥，SM3=哈希，SM9=标识密码。"
+    "explanation": "SM4 是对称分组密码，分组128位/密钥128位/32轮，对标 AES。SM2=公钥，SM3=哈希，SM9=标识密码。",
+    "topic": "national-crypto",
+    "type": "concept"
   },
   {
     "id": "crypto-8",
     "category": "crypto",
     "question": "Diffie-Hellman 密钥交换协议的主要安全缺陷是？",
-    "options": ["无法加密", "易受中间人攻击", "密钥空间太小", "计算量过大"],
+    "options": [
+      "无法加密",
+      "易受中间人攻击",
+      "密钥空间太小",
+      "计算量过大"
+    ],
     "answer": 1,
-    "explanation": "DH 用于密钥协商但不提供身份认证，易遭中间人攻击。需结合数字签名/证书防御。"
+    "explanation": "DH 用于密钥协商但不提供身份认证，易遭中间人攻击。需结合数字签名/证书防御。",
+    "topic": "asymmetric",
+    "type": "concept"
   },
   {
     "id": "crypto-9",
     "category": "crypto",
     "question": "下列分组密码工作模式中，相同明文块产生相同密文块、最不安全的是？",
-    "options": ["ECB", "CBC", "CTR", "CFB"],
+    "options": [
+      "ECB",
+      "CBC",
+      "CTR",
+      "CFB"
+    ],
     "answer": 0,
-    "explanation": "ECB 模式相同明文块→相同密文块，不能隐藏明文模式，最不安全。CBC/CTR 最常用。"
+    "explanation": "ECB 模式相同明文块→相同密文块，不能隐藏明文模式，最不安全。CBC/CTR 最常用。",
+    "topic": "symmetric",
+    "type": "concept"
   },
   {
     "id": "crypto-10",
     "category": "crypto",
     "question": "哈希函数的“雪崩效应”指：",
-    "options": ["输入任意长度输出定长", "输入 1 bit 变化使输出约 50% bit 翻转", "无法由输出反推输入", "难以找到两个相同输出的输入"],
+    "options": [
+      "输入任意长度输出定长",
+      "输入 1 bit 变化使输出约 50% bit 翻转",
+      "无法由输出反推输入",
+      "难以找到两个相同输出的输入"
+    ],
     "answer": 1,
-    "explanation": "雪崩效应：输入微小变化→输出剧烈变化（约50% bit翻转）。A是定长性，C是单向性，D是抗碰撞。"
+    "explanation": "雪崩效应：输入微小变化→输出剧烈变化（约50% bit翻转）。A是定长性，C是单向性，D是抗碰撞。",
+    "topic": "hash",
+    "type": "concept"
   },
   {
     "id": "crypto-11",
     "category": "crypto",
     "question": "3DES（三重DES）使用两个密钥时的加密方式是？",
-    "options": ["加密-加密-加密", "加密-解密-加密", "解密-加密-解密", "加密-加密-解密"],
+    "options": [
+      "加密-加密-加密",
+      "加密-解密-加密",
+      "解密-加密-解密",
+      "加密-加密-解密"
+    ],
     "answer": 1,
-    "explanation": "3DES 用 K1/K2 两密钥：C=EK1(DK2(EK1(M)))，中间用解密是为兼容单DES（K1=K2时退化为DES）。"
+    "explanation": "3DES 用 K1/K2 两密钥：C=EK1(DK2(EK1(M)))，中间用解密是为兼容单DES（K1=K2时退化为DES）。",
+    "topic": "des",
+    "type": "scenario"
   },
   {
     "id": "crypto-12",
     "category": "crypto",
     "question": "AES 的 S 盒（SubBytes）主要提供哪种安全特性？",
-    "options": ["扩散", "混淆", "完整性", "认证"],
+    "options": [
+      "扩散",
+      "混淆",
+      "完整性",
+      "认证"
+    ],
     "answer": 1,
-    "explanation": "S 盒非线性替换提供混淆(Confusion)，让密钥与密文关系复杂。ShiftRows/MixColumns 提供扩散(Diffusion)。"
+    "explanation": "S 盒非线性替换提供混淆(Confusion)，让密钥与密文关系复杂。ShiftRows/MixColumns 提供扩散(Diffusion)。",
+    "topic": "symmetric",
+    "type": "concept"
   },
   {
     "id": "crypto-13",
     "category": "crypto",
     "question": "下列关于 PKI 的说法，错误的是？",
-    "options": ["CA 负责签发证书", "CRL 是证书吊销列表", "OCSP 是在线证书状态查询", "根CA需要上级CA签发"],
+    "options": [
+      "CA 负责签发证书",
+      "CRL 是证书吊销列表",
+      "OCSP 是在线证书状态查询",
+      "根CA需要上级CA签发"
+    ],
     "answer": 3,
-    "explanation": "根CA(Root CA)是自签名证书，无需上级签发，是信任链的根。CA签发、CRL吊销列表、OCSP在线查询均正确。"
+    "explanation": "根CA(Root CA)是自签名证书，无需上级签发，是信任链的根。CA签发、CRL吊销列表、OCSP在线查询均正确。",
+    "topic": "pki",
+    "type": "concept"
   },
   {
     "id": "crypto-14",
     "category": "crypto",
     "question": "ECC 椭圆曲线密码相比 RSA 的主要优势是？",
-    "options": ["加密速度更慢", "密钥更短同等安全", "不支持签名", "基于大整数分解"],
+    "options": [
+      "加密速度更慢",
+      "密钥更短同等安全",
+      "不支持签名",
+      "基于大整数分解"
+    ],
     "answer": 1,
-    "explanation": "ECC 基于椭圆曲线离散对数，密钥短（256位≈RSA 3072位），适合移动端。RSA 基于大整数分解。"
+    "explanation": "ECC 基于椭圆曲线离散对数，密钥短（256位≈RSA 3072位），适合移动端。RSA 基于大整数分解。",
+    "topic": "asymmetric",
+    "type": "concept"
   },
   {
     "id": "crypto-15",
     "category": "crypto",
     "question": "HMAC 与普通哈希的区别是？",
-    "options": ["HMAC 无密钥", "HMAC 需要密钥", "HMAC 不可逆", "HMAC 输出更长"],
+    "options": [
+      "HMAC 无密钥",
+      "HMAC 需要密钥",
+      "HMAC 不可逆",
+      "HMAC 输出更长"
+    ],
     "answer": 1,
-    "explanation": "HMAC=Hash-based MAC，带密钥的哈希，提供完整性+认证。普通哈希无密钥只验完整性。"
+    "explanation": "HMAC=Hash-based MAC，带密钥的哈希，提供完整性+认证。普通哈希无密钥只验完整性。",
+    "topic": "hash",
+    "type": "concept"
   },
   {
     "id": "crypto-16",
     "category": "crypto",
     "question": "一次性密码本（OTP）被证明绝对安全的前提是？",
-    "options": ["密钥重复使用", "密钥真随机且只用的次", "密钥比明文短", "用固定密钥"],
+    "options": [
+      "密钥重复使用",
+      "密钥真随机且只用的次",
+      "密钥比明文短",
+      "用固定密钥"
+    ],
     "answer": 1,
-    "explanation": "OTP 绝对安全（信息论安全）前提：密钥真随机、与明文等长、只用一次。重复使用则可被破解。"
+    "explanation": "OTP 绝对安全（信息论安全）前提：密钥真随机、与明文等长、只用一次。重复使用则可被破解。",
+    "topic": "classical",
+    "type": "scenario"
   },
   {
     "id": "crypto-17",
     "category": "crypto",
     "question": "下列哪种密码体制属于流密码？",
-    "options": ["DES", "AES", "RC4", "RSA"],
+    "options": [
+      "DES",
+      "AES",
+      "RC4",
+      "RSA"
+    ],
     "answer": 2,
-    "explanation": "RC4 是流密码（逐字节加密）。DES/AES 是分组密码，RSA 是非对称。"
+    "explanation": "RC4 是流密码（逐字节加密）。DES/AES 是分组密码，RSA 是非对称。",
+    "topic": "classical",
+    "type": "concept"
   },
   {
     "id": "crypto-18",
     "category": "crypto",
     "question": "AES 密钥扩展从 128 位主密钥扩展出多少个轮密钥？",
-    "options": ["10个", "11个", "14个", "16个"],
+    "options": [
+      "10个",
+      "11个",
+      "14个",
+      "16个"
+    ],
     "answer": 1,
-    "explanation": "AES-128 有 10 轮，但需 11 个轮密钥（含初始轮密钥，第0轮加轮密钥）。"
+    "explanation": "AES-128 有 10 轮，但需 11 个轮密钥（含初始轮密钥，第0轮加轮密钥）。",
+    "topic": "symmetric",
+    "type": "parameter"
   },
   {
     "id": "crypto-19",
     "category": "crypto",
     "question": "SSL/TLS 握手中，客户端验证服务器身份用的是？",
-    "options": ["客户端私钥", "服务器证书(CA签名)", "对称密钥", "哈希值"],
+    "options": [
+      "客户端私钥",
+      "服务器证书(CA签名)",
+      "对称密钥",
+      "哈希值"
+    ],
     "answer": 1,
-    "explanation": "服务器发送证书，客户端用 CA 公钥验签证书，确认服务器身份。防中间人攻击。"
+    "explanation": "服务器发送证书，客户端用 CA 公钥验签证书，确认服务器身份。防中间人攻击。",
+    "topic": "pki",
+    "type": "concept"
   },
   {
     "id": "crypto-20",
     "category": "crypto",
     "question": "前向安全（PFS）的含义是？",
-    "options": ["长期密钥泄露不影响过去会话", "密钥永不泄露", "密钥自动更新", "使用对称加密"],
+    "options": [
+      "长期密钥泄露不影响过去会话",
+      "密钥永不泄露",
+      "密钥自动更新",
+      "使用对称加密"
+    ],
     "answer": 0,
-    "explanation": "PFS(Perfect Forward Secrecy)：长期私钥泄露也不影响已录的会话密钥（因会话密钥用临时DH生成）。TLS 1.3强制PFS。"
+    "explanation": "PFS(Perfect Forward Secrecy)：长期私钥泄露也不影响已录的会话密钥（因会话密钥用临时DH生成）。TLS 1.3强制PFS。",
+    "topic": "asymmetric",
+    "type": "concept"
   },
   {
     "id": "crypto-21",
     "category": "crypto",
     "question": "某银行需在网上传输客户交易数据，要求机密性（防窃听）+完整性（防篡改）+发送方身份认证（防伪造）。最佳方案是？",
-    "options": ["用AES加密数据", "用RSA加密数据", "用AES加密数据+数字签名+数字证书", "用MD5验证完整性"],
+    "options": [
+      "用AES加密数据",
+      "用RSA加密数据",
+      "用AES加密数据+数字签名+数字证书",
+      "用MD5验证完整性"
+    ],
     "answer": 2,
-    "explanation": "场景题。AES加密→机密性；数字签名→完整性+认证+不可否认；数字证书→验证签名者身份。AES单独无完整性/认证；RSA单独慢且无完整性；MD5只验完整性无机密性/认证。"
+    "explanation": "场景题。AES加密→机密性；数字签名→完整性+认证+不可否认；数字证书→验证签名者身份。AES单独无完整性/认证；RSA单独慢且无完整性；MD5只验完整性无机密性/认证。",
+    "topic": "signature",
+    "type": "comprehensive"
   },
   {
     "id": "crypto-22",
     "category": "crypto",
     "question": "已知RSA参数 p=5, q=11, e=3，明文 M=9。求密文 C。",
-    "options": ["14", "9", "4", "25"],
+    "options": [
+      "14",
+      "9",
+      "4",
+      "25"
+    ],
     "answer": 0,
-    "explanation": "计算题。n=p×q=55。C=M^e mod n=9^3 mod 55=729 mod 55=729-13×55=729-715=14。答案C=14。"
+    "explanation": "计算题。n=p×q=55。C=M^e mod n=9^3 mod 55=729 mod 55=729-13×55=729-715=14。答案C=14。",
+    "topic": "asymmetric",
+    "type": "calculation"
   },
   {
     "id": "crypto-23",
     "category": "crypto",
     "question": "Alice要给Bob发送机密文件，要求机密性+不可否认性。下列操作顺序正确的是？",
-    "options": ["先加密后签名", "先签名后加密", "只签名", "只加密"],
+    "options": [
+      "先加密后签名",
+      "先签名后加密",
+      "只签名",
+      "只加密"
+    ],
     "answer": 1,
-    "explanation": "场景题。先签名（用Alice私钥→不可否认）后加密（用Bob公钥→机密性）。先加密后签名有问题：签名暴露在外，可能被替换。标准推荐先签后密。"
+    "explanation": "场景题。先签名（用Alice私钥→不可否认）后加密（用Bob公钥→机密性）。先加密后签名有问题：签名暴露在外，可能被替换。标准推荐先签后密。",
+    "topic": "signature",
+    "type": "scenario"
   },
   {
     "id": "crypto-24",
     "category": "crypto",
     "question": "某系统需要为大量文件传输提供机密性保护，下列方案最合适的是？",
-    "options": ["用RSA加密整个文件", "用AES加密文件，RSA加密AES密钥", "用SHA-256哈希文件", "用数字签名签文件"],
+    "options": [
+      "用RSA加密整个文件",
+      "用AES加密文件，RSA加密AES密钥",
+      "用SHA-256哈希文件",
+      "用数字签名签文件"
+    ],
     "answer": 1,
-    "explanation": "场景题。RSA慢(比AES慢100-1000倍)，不适合大数据。正确做法是混合加密：AES加密数据(快)，RSA加密AES密钥(解决密钥分发)。哈希/签名不提供机密性。"
+    "explanation": "场景题。RSA慢(比AES慢100-1000倍)，不适合大数据。正确做法是混合加密：AES加密数据(快)，RSA加密AES密钥(解决密钥分发)。哈希/签名不提供机密性。",
+    "topic": "asymmetric",
+    "type": "scenario"
   },
   {
     "id": "crypto-25",
     "category": "crypto",
     "question": "某员工离职后，公司发现之前由该员工签发的合同需要验证真伪。应使用？",
-    "options": ["该员工的私钥验签", "该员工的公钥验签", "公司的私钥验签", "重新签名"],
+    "options": [
+      "该员工的私钥验签",
+      "该员工的公钥验签",
+      "公司的私钥验签",
+      "重新签名"
+    ],
     "answer": 1,
-    "explanation": "场景题。验签用签名者的公钥。即使员工离职，其公钥仍可验证之前签名的真实性——这正是数字签名'不可否认性'的价值。私钥不公开无法验签。"
+    "explanation": "场景题。验签用签名者的公钥。即使员工离职，其公钥仍可验证之前签名的真实性——这正是数字签名'不可否认性'的价值。私钥不公开无法验签。",
+    "topic": "signature",
+    "type": "scenario"
   },
   {
     "id": "crypto-26",
     "category": "crypto",
     "question": "已知 RSA 的 n=33, e=3, 求私钥 d。",
-    "options": ["5", "7", "11", "20"],
+    "options": [
+      "5",
+      "7",
+      "11",
+      "20"
+    ],
     "answer": 1,
-    "explanation": "计算题。n=33=p×q=3×11。φ(n)=(3-1)(11-1)=20。d=e^{-1} mod 20，即3d≡1 mod 20。3×7=21≡1 mod 20，故d=7。"
+    "explanation": "计算题。n=33=p×q=3×11。φ(n)=(3-1)(11-1)=20。d=e^{-1} mod 20，即3d≡1 mod 20。3×7=21≡1 mod 20，故d=7。",
+    "topic": "asymmetric",
+    "type": "calculation"
   },
   {
     "id": "crypto-27",
     "category": "crypto",
     "question": "某Web应用存储用户口令，下列方案中最安全的是？",
-    "options": ["明文存储", "MD5哈希存储", "SHA-256哈希存储", "bcrypt(哈希+盐+慢哈希)存储"],
+    "options": [
+      "明文存储",
+      "MD5哈希存储",
+      "SHA-256哈希存储",
+      "bcrypt(哈希+盐+慢哈希)存储"
+    ],
     "answer": 3,
-    "explanation": "场景题。明文最危险。MD5已破。SHA-256无盐可被彩虹表破。bcrypt=哈希+盐+慢哈希(增加破解成本)，最安全。"
+    "explanation": "场景题。明文最危险。MD5已破。SHA-256无盐可被彩虹表破。bcrypt=哈希+盐+慢哈希(增加破解成本)，最安全。",
+    "topic": "hash",
+    "type": "scenario"
   },
   {
     "id": "crypto-28",
     "category": "crypto",
     "question": "某企业需选择国密算法实现以下需求：①数据加密传输 ②文件完整性校验 ③数字签名。正确的算法组合是？",
-    "options": ["SM2加密+SM3哈希+SM4签名", "SM4加密+SM3哈希+SM2签名", "SM3加密+SM4哈希+SM2签名", "SM2加密+SM4哈希+SM3签名"],
+    "options": [
+      "SM2加密+SM3哈希+SM4签名",
+      "SM4加密+SM3哈希+SM2签名",
+      "SM3加密+SM4哈希+SM2签名",
+      "SM2加密+SM4哈希+SM3签名"
+    ],
     "answer": 1,
-    "explanation": "综合题。SM4=对称加密(数据加密)；SM3=哈希(完整性)；SM2=非对称(签名)。注意：SM2不能做对称加密，SM3不能加密，SM4不能签名。"
+    "explanation": "综合题。SM4=对称加密(数据加密)；SM3=哈希(完整性)；SM2=非对称(签名)。注意：SM2不能做对称加密，SM3不能加密，SM4不能签名。",
+    "topic": "national-crypto",
+    "type": "comprehensive"
   },
   {
     "id": "crypto-29",
     "category": "crypto",
     "question": "Alice和Bob通过DH协议协商共享密钥，但未使用数字证书。该方案的主要风险是？",
-    "options": ["密钥太短", "中间人攻击", "计算量大", "无法加密"],
+    "options": [
+      "密钥太短",
+      "中间人攻击",
+      "计算量大",
+      "无法加密"
+    ],
     "answer": 1,
-    "explanation": "场景题。DH无身份认证，攻击者可冒充双方截获/篡改通信(中间人攻击)。防：结合数字签名/证书验证身份。DH本身能协商密钥但不能认证。"
+    "explanation": "场景题。DH无身份认证，攻击者可冒充双方截获/篡改通信(中间人攻击)。防：结合数字签名/证书验证身份。DH本身能协商密钥但不能认证。",
+    "topic": "asymmetric",
+    "type": "scenario"
   },
   {
     "id": "crypto-30",
     "category": "crypto",
     "question": "下列关于数字证书的验证流程，正确顺序是？",
-    "options": ["查有效期→验签名→查吊销→查域名", "验签名→查有效期→查吊销→查域名", "查域名→验签名→查有效期→查吊销", "查吊销→验签名→查有效期→查域名"],
+    "options": [
+      "查有效期→验签名→查吊销→查域名",
+      "验签名→查有效期→查吊销→查域名",
+      "查域名→验签名→查有效期→查吊销",
+      "查吊销→验签名→查有效期→查域名"
+    ],
     "answer": 1,
-    "explanation": "综合题。证书验证4步：①用CA公钥验签名(确认证书未被篡改)→②查有效期(Not Before/After)→③查吊销(CRL/OCSP)→④查域名(CN/SAN匹配)。"
+    "explanation": "综合题。证书验证4步：①用CA公钥验签名(确认证书未被篡改)→②查有效期(Not Before/After)→③查吊销(CRL/OCSP)→④查域名(CN/SAN匹配)。",
+    "topic": "pki",
+    "type": "comprehensive"
   },
   {
     "id": "crypto-31",
     "category": "crypto",
     "question": "某公司用ECB模式加密数据库中相同结构的记录，安全人员指出存在风险。原因是？",
-    "options": ["ECB速度太慢", "相同明文块产生相同密文块，暴露明文模式", "ECB需要IV", "ECB不支持AES"],
+    "options": [
+      "ECB速度太慢",
+      "相同明文块产生相同密文块，暴露明文模式",
+      "ECB需要IV",
+      "ECB不支持AES"
+    ],
     "answer": 1,
-    "explanation": "场景题。ECB模式相同明文块→相同密文块。如果多条记录结构相同(如'用户名:密码:')，加密后模式相同，攻击者可分析出明文结构。应改用CBC/CTR。"
+    "explanation": "场景题。ECB模式相同明文块→相同密文块。如果多条记录结构相同(如'用户名:密码:')，加密后模式相同，攻击者可分析出明文结构。应改用CBC/CTR。",
+    "topic": "symmetric",
+    "type": "scenario"
   },
   {
     "id": "crypto-32",
     "category": "crypto",
     "question": "某CA的私钥泄露，下列说法正确的是？",
-    "options": ["不影响已签发的证书", "所有由该CA签发的证书都不再可信", "只需更换CA服务器", "证书自动失效"],
+    "options": [
+      "不影响已签发的证书",
+      "所有由该CA签发的证书都不再可信",
+      "只需更换CA服务器",
+      "证书自动失效"
+    ],
     "answer": 1,
-    "explanation": "场景题。CA私钥泄露→攻击者可伪造该CA签发的任意证书。所有由该CA签发的证书都不再可信，需吊销并重新签发。根CA私钥泄露是PKI灾难性事件。"
+    "explanation": "场景题。CA私钥泄露→攻击者可伪造该CA签发的任意证书。所有由该CA签发的证书都不再可信，需吊销并重新签发。根CA私钥泄露是PKI灾难性事件。",
+    "topic": "pki",
+    "type": "scenario"
   },
   {
     "id": "crypto-33",
     "category": "crypto",
     "question": "某文件传输系统使用SHA-1校验文件完整性，安全评估认为需要升级。应替换为？",
-    "options": ["MD5", "SHA-256或SM3", "CRC32", "Base64"],
+    "options": [
+      "MD5",
+      "SHA-256或SM3",
+      "CRC32",
+      "Base64"
+    ],
     "answer": 1,
-    "explanation": "场景题。SHA-1(160位)已被破(2017年Google构造碰撞)。应升级为SHA-256或SM3(国密,256位)。MD5更不安全。CRC32用于检错非安全哈希。Base64是编码。"
+    "explanation": "场景题。SHA-1(160位)已被破(2017年Google构造碰撞)。应升级为SHA-256或SM3(国密,256位)。MD5更不安全。CRC32用于检错非安全哈希。Base64是编码。",
+    "topic": "hash",
+    "type": "scenario"
   },
   {
     "id": "crypto-34",
     "category": "crypto",
     "question": "某密码系统设计者声称'我们的加密算法是保密的，所以更安全'。这违反了哪个原则？",
-    "options": ["最小权限原则", "Kerckhoffs原则", "纵深防御原则", "失败安全原则"],
+    "options": [
+      "最小权限原则",
+      "Kerckhoffs原则",
+      "纵深防御原则",
+      "失败安全原则"
+    ],
     "answer": 1,
-    "explanation": "场景题。Kerckhoffs原则：安全不应依赖算法保密。假设攻击者知道算法，安全只依赖密钥。'算法保密'是安全错觉(可通过逆向工程获取)。"
+    "explanation": "场景题。Kerckhoffs原则：安全不应依赖算法保密。假设攻击者知道算法，安全只依赖密钥。'算法保密'是安全错觉(可通过逆向工程获取)。",
+    "topic": "engineering-detail",
+    "type": "scenario"
   },
   {
     "id": "crypto-35",
     "category": "crypto",
     "question": "某邮件系统需实现：发送方认证+内容机密性+接收方不可否认。下列方案正确的是？",
-    "options": ["Alice用自己私钥签名+Bob公钥加密", "Alice用Bob私钥签名+自己公钥加密", "Alice用Bob公钥签名+自己私钥加密", "只用AES加密"],
+    "options": [
+      "Alice用自己私钥签名+Bob公钥加密",
+      "Alice用Bob私钥签名+自己公钥加密",
+      "Alice用Bob公钥签名+自己私钥加密",
+      "只用AES加密"
+    ],
     "answer": 0,
-    "explanation": "综合题。签名用Alice私钥(发送方认证+Alice不可否认)；加密用Bob公钥(只有Bob私钥能解→机密性)。注意：签名用发送方密钥，加密用接收方密钥。"
+    "explanation": "综合题。签名用Alice私钥(发送方认证+Alice不可否认)；加密用Bob公钥(只有Bob私钥能解→机密性)。注意：签名用发送方密钥，加密用接收方密钥。",
+    "topic": "signature",
+    "type": "comprehensive"
   },
   {
     "id": "crypto-36",
     "category": "crypto",
     "question": "已知哈希函数H，消息M及其哈希值h=H(M)。攻击者要伪造消息M'使H(M')=h，这种攻击称为？",
-    "options": ["单向性攻击", "抗弱碰撞攻击", "抗强碰撞攻击", "雪崩效应攻击"],
+    "options": [
+      "单向性攻击",
+      "抗弱碰撞攻击",
+      "抗强碰撞攻击",
+      "雪崩效应攻击"
+    ],
     "answer": 1,
-    "explanation": "概念辨析题。给定M找M'使H(M')=H(M)是第二原像攻击(抗弱碰撞)。找任意两个M1≠M2使H相同是碰撞攻击(抗强碰撞)。单向性是H(M)推不出M。"
+    "explanation": "概念辨析题。给定M找M'使H(M')=H(M)是第二原像攻击(抗弱碰撞)。找任意两个M1≠M2使H相同是碰撞攻击(抗强碰撞)。单向性是H(M)推不出M。",
+    "topic": "hash",
+    "type": "concept"
   },
   {
     "id": "crypto-37",
     "category": "crypto",
     "question": "某TLS连接使用RSA密钥交换(非ECDHE)，安全评估指出缺少前向安全(PFS)。这意味着？",
-    "options": ["速度太慢", "服务器私钥泄露后历史通信可被解密", "不支持加密", "易受SQL注入"],
+    "options": [
+      "速度太慢",
+      "服务器私钥泄露后历史通信可被解密",
+      "不支持加密",
+      "易受SQL注入"
+    ],
     "answer": 1,
-    "explanation": "场景题。RSA密钥交换：客户端用服务器公钥加密预主密钥。若服务器私钥泄露，攻击者可解密所有录制的历史流量(无PFS)。ECDHE用临时密钥，私钥泄露不影响历史(PFS)。"
+    "explanation": "场景题。RSA密钥交换：客户端用服务器公钥加密预主密钥。若服务器私钥泄露，攻击者可解密所有录制的历史流量(无PFS)。ECDHE用临时密钥，私钥泄露不影响历史(PFS)。",
+    "topic": "asymmetric",
+    "type": "scenario"
   },
   {
     "id": "crypto-38",
     "category": "crypto",
     "question": "某系统用MAC验证消息完整性，但双方发生纠纷时无法确定是谁发的消息。原因是？",
-    "options": ["MAC太短", "MAC用对称密钥，双方都有密钥，无法区分谁发的", "MAC不可逆", "MAC不安全"],
+    "options": [
+      "MAC太短",
+      "MAC用对称密钥，双方都有密钥，无法区分谁发的",
+      "MAC不可逆",
+      "MAC不安全"
+    ],
     "answer": 1,
-    "explanation": "场景题。MAC用对称共享密钥，双方都有密钥都能生成MAC，因此无法区分是谁发的→无不可否认性。数字签名用非对称(私钥只有一方有)→有不可否认。"
+    "explanation": "场景题。MAC用对称共享密钥，双方都有密钥都能生成MAC，因此无法区分是谁发的→无不可否认性。数字签名用非对称(私钥只有一方有)→有不可否认。",
+    "topic": "signature",
+    "type": "scenario"
   },
   {
     "id": "crypto-39",
     "category": "crypto",
     "question": "AES加密中，CBC模式需要初始化向量(IV)。关于IV的要求，正确的是？",
-    "options": ["IV必须保密", "IV必须随机且唯一", "IV可以是固定值", "IV必须比密钥长"],
+    "options": [
+      "IV必须保密",
+      "IV必须随机且唯一",
+      "IV可以是固定值",
+      "IV必须比密钥长"
+    ],
     "answer": 1,
-    "explanation": "概念题。IV需随机且唯一(无需保密)。IV相同+相同明文→相同密文(如ECB问题)。IV公开传输没问题，但重复使用不安全。ECB不需要IV(也因此不安全)。"
+    "explanation": "概念题。IV需随机且唯一(无需保密)。IV相同+相同明文→相同密文(如ECB问题)。IV公开传输没问题，但重复使用不安全。ECB不需要IV(也因此不安全)。",
+    "topic": "symmetric",
+    "type": "scenario"
   },
   {
     "id": "crypto-40",
     "category": "crypto",
     "question": "某PKI系统中，用户证书过期后需更新。下列说法正确的是？",
-    "options": ["旧证书自动续期", "需向CA重新申请签发新证书", "修改过期时间即可", "证书永不过期"],
+    "options": [
+      "旧证书自动续期",
+      "需向CA重新申请签发新证书",
+      "修改过期时间即可",
+      "证书永不过期"
+    ],
     "answer": 1,
-    "explanation": "场景题。证书过期需向CA重新申请签发新证书(CA会重新验证身份)。不能自行修改过期时间(证书有CA签名防篡改)。证书有效期是PKI安全的重要机制。"
+    "explanation": "场景题。证书过期需向CA重新申请签发新证书(CA会重新验证身份)。不能自行修改过期时间(证书有CA签名防篡改)。证书有效期是PKI安全的重要机制。",
+    "topic": "pki",
+    "type": "scenario"
   }
 ]
