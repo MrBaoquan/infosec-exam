@@ -24,13 +24,13 @@ sidebar_position: 0
 
 | 日 | 学习内容 | 时长 | 重要度 | 链接 |
 |:--:|----------|:----:|:------:|------|
-| 8 | OSI 七层与 TCP/IP 协议安全 | 2h | ★★★ | [OSI](./network/osi-model) / [协议安全](./network/protocol-security) |
+| 8 | OSI、TCP/IP 与无线网络安全 | 2h | ★★★ | [OSI](./network/osi-model) / [协议安全](./network/protocol-security) / [无线安全](./network/wireless-security) |
 | 9 | 网络安全体系模型与攻击过程 | 2h | ★★★ | [体系模型](./network/security-system-model) / [攻击原理](./network/attack-principles) |
 | 10 | DoS、欺骗、社会工程与 APT | 2h | ★★★ | [网络攻击](./network/attacks) |
 | 11 | 防火墙与 IDS/IPS | 2h | ★★★ | [防火墙](./network/firewall) / [IDS与IPS](./network/ids-ips) |
 | 12 | VPN/IPSec 与 TLS/HTTPS | 2h | ★★★ | [VPN与IPSec](./network/vpn-ipsec) / [TLS与HTTPS](./network/tls-https) |
 | 13 | 物理安全、隔离与主动防御 | 2h | ★★ | [物理安全](./network/physical-security) / [物理隔离](./network/physical-isolation) / [主动防御](./network/active-defense) |
-| 14 | 安全审计、架构、测评 + 网络案例 | 2h | ★★★ | [安全审计](./network/security-audit) / [安全架构](./network/security-architecture) / [安全测评](./network/security-assessment) / [网络案例](./exam-cases/network-case) |
+| 14 | 安全审计、现代架构、测评 + 网络案例 | 2h | ★★★ | [安全审计](./network/security-audit) / [现代安全架构](./network/security-architecture) / [安全测评](./network/security-assessment) / [网络案例](./exam-cases/network-case) |
 
 ## 第 3 周：系统安全与应用安全
 
@@ -42,7 +42,7 @@ sidebar_position: 0
 | 18 | 漏洞、补丁、应急、取证与运营 | 2h | ★★★ | [漏洞与应急](./system/vulnerability-incident) / [漏洞防护](./system/vulnerability-management) / [安全运营与取证](./system/security-operations) |
 | 19 | Web 攻击原理与防护 | 2h | ★★★ | [Web攻击](./application/web-attacks) / [Web补充考点](./application/web-security-extra) |
 | 20 | 数据库、中间件、邮件与移动安全 | 2h | ★★ | [数据库与中间件](./application/database) / [邮件与移动安全](./application/email-mobile) |
-| 21 | 云与物联网安全 + Web 案例 | 2h | ★★ | [云与物联网](./application/cloud-iot) / [Web案例](./exam-cases/web-case) |
+| 21 | 云、物联网、工控安全 + Web 案例 | 2h | ★★ | [云与物联网](./application/cloud-iot) / [工控安全](./application/industrial-control-security) / [Web案例](./exam-cases/web-case) |
 
 ## 第 4 周：管理、工程与综合训练
 

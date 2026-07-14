@@ -55,6 +55,13 @@ description: 网络协议安全、防火墙、IDS、VPN、攻击防护
 | **SQL 注入/XSS/CSRF** | 见应用安全章节 | 输入校验、CSP |
 | **钓鱼** | 伪造站点 | 安全意识 |
 
+## 无线网络安全
+
+- WEP 已淘汰；WPA 是过渡方案；WPA2 使用 AES-CCMP；WPA3-Personal 使用 SAE
+- 企业无线网使用 802.1X、EAP 和 RADIUS 按用户或设备认证
+- 防范 Evil Twin、Rogue AP、弱口令和伪造解除认证攻击
+- 详见[无线网络安全](./network/wireless-security)
+
 ## 考点速记
 
 - IPSec：**AH 认证不加密，ESP 既认证又加密**
@@ -62,3 +69,4 @@ description: 网络协议安全、防火墙、IDS、VPN、攻击防护
 - 误用检测=已知攻击(特征)；异常检测=未知攻击(基线)
 - 防火墙越高层越安全但越慢；NGFW 集成多能力
 - TLS 取代 SSL；HTTPS = HTTP + TLS
+- 企业无线认证优先使用 802.1X + RADIUS，不依赖全员共享口令

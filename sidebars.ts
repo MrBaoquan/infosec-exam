@@ -33,6 +33,7 @@ const sidebars: SidebarsConfig = {
                 'network/index',
                 'network/osi-model',
                 'network/protocol-security',
+                'network/wireless-security',
                 'network/security-system-model',
                 'network/attack-principles',
                 'network/attacks',
@@ -73,6 +74,7 @@ const sidebars: SidebarsConfig = {
                 'application/database',
                 'application/email-mobile',
                 'application/cloud-iot',
+                'application/industrial-control-security',
             ],
         },
         {
