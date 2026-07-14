@@ -5,6 +5,7 @@ const questionDir = path.join(__dirname, '..', 'static', 'questions');
 const files = fs.readdirSync(questionDir).filter((file) => file.endsWith('.json'));
 const allowedTypes = new Set(['scenario', 'concept', 'parameter', 'comprehensive', 'calculation']);
 const ids = new Set();
+const questionTexts = new Map();
 const questions = [];
 const errors = [];
 
@@ -30,6 +31,12 @@ for (const file of files) {
     if (!question.topic) errors.push(`${label}: missing topic`);
     if (!allowedTypes.has(question.type)) errors.push(`${label}: invalid type ${question.type}`);
     if (!question.question || typeof question.question !== 'string') errors.push(`${label}: missing question text`);
+    if (typeof question.question === 'string') {
+      const normalized = question.question.replace(/\s+/g, '').toLowerCase();
+      const duplicate = questionTexts.get(normalized);
+      if (duplicate) errors.push(`${label}: duplicate question text with ${duplicate}`);
+      questionTexts.set(normalized, label);
+    }
     if (!Array.isArray(question.options) || question.options.length !== 4) errors.push(`${label}: must have exactly four options`);
     if (!Number.isInteger(question.answer) || question.answer < 0 || question.answer > 3) errors.push(`${label}: answer must be 0..3`);
     if (!question.explanation || question.explanation.length < 20) errors.push(`${label}: explanation is too short`);

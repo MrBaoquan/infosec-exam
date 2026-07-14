@@ -362,17 +362,17 @@
   {
     "id": "mgmt-16",
     "category": "management",
-    "question": "电子取证时应遵循的数据获取顺序是？",
+    "question": "某电子证据在采集后多次转交，但未记录交接人员、时间和操作。该问题最直接破坏了什么？",
     "options": [
-      "磁盘优先",
-      "内存优先(易失性优先)",
-      "随机获取",
-      "日志优先"
+      "证据保管链的完整性",
+      "密码算法的机密性",
+      "网络带宽",
+      "备份的RPO"
     ],
-    "answer": 1,
-    "explanation": "易失性优先：内存数据易丢失，关机前先抓内存镜像，再取磁盘。",
+    "answer": 0,
+    "explanation": "未记录证据交接会破坏证据保管链，导致来源、完整性和可采信性受到质疑，答案A。密码算法、网络带宽和RPO都与证据交接记录无直接关系。",
     "topic": "security-management",
-    "type": "concept"
+    "type": "scenario"
   },
   {
     "id": "eng-6",
@@ -598,5 +598,185 @@
     "explanation": "场景题。EAL5>EAL4，保证程度更高(半形式化设计与测试)。EAL4是商业最高实用级，EAL5-7多用于军方/高安全产品。",
     "topic": "engineering-detail",
     "type": "scenario"
+  },
+  {
+    "id": "mgmt-25",
+    "category": "management",
+    "question": "某设备资产价值80万元，单次事件暴露因子25%，年发生率0.4，求年度预期损失ALE。",
+    "options": [
+      "8万元",
+      "20万元",
+      "32万元",
+      "80万元"
+    ],
+    "answer": 0,
+    "explanation": "SLE=AV×EF=80×25%=20万元；ALE=SLE×ARO=20×0.4=8万元，答案A。B是单次损失；C误将80直接乘0.4；D是资产价值。",
+    "topic": "risk-assessment",
+    "type": "calculation"
+  },
+  {
+    "id": "mgmt-26",
+    "category": "management",
+    "question": "某系统全年停机9小时，按全年365天计算，其年度可用性最接近？",
+    "options": [
+      "99.0%",
+      "99.5%",
+      "99.90%",
+      "99.99%"
+    ],
+    "answer": 2,
+    "explanation": "全年8760小时，可用性=(8760-9)/8760≈99.897%，最接近99.90%，答案C。99.99%一年通常只允许约53分钟停机；A、B允许的停机远多于9小时。",
+    "topic": "bcp-drp",
+    "type": "calculation"
+  },
+  {
+    "id": "mgmt-27",
+    "category": "management",
+    "question": "某业务RPO为4小时，系统在18:00故障，最近一次可用备份为14:30。该备份是否满足RPO要求？",
+    "options": [
+      "满足，数据差距3.5小时",
+      "不满足，必须是18:00备份",
+      "不满足，因为RPO等于恢复耗时",
+      "无法判断，RPO只衡量系统性能"
+    ],
+    "answer": 0,
+    "explanation": "故障时刻与备份点相差3.5小时，小于4小时RPO，因此满足，答案A。RPO表示可接受的数据丢失时间窗口，不要求零丢失；恢复耗时由RTO衡量；它也不是性能指标。",
+    "topic": "bcp-drp",
+    "type": "calculation"
+  },
+  {
+    "id": "mgmt-28",
+    "category": "management",
+    "question": "某企业评估出数据泄露高风险，同时面临个人信息保护合规要求。下列处置组合最合理的是？",
+    "options": [
+      "购买保险后不再采取技术措施",
+      "停止所有业务以规避全部风险",
+      "实施最小权限、加密和审计降低风险，对剩余财务损失适当投保，并持续监控",
+      "接受风险且不记录审批"
+    ],
+    "answer": 2,
+    "explanation": "C组合使用风险降低、部分转移和持续监控，并满足合规要求。A中保险只转移部分损失，不能替代安全控制；B不成比例且未结合业务；D缺少评估、审批和持续监控。",
+    "topic": "risk-assessment",
+    "type": "comprehensive"
+  },
+  {
+    "id": "mgmt-29",
+    "category": "management",
+    "question": "某三级系统发现默认口令、日志缺失、远程Telnet和备份未演练。下列综合整改方案最合理的是？",
+    "options": [
+      "只部署防火墙",
+      "修改默认口令、启用并集中保存审计日志、改用SSH、制定并演练备份恢复计划",
+      "只增加网络带宽",
+      "关闭远程管理但保留其他问题"
+    ],
+    "answer": 1,
+    "explanation": "B逐项对应身份鉴别、安全审计、通信保护和恢复能力。A无法解决主机账号、日志和恢复问题；C与风险无关；D只处理一个入口，未形成完整整改。",
+    "topic": "level-protection",
+    "type": "comprehensive"
+  },
+  {
+    "id": "eng-9",
+    "category": "engineering",
+    "question": "某网上业务系统准备上线，但安全需求只写了“系统应足够安全”。下列工程化改进最合理的是？",
+    "options": [
+      "上线后再根据攻击情况补充要求",
+      "将要求细化为可验证的认证、授权、加密、日志和恢复指标，并建立需求到测试用例的追踪",
+      "只采购等级最高的防火墙",
+      "删除安全需求以免无法验收"
+    ],
+    "answer": 1,
+    "explanation": "B把模糊目标转成可验证要求并建立需求追踪，符合安全工程生命周期。A介入过晚；C只依赖单一设备且不能证明满足需求；D逃避验收。",
+    "topic": "engineering-detail",
+    "type": "comprehensive"
+  },
+  {
+    "id": "eng-10",
+    "category": "engineering",
+    "question": "某系统设计、开发、测试和运维团队各自记录问题，但漏洞状态无法贯通。最合理的改进是？",
+    "options": [
+      "只在上线前做一次扫描",
+      "建立安全需求、威胁、缺陷、测试和整改复测之间的双向追踪与责任人",
+      "由开发人员自行决定是否修复",
+      "删除重复记录，不保留证据"
+    ],
+    "answer": 1,
+    "explanation": "B建立跨生命周期追踪，能证明风险从发现到关闭的完整链路。A遗漏需求和设计问题；C缺少风险决策和监督；D破坏审计与验收证据。",
+    "topic": "engineering-detail",
+    "type": "comprehensive"
+  },
+  {
+    "id": "mgmt-30",
+    "category": "management",
+    "question": "等级保护第三级信息系统通常至少多久开展一次等级测评？",
+    "options": [
+      "每半年一次",
+      "每年至少一次",
+      "每两年至少一次",
+      "只在首次上线时一次"
+    ],
+    "answer": 1,
+    "explanation": "第三级系统通常每年至少开展一次等级测评，答案B。第四级通常每半年至少一次；两年一次和只测一次都不能满足三级持续测评要求。",
+    "topic": "level-protection",
+    "type": "parameter"
+  },
+  {
+    "id": "mgmt-31",
+    "category": "management",
+    "question": "依据网络安全相关要求，网络日志留存期限通常不少于？",
+    "options": [
+      "1个月",
+      "3个月",
+      "6个月",
+      "永久保存"
+    ],
+    "answer": 2,
+    "explanation": "网络日志留存通常不少于6个月，答案C。1个月和3个月不足；法规并未要求所有网络日志永久保存，实际还需结合行业和业务要求。",
+    "topic": "security-management",
+    "type": "parameter"
+  },
+  {
+    "id": "mgmt-32",
+    "category": "management",
+    "question": "灾难恢复中，RTO表示？",
+    "options": [
+      "可接受的数据丢失时间窗口",
+      "从中断到业务恢复的目标时间",
+      "两次故障之间的平均时间",
+      "单次损失金额"
+    ],
+    "answer": 1,
+    "explanation": "RTO是恢复时间目标，表示业务中断后应在多长时间内恢复，答案B。A是RPO；C是MTBF；D接近SLE概念。",
+    "topic": "bcp-drp",
+    "type": "parameter"
+  },
+  {
+    "id": "eng-11",
+    "category": "engineering",
+    "question": "CC通用准则的评估保证级从低到高共有多少级？",
+    "options": [
+      "3级",
+      "5级",
+      "7级",
+      "10级"
+    ],
+    "answer": 2,
+    "explanation": "CC定义EAL1至EAL7共7级，答案C。5级是SSE-CMM成熟度等级数量；3级和10级均不是CC的EAL数量。",
+    "topic": "engineering-detail",
+    "type": "parameter"
+  },
+  {
+    "id": "eng-12",
+    "category": "engineering",
+    "question": "SSE-CMM安全工程能力成熟度模型共有多少个能力等级？",
+    "options": [
+      "3级",
+      "5级",
+      "7级",
+      "8级"
+    ],
+    "answer": 1,
+    "explanation": "SSE-CMM共有5级：非正式、计划与跟踪、充分定义、量化控制、持续改进，答案B。7级对应CC的EAL数量。",
+    "topic": "engineering-detail",
+    "type": "parameter"
   }
 ]

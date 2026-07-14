@@ -598,5 +598,125 @@
     "explanation": "场景题。证书过期需向CA重新申请签发新证书(CA会重新验证身份)。不能自行修改过期时间(证书有CA签名防篡改)。证书有效期是PKI安全的重要机制。",
     "topic": "pki",
     "type": "scenario"
+  },
+  {
+    "id": "crypto-41",
+    "category": "crypto",
+    "question": "已知RSA公钥(n=55,e=3)，明文M=4，求密文C。",
+    "options": [
+      "9",
+      "16",
+      "64",
+      "31"
+    ],
+    "answer": 0,
+    "explanation": "RSA加密为C=M^e mod n=4^3 mod 55=64 mod 55=9，答案A。B只计算了平方；C未取模；D不是该模运算结果。",
+    "topic": "asymmetric",
+    "type": "calculation"
+  },
+  {
+    "id": "crypto-42",
+    "category": "crypto",
+    "question": "已知RSA参数p=5、q=11、e=3，密文C=14，私钥d=27，求解密后的明文M。",
+    "options": [
+      "3",
+      "4",
+      "9",
+      "14"
+    ],
+    "answer": 2,
+    "explanation": "n=55，解密M=C^d mod n=14^27 mod 55。逐次平方可得14^2 mod55=31，14^4 mod55=26，14^8 mod55=16，14^16 mod55=36；27=16+8+2+1，乘积取模得到9，答案C。D是未解密的密文。",
+    "topic": "asymmetric",
+    "type": "calculation"
+  },
+  {
+    "id": "crypto-43",
+    "category": "crypto",
+    "question": "使用凯撒密码，密钥k=3，按A=0、B=1依次编号，明文CAT加密后的密文是？",
+    "options": [
+      "FDW",
+      "ECV",
+      "ZXQ",
+      "CAT"
+    ],
+    "answer": 0,
+    "explanation": "每个字母向后移动3位：C到F、A到D、T到W，所以是FDW，答案A。B的位移不一致；C是反向错误位移；D没有加密。",
+    "topic": "classical",
+    "type": "calculation"
+  },
+  {
+    "id": "crypto-44",
+    "category": "crypto",
+    "question": "已知DH公开参数p=23、g=5，Alice私钥a=2，Bob私钥b=3，双方协商得到的共享密钥是？",
+    "options": [
+      "2",
+      "4",
+      "8",
+      "10"
+    ],
+    "answer": 2,
+    "explanation": "Alice公钥A=5^2 mod23=2，Bob公钥B=5^3 mod23=10；共享密钥K=B^a mod23=10^2 mod23=8，答案C。也可计算A^b mod23=2^3=8。",
+    "topic": "asymmetric",
+    "type": "calculation"
+  },
+  {
+    "id": "crypto-45",
+    "category": "crypto",
+    "question": "某文件交换平台要求大文件传输机密、接收方能验证发送者且发送者不能抵赖。下列组合最合理的是？",
+    "options": [
+      "仅用SHA-256计算摘要",
+      "用接收方公钥直接加密全部大文件",
+      "随机会话密钥加密文件，用接收方公钥保护会话密钥，并用发送方私钥签名",
+      "双方共享MAC密钥并公开该密钥"
+    ],
+    "answer": 2,
+    "explanation": "C采用混合加密兼顾效率和机密性，并用发送方私钥签名提供身份认证、完整性和不可否认性。A不提供机密性；B对大文件效率低且缺少签名；D公开MAC密钥后任何人都能伪造，且MAC本身不提供第三方不可否认性。",
+    "topic": "signature",
+    "type": "comprehensive"
+  },
+  {
+    "id": "crypto-46",
+    "category": "crypto",
+    "question": "某TLS服务需同时满足前向安全、服务器身份认证和高效数据加密。最合理的机制组合是？",
+    "options": [
+      "静态RSA密钥交换+RC4",
+      "ECDHE协商临时密钥+证书签名认证+AES-GCM传输",
+      "匿名DH+ECB模式",
+      "仅使用服务器证书加密全部业务数据"
+    ],
+    "answer": 1,
+    "explanation": "B中ECDHE提供前向安全，证书签名认证服务器，AES-GCM高效提供机密性与完整性。A的静态RSA交换不具前向安全且RC4已不安全；C缺少身份认证且ECB暴露模式；D误把证书公钥用于全部大数据加密。",
+    "topic": "asymmetric",
+    "type": "comprehensive"
+  },
+  {
+    "id": "crypto-47",
+    "category": "crypto",
+    "question": "AES-256的密钥长度、固定分组长度和轮数分别是？",
+    "options": [
+      "256位、256位、14轮",
+      "256位、128位、14轮",
+      "128位、128位、10轮",
+      "256位、128位、16轮"
+    ],
+    "answer": 1,
+    "explanation": "AES-256密钥为256位、分组始终为128位、加密14轮，答案B。A把密钥长度误当分组长度；C是AES-128参数；D轮数错误。",
+    "topic": "symmetric",
+    "type": "parameter"
+  },
+  {
+    "id": "crypto-48",
+    "category": "crypto",
+    "question": "SM4算法的分组长度、密钥长度和轮数分别是？",
+    "options": [
+      "64位、56位、16轮",
+      "128位、128位、32轮",
+      "128位、256位、14轮",
+      "256位、256位、32轮"
+    ],
+    "answer": 1,
+    "explanation": "SM4是128位分组、128位密钥、32轮的对称分组密码，答案B。A是对DES参数的混淆；C混入AES参数；D错误扩大了分组和密钥长度。",
+    "topic": "national-crypto",
+    "type": "parameter"
   }
 ]

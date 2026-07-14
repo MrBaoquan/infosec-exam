@@ -733,5 +733,65 @@
     "explanation": "B同时落实身份认证、网络分区、访客隔离和无线监测。A仍存在共享凭据和横向访问风险；C中的隐藏SSID不提供可靠安全且关闭日志削弱检测；D只扩容带宽，未解决访问控制问题。",
     "topic": "wireless-security",
     "type": "comprehensive"
+  },
+  {
+    "id": "network-50",
+    "category": "network",
+    "question": "某企业遭遇钓鱼入侵后，攻击者使用被盗账号登录云应用并横向访问文件服务器。下列综合防护组合最合理的是？",
+    "options": [
+      "只扩容出口带宽",
+      "MFA与设备状态验证、最小权限和微隔离、EDR/NDR采集、SIEM关联及SOC响应",
+      "仅隐藏内部IP",
+      "关闭全部远程访问和日志"
+    ],
+    "answer": 1,
+    "explanation": "B覆盖身份、访问范围、端点与网络检测、日志关联和响应闭环。A只解决容量；C不能阻止合法账号滥用；D虽粗暴限制业务，却关闭日志导致无法检测和调查。",
+    "topic": "security-architecture",
+    "type": "comprehensive"
+  },
+  {
+    "id": "network-51",
+    "category": "network",
+    "question": "RADIUS认证和计费服务常用的UDP端口组合是？",
+    "options": [
+      "49和50",
+      "80和443",
+      "1812和1813",
+      "20和21"
+    ],
+    "answer": 2,
+    "explanation": "RADIUS常用UDP 1812进行认证、1813进行计费，答案C。TCP 49常用于TACACS+；80/443是HTTP/HTTPS；20/21是FTP。",
+    "topic": "wireless-security",
+    "type": "parameter"
+  },
+  {
+    "id": "network-52",
+    "category": "network",
+    "question": "TACACS+网络设备管理协议常用的传输层协议和端口是？",
+    "options": [
+      "UDP 1812",
+      "TCP 49",
+      "TCP 443",
+      "UDP 53"
+    ],
+    "answer": 1,
+    "explanation": "TACACS+使用TCP 49，答案B。UDP 1812常用于RADIUS认证；TCP 443是HTTPS；UDP 53是DNS。",
+    "topic": "protocol-security",
+    "type": "parameter"
+  },
+  {
+    "id": "network-53",
+    "category": "network",
+    "question": "IKEv1中用于第二阶段协商IPSec SA的模式是？",
+    "options": [
+      "主模式",
+      "野蛮模式",
+      "快速模式",
+      "传输模式"
+    ],
+    "answer": 2,
+    "explanation": "IKEv1快速模式用于第二阶段协商IPSec SA，答案C。主模式和野蛮模式属于第一阶段；传输模式是IPSec数据保护模式，不是IKE协商模式。",
+    "topic": "vpn-ipsec",
+    "type": "parameter"
   }
 ]

@@ -493,5 +493,35 @@
     "explanation": "B同时解决通信保护、强认证、个人追责、最小权限和审计。A仍无法追责且授权过宽；C扩大办公网到生产系统的路径；D取消边界控制。",
     "topic": "industrial-control-security",
     "type": "comprehensive"
+  },
+  {
+    "id": "app-34",
+    "category": "application",
+    "question": "某云上电商发生对象存储公开、管理员密钥泄露和异常批量下载。下列综合整改方案最合理的是？",
+    "options": [
+      "只要求云厂商赔偿",
+      "关闭公开访问、最小权限与MFA、使用临时凭据、加密并开启配置和访问日志告警",
+      "只更换对象存储品牌",
+      "删除全部日志以避免泄露"
+    ],
+    "answer": 1,
+    "explanation": "B覆盖配置、身份、凭据、数据保护和监控，符合云责任共担。A把客户侧责任全部推给云厂商；C不能修复错误配置和密钥管理；D破坏调查与告警能力。",
+    "topic": "cloud-iot",
+    "type": "comprehensive"
+  },
+  {
+    "id": "app-35",
+    "category": "application",
+    "question": "HTTP响应头Strict-Transport-Security常用的max-age参数单位是？",
+    "options": [
+      "毫秒",
+      "秒",
+      "分钟",
+      "天"
+    ],
+    "answer": 1,
+    "explanation": "HSTS的max-age单位是秒，答案B。例如max-age=31536000约为一年。其他单位会导致对策略有效期的错误理解。",
+    "topic": "web-attacks",
+    "type": "parameter"
   }
 ]

@@ -538,5 +538,50 @@
     "explanation": "场景题。netstat -an查看网络连接状态(本地/远程地址/端口/状态)。用于排查异常网络连接(如木马C2连接)。Linux同样有netstat。",
     "topic": "os-security",
     "type": "scenario"
+  },
+  {
+    "id": "system-37",
+    "category": "system",
+    "question": "某企业统一身份平台发生异常登录，且离职账号仍可访问财务系统。下列综合整改方案最合理的是？",
+    "options": [
+      "只提高口令最小长度",
+      "MFA、风险登录检测、账号生命周期联动、会话撤销、最小权限与定期复核",
+      "所有员工共用管理员账号",
+      "关闭审计以减少存储"
+    ],
+    "answer": 1,
+    "explanation": "B同时覆盖认证强度、异常检测、离职停用、会话控制和权限治理。A只处理部分口令风险；C破坏最小权限和追责；D降低发现与调查能力。",
+    "topic": "authentication",
+    "type": "comprehensive"
+  },
+  {
+    "id": "system-38",
+    "category": "system",
+    "question": "生物特征认证中，FAR表示？",
+    "options": [
+      "把合法用户错误拒绝的比率",
+      "把非法用户错误接受的比率",
+      "系统平均修复时间",
+      "密码尝试失败次数"
+    ],
+    "answer": 1,
+    "explanation": "FAR是误接受率，即把非法用户错误识别为合法用户，越低越安全，答案B。A是FRR误拒绝率；C是MTTR；D不是生物识别指标。",
+    "topic": "authentication",
+    "type": "parameter"
+  },
+  {
+    "id": "system-39",
+    "category": "system",
+    "question": "CVSS基础评分为9.5的漏洞通常属于哪个严重等级？",
+    "options": [
+      "低危",
+      "中危",
+      "高危",
+      "严重"
+    ],
+    "answer": 3,
+    "explanation": "CVSS 3.x中9.0至10.0通常为严重等级，9.5选D。7.0至8.9为高危；4.0至6.9为中危；0.1至3.9为低危。",
+    "topic": "vulnerability-incident",
+    "type": "parameter"
   }
 ]
