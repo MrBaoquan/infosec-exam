@@ -6,53 +6,55 @@ sidebar_position: 0
 
 # 🗺️ 备考路线图
 
-> 按此路线图学习，4 周可系统覆盖全部考点。每天 1-2 小时即可。
+> 按此路线图完成一轮主干知识学习。每天建议 1.5-2 小时；覆盖状态与待补范围见[大纲覆盖与内容优化计划](./improvement-plan)。
 
-## 第 1 周：基础 + 密码学（占 35%+，必拿分）
-
-| 日 | 学习内容 | 时长 | 重要度 | 链接 |
-|:--:|----------|:----:|:------:|------|
-| 1 | 信息安全概念、CIA 三性 | 1h | ★★★ | [基础](../fundamentals/concepts) |
-| 2 | 安全模型(BLP/Biba) | 1h | ★★★ | [安全模型](../fundamentals/models) |
-| 3 | 法律法规、等保简介 | 1h | ★★ | [法律法规](../fundamentals/laws) |
-| 4 | 古典密码 + DES + AES | 1.5h | ★★★ | [古典](../crypto/classical) / [DES](../crypto/des) / [AES](../crypto/symmetric) |
-| 5 | 哈希 + 非对称 RSA + DH | 1.5h | ★★★ | [哈希](../crypto/hash) / [RSA](../crypto/asymmetric) |
-| 6 | 数字签名 + PKI + Kerberos | 1.5h | ★★★ | [签名](../crypto/signature) / [PKI](../crypto/pki) / [Kerberos](../crypto/kerberos-x509) |
-| 7 | 国密算法 + 密码学大题练习 | 1.5h | ★★ | [国密](../crypto/national-crypto) / [大题](../exam-cases/crypto-case) |
-
-## 第 2 周：网络安全 + 系统安全（占 35%）
+## 第 1 周：基础 + 密码学
 
 | 日 | 学习内容 | 时长 | 重要度 | 链接 |
 |:--:|----------|:----:|:------:|------|
-| 8 | OSI七层 + 协议安全 + 安全模型 | 1.5h | ★★★ | [OSI](../network/osi-model) / [协议](../network/protocol-security) / [体系模型](../network/security-system-model) |
-| 9 | 攻击原理 + 网络攻击 + 防火墙 | 1.5h | ★★★ | [攻击原理](../network/attack-principles) / [攻击](../network/attacks) / [防火墙](../network/firewall) |
-| 10 | IDS/IPS + VPN/IPSec + TLS/HTTPS | 1.5h | ★★★ | [IDS](../network/ids-ips) / [IPSec](../network/vpn-ipsec) / [TLS](../network/tls-https) |
-| 11 | 操作系统安全 + 访问控制 | 1.5h | ★★★ | [OS](../system/os-security) / [访问控制](../system/access-control) |
-| 12 | 恶意代码 + 漏洞应急 | 1h | ★★ | [恶意代码](../system/malware) / [漏洞](../system/vulnerability-incident) |
-| 13 | 网络安全大题练习 | 1h | ★★★ | [网络大题](../exam-cases/network-case) |
-| 14 | 题库练习：密码学+网络+系统 | 1h | ★★ | [题库](/quiz) |
+| 1 | 信息安全概念、CIA 三性 | 1.5h | ★★★ | [基础概念](./fundamentals/concepts) |
+| 2 | 安全模型：BLP、Biba、Clark-Wilson | 1.5h | ★★★ | [安全模型](./fundamentals/models) |
+| 3 | 法律法规、标准与考试边界 | 1.5h | ★★ | [法律法规](./fundamentals/laws) |
+| 4 | 古典密码 → DES | 2h | ★★★ | [古典密码](./crypto/classical) / [DES](./crypto/des) |
+| 5 | AES → 哈希与 MAC | 2h | ★★★ | [AES](./crypto/symmetric) / [哈希](./crypto/hash) |
+| 6 | RSA、DH → 数字签名 | 2h | ★★★ | [非对称密码](./crypto/asymmetric) / [数字签名](./crypto/signature) |
+| 7 | PKI、Kerberos、国密 + 密码学案例 | 2h | ★★★ | [PKI](./crypto/pki) / [Kerberos与X.509](./crypto/kerberos-x509) / [国密](./crypto/national-crypto) / [密码学案例](./exam-cases/crypto-case) |
 
-## 第 3 周：应用安全 + 管理工程（占 30%）
-
-| 日 | 学习内容 | 时长 | 重要度 | 链接 |
-|:--:|----------|:----:|:------:|------|
-| 15 | Web 攻击(SQL/XSS/CSRF) | 1.5h | ★★★ | [Web攻击](../application/web-attacks) |
-| 16 | 数据库 + 邮件移动安全 | 1h | ★★ | [数据库](../application/database) / [邮件](../application/email-mobile) |
-| 17 | 云安全 + 物联网 | 1h | ★ | [云安全](../application/cloud-iot) |
-| 18 | 风险评估 + 等保2.0 | 1.5h | ★★★ | [风险评估](../management/risk-assessment) / [等保](../management/level-protection) |
-| 19 | BCP/DRP + 安全管理 | 1h | ★★ | [BCP](../management/bcp-drp) / [管理](../management/security-management) |
-| 20 | 安全工程 + Web/管理大题 | 1.5h | ★★★ | [工程](../engineering/engineering-detail) / [Web大题](../exam-cases/web-case) |
-| 21 | 题库练习：应用+管理+综合 | 1h | ★★ | [题库](/quiz) |
-
-## 第 4 周：大题专项 + 模拟冲刺
+## 第 2 周：网络基础、攻击与边界防护
 
 | 日 | 学习内容 | 时长 | 重要度 | 链接 |
 |:--:|----------|:----:|:------:|------|
-| 22 | 5 类下午大题通读 | 2h | ★★★ | [大题总览](../exam-cases) |
-| 23 | 综合分析大题 + 整改方案 | 1.5h | ★★★ | [综合大题](../exam-cases/comprehensive-case) |
-| 24 | 错题重做（题库错题本） | 1h | ★★★ | [题库](/quiz) |
-| 25 | 全部考点速记复习 | 1.5h | ★★★ | 各章"考点速记" |
-| 26-28 | 查漏补缺 + 真题模拟 | 2h/天 | ★★★ | 重点复习薄弱模块 |
+| 8 | OSI 七层与 TCP/IP 协议安全 | 2h | ★★★ | [OSI](./network/osi-model) / [协议安全](./network/protocol-security) |
+| 9 | 网络安全体系模型与攻击过程 | 2h | ★★★ | [体系模型](./network/security-system-model) / [攻击原理](./network/attack-principles) |
+| 10 | DoS、欺骗、社会工程与 APT | 2h | ★★★ | [网络攻击](./network/attacks) |
+| 11 | 防火墙与 IDS/IPS | 2h | ★★★ | [防火墙](./network/firewall) / [IDS与IPS](./network/ids-ips) |
+| 12 | VPN/IPSec 与 TLS/HTTPS | 2h | ★★★ | [VPN与IPSec](./network/vpn-ipsec) / [TLS与HTTPS](./network/tls-https) |
+| 13 | 物理安全、隔离与主动防御 | 2h | ★★ | [物理安全](./network/physical-security) / [物理隔离](./network/physical-isolation) / [主动防御](./network/active-defense) |
+| 14 | 安全审计、架构、测评 + 网络案例 | 2h | ★★★ | [安全审计](./network/security-audit) / [安全架构](./network/security-architecture) / [安全测评](./network/security-assessment) / [网络案例](./exam-cases/network-case) |
+
+## 第 3 周：系统安全与应用安全
+
+| 日 | 学习内容 | 时长 | 重要度 | 链接 |
+|:--:|----------|:----:|:------:|------|
+| 15 | 操作系统安全与认证 | 2h | ★★★ | [操作系统安全](./system/os-security) / [认证技术](./system/authentication) |
+| 16 | 访问控制模型与权限设计 | 1.5h | ★★★ | [访问控制](./system/access-control) |
+| 17 | 恶意代码基础与深入 | 2h | ★★★ | [恶意代码](./system/malware) / [恶意代码深入](./system/malware-advanced) |
+| 18 | 漏洞、补丁、应急、取证与运营 | 2h | ★★★ | [漏洞与应急](./system/vulnerability-incident) / [漏洞防护](./system/vulnerability-management) / [安全运营与取证](./system/security-operations) |
+| 19 | Web 攻击原理与防护 | 2h | ★★★ | [Web攻击](./application/web-attacks) / [Web补充考点](./application/web-security-extra) |
+| 20 | 数据库、中间件、邮件与移动安全 | 2h | ★★ | [数据库与中间件](./application/database) / [邮件与移动安全](./application/email-mobile) |
+| 21 | 云与物联网安全 + Web 案例 | 2h | ★★ | [云与物联网](./application/cloud-iot) / [Web案例](./exam-cases/web-case) |
+
+## 第 4 周：管理、工程与综合训练
+
+| 日 | 学习内容 | 时长 | 重要度 | 链接 |
+|:--:|----------|:----:|:------:|------|
+| 22 | 风险评估与等级保护 | 2h | ★★★ | [风险评估](./management/risk-assessment) / [等级保护](./management/level-protection) |
+| 23 | 安全管理、运维与人员制度 | 1.5h | ★★★ | [安全管理](./management/security-management) |
+| 24 | BCP、DRP 与恢复指标 | 1.5h | ★★★ | [业务连续性与灾难恢复](./management/bcp-drp) |
+| 25 | 信息安全工程生命周期 + 管理案例 | 2h | ★★★ | [信息安全工程](./engineering/engineering-detail) / [管理案例](./exam-cases/management-case) |
+| 26 | 五类应用题与综合案例 | 2h | ★★★ | [大题总览](./exam-cases) / [综合案例](./exam-cases/comprehensive-case) |
+| 27 | 错题重做 + 薄弱模块回看 | 2h | ★★★ | [题库](/quiz) / [答题分析](/stats) |
+| 28 | 完整套卷模拟与考点速记 | 2h | ★★★ | [套卷模拟](/exam) / 各章“考点速记” |
 
 ## 学习方法建议
 
@@ -66,13 +68,13 @@ sidebar_position: 0
 ### 📊 得分策略
 | 模块 | 目标得分率 | 说明 |
 |------|:----------:|------|
-| 密码学 | 90%+ | 必拿分，动画+大题模板 |
-| 网络安全 | 80%+ | 高频，理解为主 |
-| 应用安全 | 80%+ | Web 攻击大题高频 |
-| 管理工程 | 70%+ | 记忆为主 |
-| 下午大题 | 60%+ | 答题模板+规范术语 |
+| 密码学 | 90%+ | 动画理解机制，计算题按步骤作答 |
+| 网络安全 | 80%+ | 先定位协议层，再分析攻击和措施 |
+| 应用安全 | 80%+ | 理解漏洞成因，掌握代码与配置修复 |
+| 管理工程 | 70%+ | 用流程、角色、产物组织答案 |
+| 应用技术 | 60%+ | 依据题干分点作答，使用规范术语 |
 
-> 上午 45/75 及格、下午 45/75 及格，**两科同时达标**才能通过。
+> 两个科目必须同时达到当次合格标准。考试形式和标准以官方当次通知为准。
 
 ## 进度追踪
 

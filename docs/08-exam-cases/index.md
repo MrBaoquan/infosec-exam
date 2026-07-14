@@ -11,11 +11,11 @@ description: 下午应用技术大题题型分析与答题策略
 
 | 题号 | 类型 | 占分 | 难度 | 当前掌握 |
 |:----:|------|:----:|:----:|:--------:|
-| 1 | 密码学应用 | ~15 | ★★★ | [学习](./crypto-case) |
-| 2 | 网络安全配置 | ~15 | ★★★★ | [学习](./network-case) |
-| 3 | Web 安全 | ~15 | ★★★ | [学习](./web-case) |
-| 4 | 安全管理 | ~15 | ★★ | [学习](./management-case) |
-| 5 | 综合分析 | ~15 | ★★★★★ | [学习](./comprehensive-case) |
+| 1 | 密码学应用 | ~15 | ★★★ | [学习](./exam-cases/crypto-case) |
+| 2 | 网络安全配置 | ~15 | ★★★★ | [学习](./exam-cases/network-case) |
+| 3 | Web 安全 | ~15 | ★★★ | [学习](./exam-cases/web-case) |
+| 4 | 安全管理 | ~15 | ★★ | [学习](./exam-cases/management-case) |
+| 5 | 综合分析 | ~15 | ★★★★★ | [学习](./exam-cases/comprehensive-case) |
 
 ## 下午大题答题总策略
 
@@ -41,8 +41,8 @@ description: 下午应用技术大题题型分析与答题策略
 
 ## 各题型详解
 
-- [密码学应用大题](./crypto-case)
-- [网络安全配置大题](./network-case)
-- [Web 安全大题](./web-case)
-- [安全管理大题](./management-case)
-- [综合分析大题](./comprehensive-case)
+- [密码学应用大题](./exam-cases/crypto-case)
+- [网络安全配置大题](./exam-cases/network-case)
+- [Web 安全大题](./exam-cases/web-case)
+- [安全管理大题](./exam-cases/management-case)
+- [综合分析大题](./exam-cases/comprehensive-case)

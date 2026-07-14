@@ -88,7 +88,7 @@ const config: Config = {
         },
         footer: {
             style: 'dark',
-            copyright: `备考用途 · ${new Date().getFullYear()} · 内容依据 2018 新版大纲`,
+            copyright: `备考用途 · ${new Date().getFullYear()} · 依据现行考试大纲持续维护`,
         },
         prism: {
             theme: prismThemes.github,

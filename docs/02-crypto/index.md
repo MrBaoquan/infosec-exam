@@ -89,11 +89,11 @@ description: 密码学整体框架与分类
 
 ## 子章节导航
 
-- [古典密码](./classical)（凯撒/维吉尼亚 + 动画）
-- [对称加密-AES](./symmetric)（状态矩阵动画）
-- [对称加密-DES](./des)（Feistel 网络动画）
-- [非对称加密-RSA](./asymmetric)（加解密步骤动画）
-- [哈希函数](./hash)（雪崩效应动画）
-- [数字签名](./signature)
-- [PKI/CA](./pki)
-- [国密算法](./national-crypto)（SM2/SM3/SM4）
+- [古典密码](./crypto/classical)（凯撒/维吉尼亚 + 动画）
+- [对称加密-AES](./crypto/symmetric)（状态矩阵动画）
+- [对称加密-DES](./crypto/des)（Feistel 网络动画）
+- [非对称加密-RSA](./crypto/asymmetric)（加解密步骤动画）
+- [哈希函数](./crypto/hash)（雪崩效应动画）
+- [数字签名](./crypto/signature)
+- [PKI/CA](./crypto/pki)
+- [国密算法](./crypto/national-crypto)（SM2/SM3/SM4）
