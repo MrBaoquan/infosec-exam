@@ -28,6 +28,13 @@ const KEY_MEMORY = [
     to: '/docs/key-memory/ip-subnetting',
     id: 'key-memory/ip-subnetting',
   },
+  {
+    n: '02',
+    t: 'RSA 计算题（6 类子题型）',
+    d: '求 d 用 φ，加解密用 n · 大指数用二进制快速幂',
+    to: '/docs/key-memory/rsa-calculation',
+    id: 'key-memory/rsa-calculation',
+  },
 ];
 // 注意：进度按 URL 路径记录，索引页的 id 是 key-memory（不是 key-memory/index）
 const KEY_MEMORY_IDS = ['key-memory', ...KEY_MEMORY.map((k) => k.id)];
