@@ -19,7 +19,20 @@ const MODULES = [
   {t: '六、信息安全管理', d: '风险评估 · 等保2.0 · BCP', to: '/docs/management', ids: ['management/index']},
   {t: '七、信息安全工程', d: 'SSE-CMM · CC · 安全原则', to: '/docs/engineering', ids: ['engineering/index']},
 ];
-const ALL_IDS = MODULES.flatMap((m) => m.ids);
+// 重点记忆篇章：我不熟悉、要反复练的题型（新增题型时在这里加一条）
+const KEY_MEMORY = [
+  {
+    n: '01',
+    t: 'IP 子网划分与子网地址计算',
+    d: '子网地址 = IP 与掩码按位与 · 块大小 = 256 − 关键字节',
+    to: '/docs/key-memory/ip-subnetting',
+    id: 'key-memory/ip-subnetting',
+  },
+];
+// 注意：进度按 URL 路径记录，索引页的 id 是 key-memory（不是 key-memory/index）
+const KEY_MEMORY_IDS = ['key-memory', ...KEY_MEMORY.map((k) => k.id)];
+
+const ALL_IDS = [...MODULES.flatMap((m) => m.ids), ...KEY_MEMORY_IDS];
 
 function Dashboard() {
   const {getStats} = useStudyProgress();
@@ -39,6 +52,53 @@ function Dashboard() {
         <span>⚪ 未学 {counts.unset}</span>
         <span>共 {total} 篇</span>
       </div>
+    </div>
+  );
+}
+
+function KeyMemoryCard() {
+  const {getStats, getStatus, LABELS} = useStudyProgress();
+  const {counts, total, donePct} = getStats(KEY_MEMORY_IDS);
+  return (
+    <div
+      style={{
+        border: '1px solid var(--ifm-color-emphasis-300)',
+        borderLeft: '4px solid #f59e0b',
+        borderRadius: 12,
+        padding: 20,
+        margin: '24px 0',
+        background: 'var(--ifm-card-background-color)',
+        textAlign: 'left',
+      }}
+    >
+      <div style={{display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: 8}}>
+        <h3 style={{margin: 0}}>🎯 重点记忆篇章</h3>
+        <span style={{fontSize: 13, color: 'var(--ifm-color-emphasis-600)'}}>
+          已掌握 {counts.done}/{total} · {donePct}%
+        </span>
+      </div>
+      <p style={{margin: '8px 0 12px', fontSize: 13, color: 'var(--ifm-color-emphasis-600)'}}>
+        我不熟悉、要反复练的题型解法，一类一页：识别信号 → 通用步骤 → 例题详解 → 变式自测 → 速记卡。
+      </p>
+      <ul style={{margin: 0, paddingLeft: 18, fontSize: 14, lineHeight: 1.9}}>
+        {KEY_MEMORY.map((k) => {
+          const st = getStatus(k.id);
+          return (
+            <li key={k.n}>
+              <Link to={k.to}>
+                <b>题型{k.n}</b> · {k.t}
+              </Link>
+              <span style={{fontSize: 12, color: 'var(--ifm-color-emphasis-500)'}}>
+                {' '}
+                {st === 'done' ? LABELS.done : st === 'learning' ? LABELS.learning : LABELS.unset}
+              </span>
+            </li>
+          );
+        })}
+      </ul>
+      <p style={{margin: '12px 0 0', fontSize: 13}}>
+        <Link to="/docs/key-memory">进入篇章总览与题型索引 →</Link>
+      </p>
     </div>
   );
 }
@@ -73,6 +133,8 @@ function HomeContent() {
         <BrowserOnly fallback={<div style={{height: 100}} />}>
           {() => <Dashboard />}
         </BrowserOnly>
+
+        <KeyMemoryCard />
 
         <div className="hero-grid" style={{display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))', gap: 16, margin: '24px 0'}}>
           {MODULES.map((c) => <ModuleCard key={c.t} module={c} />)}
