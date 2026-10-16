@@ -3,6 +3,11 @@ import type { SidebarsConfig } from '@docusaurus/plugin-content-docs';
 const sidebars: SidebarsConfig = {
     tutorialSidebar: [
         'intro',
+        {
+            type: 'category',
+            label: '🎯 重点记忆篇章',
+            items: ['key-memory/index', 'key-memory/ip-subnetting'],
+        },
         'improvement-plan',
         'study-plan',
         {
