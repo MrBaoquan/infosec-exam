@@ -35,6 +35,13 @@ const KEY_MEMORY = [
     to: '/docs/key-memory/rsa-calculation',
     id: 'key-memory/rsa-calculation',
   },
+  {
+    n: '03',
+    t: '子网划分方案设计（需求反推掩码）',
+    d: '子网数向上取 k，主机数减二取 n · k+n 不许超位数',
+    to: '/docs/key-memory/subnet-planning',
+    id: 'key-memory/subnet-planning',
+  },
 ];
 // 注意：进度按 URL 路径记录，索引页的 id 是 key-memory（不是 key-memory/index）
 const KEY_MEMORY_IDS = ['key-memory', ...KEY_MEMORY.map((k) => k.id)];

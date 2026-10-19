@@ -6,7 +6,12 @@ const sidebars: SidebarsConfig = {
         {
             type: 'category',
             label: '🎯 重点记忆篇章',
-            items: ['key-memory/index', 'key-memory/ip-subnetting', 'key-memory/rsa-calculation'],
+            items: [
+                'key-memory/index',
+                'key-memory/ip-subnetting',
+                'key-memory/rsa-calculation',
+                'key-memory/subnet-planning',
+            ],
         },
         'improvement-plan',
         'study-plan',
