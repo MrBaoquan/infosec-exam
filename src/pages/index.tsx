@@ -111,6 +111,9 @@ function KeyMemoryCard() {
         })}
       </ul>
       <p style={{margin: '12px 0 0', fontSize: 13}}>
+        <Link to="/docs/key-memory/short-answer-drill">🗣️ 简答题演练台账（逐题评分 + 失分清单）→</Link>
+      </p>
+      <p style={{margin: '4px 0 0', fontSize: 13}}>
         <Link to="/docs/key-memory">进入篇章总览与题型索引 →</Link>
       </p>
     </div>

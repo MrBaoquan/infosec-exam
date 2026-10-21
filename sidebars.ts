@@ -8,6 +8,7 @@ const sidebars: SidebarsConfig = {
             label: '🎯 重点记忆篇章',
             items: [
                 'key-memory/index',
+                'key-memory/short-answer-drill',
                 'key-memory/ip-subnetting',
                 'key-memory/rsa-calculation',
                 'key-memory/subnet-planning',
