@@ -49,6 +49,13 @@ const KEY_MEMORY = [
     to: '/docs/key-memory/firewall-ids-ips',
     id: 'key-memory/firewall-ids-ips',
   },
+  {
+    n: '05',
+    t: 'SQL 注入 / XSS / CSRF 辨析',
+    d: '注入看谁在执行字符串，跨站看请求是谁发出的 · 预编译、编码、Token 三治本',
+    to: '/docs/key-memory/sqli-xss-csrf',
+    id: 'key-memory/sqli-xss-csrf',
+  },
 ];
 // 注意：进度按 URL 路径记录，索引页的 id 是 key-memory（不是 key-memory/index）
 const KEY_MEMORY_IDS = ['key-memory', ...KEY_MEMORY.map((k) => k.id)];

@@ -13,6 +13,7 @@ const sidebars: SidebarsConfig = {
                 'key-memory/rsa-calculation',
                 'key-memory/subnet-planning',
                 'key-memory/firewall-ids-ips',
+                'key-memory/sqli-xss-csrf',
             ],
         },
         'improvement-plan',
