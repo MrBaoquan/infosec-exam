@@ -33,6 +33,7 @@ sidebar_label: 📖 篇章说明与索引
 | 01 | [IP 子网划分与子网地址计算](/docs/key-memory/ip-subnetting) | 子网地址 = IP 与掩码**按位与**；块大小 = 256 − 关键字节 | 📌 待巩固 |
 | 02 | [RSA 计算题（6 类子题型）](/docs/key-memory/rsa-calculation) | 求 d 用 φ，加解密用 n；指数一大就快速幂，每乘一次就取模 | 📌 待巩固 |
 | 03 | [子网划分方案设计（需求反推掩码）](/docs/key-memory/subnet-planning) | 子网数向上取 k，主机数减二取 n；k+n 不许超位数 | 📌 待巩固 |
+| 04 | [防火墙 / IDS / IPS 定位与选型](/docs/key-memory/firewall-ids-ips) | 串联还是旁路 → 四层还是七层 → 放行/告警/阻断；能阻断的都要先问「挂了怎么办」 | 📌 待巩固 |
 
 > 「状态」列由我手动维护：📌 待巩固 → 🔄 复习中 → ✅ 已掌握。
 

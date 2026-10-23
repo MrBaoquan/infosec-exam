@@ -12,6 +12,7 @@ const sidebars: SidebarsConfig = {
                 'key-memory/ip-subnetting',
                 'key-memory/rsa-calculation',
                 'key-memory/subnet-planning',
+                'key-memory/firewall-ids-ips',
             ],
         },
         'improvement-plan',

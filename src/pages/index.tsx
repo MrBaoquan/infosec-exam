@@ -42,6 +42,13 @@ const KEY_MEMORY = [
     to: '/docs/key-memory/subnet-planning',
     id: 'key-memory/subnet-planning',
   },
+  {
+    n: '04',
+    t: '防火墙 / IDS / IPS 定位与选型',
+    d: '串联还是旁路 → 四层还是七层 → 放行/告警/阻断 · 能阻断的先问挂了怎么办',
+    to: '/docs/key-memory/firewall-ids-ips',
+    id: 'key-memory/firewall-ids-ips',
+  },
 ];
 // 注意：进度按 URL 路径记录，索引页的 id 是 key-memory（不是 key-memory/index）
 const KEY_MEMORY_IDS = ['key-memory', ...KEY_MEMORY.map((k) => k.id)];
