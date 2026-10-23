@@ -125,6 +125,11 @@ function KeyMemoryCard() {
         })}
       </ul>
       <p style={{margin: '12px 0 0', fontSize: 13}}>
+        <Link to="/docs/key-memory/final-cram">
+          <b>🚀 考前冲刺 · 填空与简答标准答案速查（考前 30 分钟看这页）→</b>
+        </Link>
+      </p>
+      <p style={{margin: '4px 0 0', fontSize: 13}}>
         <Link to="/docs/key-memory/short-answer-drill">🗣️ 简答题演练台账（逐题评分 + 失分清单）→</Link>
       </p>
       <p style={{margin: '4px 0 0', fontSize: 13}}>
