@@ -10,6 +10,7 @@ const sidebars: SidebarsConfig = {
                 'key-memory/index',
                 'key-memory/short-answer-drill',
                 'key-memory/final-cram',
+                'key-memory/prediction-bank',
                 'key-memory/ip-subnetting',
                 'key-memory/rsa-calculation',
                 'key-memory/subnet-planning',

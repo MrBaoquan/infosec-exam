@@ -300,12 +300,14 @@ CSRF 防护假设「攻击者读不到页面内容，因而拿不到 Token」。
 
 1. 同一考点**低于 6 分**即升级为独立题型页（`docs/00-key-memory/` 下新建，按识别信号 → 核心原理 → 通用步骤 → 例题 → 变式 → 易错 → 速记卡七块写）。
 2. 已升级：[题型 02 · RSA 计算](/docs/key-memory/rsa-calculation)、[题型 04 · 防火墙/IDS/IPS 定位与选型](/docs/key-memory/firewall-ids-ips)（第 02 轮触发）、[题型 05 · SQL 注入/XSS/CSRF 辨析](/docs/key-memory/sqli-xss-csrf)（第 04 轮触发）。
-3. 题型页负责「怎么答」，本台账负责「我错在哪」，两者互不替代。
+3. 题型页负责「怎么答」，本台账负责「我错在哪」，两者互不替代；**押题题库负责「可能考什么」**。
 4. 每轮结束都要：留存原题与标准答案 → 更新台账 → 更新复习清单 → 更新轮转表得分 → 构建 → 推送到线上。
 
 ## 相关章节
 
 - [重点记忆篇章总览](/docs/key-memory) —— 题型索引与复习方法
+- [简答题押题题库（50 题）](/docs/key-memory/prediction-bank) —— 按星级排的押题，配本台账的失分清单一起用
+- [考前冲刺 · 填空与简答标准答案速查](/docs/key-memory/final-cram) —— 参数表与易混辨析
 - [题型 04 · 防火墙 / IDS / IPS 定位与选型](/docs/key-memory/firewall-ids-ips) —— 第 02 轮失分点的完整解法
 - [题型 05 · SQL 注入 / XSS / CSRF 辨析](/docs/key-memory/sqli-xss-csrf) —— 第 04 轮失分点的完整解法
 - [下午大题专项](/docs/exam-cases) —— 五类大题的答题模板

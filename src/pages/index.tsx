@@ -130,6 +130,9 @@ function KeyMemoryCard() {
         </Link>
       </p>
       <p style={{margin: '4px 0 0', fontSize: 13}}>
+        <Link to="/docs/key-memory/prediction-bank">🎯 简答题押题题库（50 题 · 星级排序 + 得分点）→</Link>
+      </p>
+      <p style={{margin: '4px 0 0', fontSize: 13}}>
         <Link to="/docs/key-memory/short-answer-drill">🗣️ 简答题演练台账（逐题评分 + 失分清单）→</Link>
       </p>
       <p style={{margin: '4px 0 0', fontSize: 13}}>
